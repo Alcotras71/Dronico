@@ -1,0 +1,57 @@
+.header {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	&.header-dark{
+		a{
+			color:#fff;
+		}
+		a:hover {
+			color: $main;
+			transition: color 0.5s ease;
+		}
+		.header__show a {
+			color: $main;
+			transition: all 0.5s ease;
+		}
+		.header__show a:hover {
+			color: #fff;
+		}
+		path {
+			transition: all 0.5s ease;
+		}
+		svg:hover > path{
+			fill: $main;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		color: #fff;
+		padding: 40px 30px 0 30px;
+		justify-content: space-between;
+	}
+	&__logo {
+		width: 183px;
+	}
+	&__menu {
+		display: flex;
+		font-size: 1.8rem;
+	}
+	&__show {
+		margin-right: 60px;
+	}
+
+}
+.contacts {
+	display: flex;
+	&__icon {
+		width: 24px;
+		margin-right: 24px;
+	}
+	&__phone {
+		font-size: 2.4rem;
+		font-weight: bold;
+		transition: all 0.5s ease;
+	}
+}
