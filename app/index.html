@@ -1,16 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dronico</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dronico</title>
-	<link rel="stylesheet" href="css/style.min.css">
-</head>
+  <body>
+    <div class="wrapper wrapper-dark">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li class="header__show">СВЕТОВОЕ шоу</li>
+              <li class="header__aero">Радиоуправляемые аэростаты</li>
+            </ul>
+          </nav>
+          <div class="header__contacts contacts">
+            <div class="contacts__icon whatsapp">
+              <img src="images/whatsapp.svg" alt="whatsapp" />
+            </div>
+            <div class="contacts__icon telegram">
+              <img src="images/telegram.svg" alt="telegram" />
+            </div>
+            <div class="contacts__phone">
+              <a href="tel:84959685757">+7 (495) 968 57 57</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="presentation light-show">
+          <div class="presentation__video">
+            <img src="images/show/video_TOP.png" alt="video_TOP" />
+          </div>
+          <h1 class="presentation__title bit-title title-dark">Dronico</h1>
+          <h2 class="presentation__subtitle title-dark">СВЕТОВОЕ шоу дронов</h2>
+          <p class="presentation__text">
+            Прикоснитесь к будущему в сфере искусства и технологий
+          </p>
+          <div class="presentation__button">Заказать звонок</div>
+          <ul class="presentation__coords">
+            <li>21.512344233, 35.1129764</li>
+            <li>23.5d124323, 13.1195744</li>
+            <li>70.512323, 45.11974</li>
+          </ul>
+          <div class="presentation__plus-left">+</div>
+          <div class="presentation__plus-right">+</div>
+        </section>
+        <section class="using-areas using-areas-dark">
+          <h2 class="using-areas__title title title-dark">
+            Области применения
+          </h2>
+          <div class="using-areas__slider using__cards">
+            <div class="using__card">
+              <div class="using__card-top"></div>
+              <div class="using__card-bottom">
+                <div class="using__card-count">01</div>
+                <div class="using__card-text">Спортивные мероприятия</div>
+              </div>
+            </div>
+            <div class="using__card card-enable">
+              <div class="using__card-top card-img">
+                <img src="images/show/use_sphere.png" alt="sphere" />
+              </div>
+              <div class="using__card-bottom">
+                <div class="using__card-count card-title title-dark">
+                  Церемонии открытия
+                </div>
+                <div class="using__card-text card-bigtext">
+                  У нас в распоряжении дроны разных размеров и внешнего вида,
+                  которые гибко настраиваются для сцены с любыми возможностями.
+                </div>
+              </div>
+            </div>
+            <div class="using__card">
+              <div class="using__card-top"></div>
+              <div class="using__card-bottom">
+                <div class="using__card-count">02</div>
+                <div class="using__card-text">Спортивные мероприятия</div>
+              </div>
+            </div>
+            <div class="using__card">
+              <div class="using__card-top"></div>
+              <div class="using__card-bottom">
+                <div class="using__card-count">04</div>
+                <div class="using__card-text">Наука и образование</div>
+              </div>
+            </div>
+          </div>
+          <div class="using__card-pagination card-pagination">
+            <div class="card-pagination__left"></div>
+            <div class="card-pagination__right"></div>
+          </div>
+        </section>
+        <section class="history">
+          <div class="history__container">
+            <h2 class="history__title title title-dark">
+              <span>Расскажите свою историю</span> с помощью текста, логотипов и
+              анимации
+            </h2>
+            <div class="history__cards-left">
+              <div class="history__card">
+                <img
+                  src="images/show/history_quantity1.svg"
+                  alt="card__quantity"
+                  class="card__icon"
+                />
+                <div class="card__title title-dark">
+                  200 дронов в одном помещении
+                </div>
+                <div class="card__text">
+                  У нас в распоряжении дроны разных размеров и внешнего вида,
+                  которые гибко настраиваются для сцены с любыми возможностями.
+                </div>
+              </div>
+              <div class="history__card">
+                <img
+                  src="images/show/history_radar3.svg"
+                  alt="history_radar"
+                  class="card__icon"
+                />
+                <div class="card__title title-dark">
+                  устойчивость к магнитным полям
+                </div>
+                <div class="card__text">
+                  В своей работе мы используем высокоточную технологию навигации
+                  и позиционирования. Это система не зависит от компаса, сигнала
+                  GPS / ГЛОНАСС а значит становится устойчивой к воздействию
+                  магнитных полей, наводимых от металлоконструкций и линий
+                  электропередач.
+                </div>
+              </div>
+            </div>
+            <div class="history__cards-right">
+              <div class="history__card">
+                <img
+                  src="images/show/history_target2.svg"
+                  alt="history_target"
+                  class="card__icon"
+                />
+                <div class="card__title title-dark">
+                  Управление из одного места
+                </div>
+                <div class="card__text">
+                  Управлением полетом может осуществлять один человек с одним
+                  компьютером или телефоном. Это не требует участия я пилотов-
+                  дронов. Это позволяет гибко регулировать количество
+                  участвующих дронов и значительно снизить затраты.
+                </div>
+              </div>
+              <div class="history__card">
+                <img
+                  src="images/show/history_mobile4.svg"
+                  alt="history_mobile"
+                  class="card__icon"
+                />
+                <div class="card__title title-dark">
+                  Управление цветом с одной кнопки
+                </div>
+                <div class="card__text">
+                  Полноцветное световое шоу — светодиодные лампы высокой яркости
+                  24W, намного ярче галогенных лампочек, они прекрасно видны
+                  даже днем; 32-битные цвета предоставляют 16 777 216 оттенков
+                  цветов и 256 градаций прозрачности; 20 режимов мерцания цвета
+                  на выбор.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="dronico-slider">
+          <div class="dronico-slider__container">
+            <div class="dronico-slider__img">
+              <img src="images/show/dancing_photo.png" alt="dancing_photo" />
+            </div>
+            <div class="dronico-slider__content">
+              <div class="dronico-slider__title title-dark">
+                Танцевальные шоу дронов и людей
+              </div>
+              <div class="dronico-slider__subtitle title-dark">
+                Индивидуальная постановка номеров артистов и беспилотников,
+                разных размеров и разной внешности
+              </div>
+              <div class="dronico-slider__types types">
+                <div class="types__card">
+                  <div class="types__icon">
+                    <img
+                      src="images/show/dancing_circles1.svg"
+                      alt="dancing_circles-four"
+                    />
+                  </div>
+                  <div class="types__title title-dark">
+                    Индивидуальный номер
+                  </div>
+                  <div class="types__text">
+                    Разрабатывается индивидуальный танцевальный номер людей и
+                    дронов специально для вашего мероприятия.
+                  </div>
+                </div>
+                <div class="types__card">
+                  <div class="types__icon">
+                    <img
+                      src="images/show/dancing_circles2.svg"
+                      alt="dancing_circles-three"
+                    />
+                  </div>
+                  <div class="types__title title-dark">РАЗНЫЕ ВИДЫ ДРОНОВ</div>
+                  <div class="types__text">
+                    У нас в распоряжении дроны разных размеров и внешнего вида,
+                    которые гибко настраиваются для сцены с любыми
+                    возможностями.
+                  </div>
+                </div>
+                <div class="types__card">
+                  <div class="types__icon">
+                    <img
+                      src="images/show/dancing_circles3.svg"
+                      alt="dancing_circles-some"
+                    />
+                  </div>
+                  <div class="types__title title-dark">
+                    ГАРАНТИЯ БЕЗОПАСНОСТИ
+                  </div>
+                  <div class="types__text">
+                    Мы используем систему RTK, которая позволяет контролировать
+                    положение всех дронов с точностью до 1 см.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dronico-slider__pagination">
+              <div class="dronico-slider__arrow-left"></div>
+              <div class="dronico-slider__arrow-right"></div>
+            </div>
+          </div>
+        </section>
+        <section class="tech-dronico">
+          <div class="tech-dronico__text-container">
+            <h2 class="tech-dronico__title title-dark">
+              Мы используем <span>передовые технологии-</span>
+            </h2>
+            <div class="tech-dronico__subtitle title-dark">technology</div>
+            <div class="tech-dronico__text">
+              Мы предлагаем беспилотники разных размеров и разной внешности. Они
+              настраиваются в соответствии с возможностями сцены и другими
+              необходимыми требованиями.
+            </div>
+          </div>
+          <div class="tech-dronico__img-container">
+            <div class="tech-dronico__img small">
+              <img src="images/show/techDron_small1.png" alt="techDron_small" />
+              <div class="tech-dronico__btn"></div>
+            </div>
+            <div class="tech-dronico__img medium">
+              <img
+                src="images/show/techDron_medium2.png"
+                alt="techDron_medium"
+              />
+              <div class="tech-dronico__btn"></div>
+            </div>
+            <div class="tech-dronico__img big">
+              <img src="images/show/techDron_big3.png" alt="techDron_big" />
+              <div class="tech-dronico__btn"></div>
+            </div>
+          </div>
+        </section>
+        <section class="technologies">
+          <h1 class="technologies__title bit-title title-dark">Технологии</h1>
+          <div class="technologies__image-container">
+            <img
+              src="images/show/tech_sphere.png"
+              alt="tech_sphere"
+              class="technologies__image"
+            />
+            <div class="technologies__coord-left">70.512323, 45.11974</div>
+            <div class="technologies__coord-right">70.512323, 45.11974</div>
+          </div>
+          <div class="technologies__tabs">
+            <div class="technologies__tab">
+              <div class="technologies__tab-icon">
+                <img src="images/show/tech_circle1.svg" alt="tech_target" />
+              </div>
+              <div class="technologies__tab-text">
+                Контроль маршрута каждого беспилотника с
+                <span>точностью до 1 см.</span>
+              </div>
+            </div>
+            <div class="technologies__tab">
+              <div class="technologies__tab-icon">
+                <img
+                  src="images/show/tech_circle2.svg"
+                  alt="tech_three-circles"
+                />
+              </div>
+              <div class="technologies__tab-text">
+                ВРЕМЯ ЗАДЕРЖКИ СИНХРОНИЗАЦИИ ДРОНОВ
+                <span>5-500 НАНОСЕКУНД</span>
+              </div>
+            </div>
+            <div class="technologies__tab">
+              <div class="technologies__tab-icon">
+                <img src="images/show/tech_circle3.svg" alt="tech_circles" />
+              </div>
+              <div class="technologies__tab-text">
+                ВРЕМЯ ЗАДЕРЖКИ ОБРАТНОЙ СВЯЗИ <span>5-20 НАНОСЕКУНД</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <h1 class="about__title bit-title title-dark">Dronico</h1>
+          <div class="about__text-container">
+            <div class="about__text-title title title-dark">
+              <span>Drone Light Show -</span> новейший способ обогатить любое
+              ваше событие
+            </div>
+            <div class="about__text-text">
+              Компания DRONICО была основана в 2018 году. Мы — официальные
+              представители крупнейшей китайской ассоциации дронов Uflying
+              Technology (HK) Co Limited и компании HighGreat Innovation
+              Technology Development Co., Ltd в России.
+            </div>
+          </div>
+          <div class="about__image">
+            <img src="images/show/team_photo.png" alt="team" />
+          </div>
+        </section>
+        <section class="our-clients">
+          <div class="our-clients__container">
+            <div class="our-clients__title title title-dark">
+              Среди <span>наших клиентов</span>
+            </div>
+            <div class="our-clients__tabs">
+              <ul class="our-clients__tabs-top">
+                <li>
+                  <img src="images/show/ourClients_cctv1.png" alt="cctv" />
+                </li>
+                <li>
+                  <img src="images/show/ourClients_audi2.png" alt="audi" />
+                </li>
+                <li>
+                  <img
+                    src="images/show/ourClients_alibaba3.png"
+                    alt="alibaba"
+                  />
+                </li>
+                <li><img src="images/show/ourClients_b4.png" alt="b" /></li>
+              </ul>
+              <ul class="our-clients__tabs-middle">
+                <li><img src="images/show/ourClients_ww5.png" alt="ww" /></li>
+                <li>
+                  <img
+                    src="images/show/ourClients_triangle6.png"
+                    alt="triangle"
+                  />
+                </li>
+                <li><img src="images/show/ourClients_btv7.png" alt="btv" /></li>
+              </ul>
+              <ul class="our-clients__tabs-bottom tabs-bottom">
+                <li class="tabs-bottom__left">
+                  <img
+                    src="images/show/ourClients_triangle6.png"
+                    alt="triangle"
+                  />
+                </li>
+                <li class="tabs-bottom__right">
+                  <img src="images/show/ourClients_motor8.png" alt="motor" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="work work-dark">
+          <div class="work__title title title-dark">
+            <span>Как мы</span> работаем
+          </div>
+          <!-- code here -->
+        </section>
+        <section class="map map-dark">
+          <div class="map__container">
+            <div class="map__text">
+              <div class="map__title title title-dark">
+                <span>Москва,</span> Партийный пер.,д. 1, корп. 58, с. 1, 3-й
+                этаж
+              </div>
+              <div class="map__contacts">
+                <div class="map__social-icons">
+                  <img
+                    class="whatsapp"
+                    src="images/whatsapp.svg"
+                    alt="whatsapp"
+                  />
+                  <img
+                    class="telegram"
+                    src="images/telegram.svg"
+                    alt="telegram"
+                  />
+                </div>
+                <div class="map__contacts-phone">
+                  <a href="tel:84959685757">+7 (495) 968 57 57</a>
+                </div>
+              </div>
+            </div>
+            <div class="map__map">
+              <!-- map -->
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer__rights">(c) 2019 г. Все права защищены</div>
+          <div class="footer__social-icons">
+            <img
+              class="footer__vk"
+              src="images/show/footerSocial_vk1.svg"
+              alt="vk"
+            />
+            <img
+              class="footer__fb"
+              src="images/show/footerSocial_fb2.svg"
+              alt="facebook"
+            />
+            <img
+              class="footer__yb"
+              src="images/show/footerSocial_yb3.svg"
+              alt="youtube"
+            />
+            <img
+              class="footer__vk"
+              src="images/show/footerSocial_inst4.svg"
+              alt="instagram"
+            />
+          </div>
+          <div class="footer__policy">Политика конфиденциальности</div>
+        </footer>
+      </main>
+    </div>
 
-<body>
-
-	<script src="js/main.js"></script>
-</body>
-
+		<script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
