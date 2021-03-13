@@ -1,0 +1,11 @@
+extends ../layouts/main.pug
+
+block variables
+	- const titleShow = 'Световое шоу';
+	- const bodyClass = 'dark-bg';
+
+block content
+	include ../sections/_presentation.pug
+	.wrapper.wrapper-dark
+		main.main
+			include ../sections/_using-areas.pug

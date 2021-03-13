@@ -1,0 +1,35 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	&.dark-bg{
+		background: $background url('../images/pattern.png') repeat;
+	}
+	font-family: "RoadRadio", Arial, Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+.wrapper {
+	margin: 0 30px 0 30px;
+}
+
+.wrapper-dark,
+.wrapper-dark a {
+	color: #fff;
+}
+
+.big-title img,
+.about img {
+	width: 100%;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 6.4rem;
+	line-height: 6.5rem;
+	text-transform: uppercase;
+	span {
+		color: $main;
+	}
+}

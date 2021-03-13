@@ -1,0 +1,16 @@
+block variables
+
+<!DOCTYPE html>
+html(lang="en")
+	head
+		include ../sections/_head.pug
+	body(class="" +bodyClass)
+
+		include ../sections/_header.pug
+
+		.content
+			block content
+
+		//- include ../sections/_footer.pug
+
+		script(src="js/main.js")
