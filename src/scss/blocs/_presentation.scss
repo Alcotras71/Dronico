@@ -1,6 +1,7 @@
-$corn: 13px;
-$borderWidth: 2px;
-$calculate: $corn + $borderWidth;
+$cornPres: 13px;
+$borderWidthPres: 2px;
+$calculatePres: $cornPres + $borderWidthPres;
+
 
 .presentation {
 	position: relative;
@@ -56,17 +57,17 @@ $calculate: $corn + $borderWidth;
 			width: 325px;
 			height: 72px;
 			display: inline-block;
-			border: $borderWidth solid $main;
-			background: linear-gradient(-45deg, $main 0 $calculate, transparent 0) bottom right/50% 50%,
-				linear-gradient(135deg, $main 0 $calculate, transparent 0) top left / 50% 50%, $main;
+			border: $borderWidthPres solid $main;
+			background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $main;
 			background-origin: border-box;
 			background-repeat: no-repeat;
 			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 $corn, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 $corn, #fff 0) top left,
+				linear-gradient(-45deg, transparent 0 $cornPres, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornPres, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5%;
-			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-size: 50.5% 50.5%!important;
+			-webkit-mask-repeat: no-repeat!important;
 			transition: all 0.5s ease;
 		}
 		p {
@@ -81,8 +82,8 @@ $calculate: $corn + $borderWidth;
 	}
 	&__button:hover {
 		&.box {
-			background: linear-gradient(-45deg, $main 0 $calculate, transparent 0) bottom right/50% 50%,
-				linear-gradient(135deg, $main 0 $calculate, transparent 0) top left / 50% 50%, $alpha;
+			background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $alpha;
 			background-origin: border-box;
 			background-repeat: no-repeat;
 		}

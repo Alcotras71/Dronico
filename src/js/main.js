@@ -4,7 +4,6 @@ const usingAreas = new Swiper('.using-card__container', {
 	spaceBetween: 10,
 	slidesPerView: 4,
 	loop: true,
-	mousewheel: true,
 	navigation: {
     nextEl: '.using-areas__pagination-next',
     prevEl: '.using-areas__pagination-prev',

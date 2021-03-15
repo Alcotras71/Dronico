@@ -1,0 +1,23 @@
+mixin typesCard(listObject)
+	.types__card
+		.types__icon
+			img(src=`images/show/dronico-sl_${listObject.img}.svg` alt=`${listObject.alt}`)
+		.types__title.title-dark
+			| #{listObject.title}
+		.types__text
+			| #{listObject.text}
+
+mixin dronicoSlide(imgNum, imgBg, title, subtitle, myList)
+	.dronico-slider__slide
+		.dronico-slider__num
+			img(src=`images/show/dronico-sl_${imgNum}.svg` alt=`${imgNum}`)
+		.dronico-slider__img
+			img(src=`images/show/dronico-sl_${imgBg}.png` alt=`${imgBg}`)
+		.dronico-slider__content
+			.dronico-slider__title.title-dark
+				| #{title}
+			.dronico-slider__subtitle.title-dark
+				| #{subtitle}
+			.dronico-slider__types.types
+				each listItemObject in myList
+					+typesCard(listItemObject)

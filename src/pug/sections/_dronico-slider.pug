@@ -1,32 +1,21 @@
+include ../mixins/_dronicoSlider.pug
+
+-const firstSliderText1 = 'Разрабатывается индивидуальный  танцевальный номер людей и дронов  специально для вашего мероприятия.';
+-const firstSliderText2 = 'У нас в распоряжении дроны разных  размеров и внешнего вида, которые  гибко настраиваются для сцены с любыми  возможностями.';
+-const firstSliderText3 = 'Мы используем систему RTK, которая  позволяет контролировать положение всех  дронов с точностью до 1 см.';
+-const firstSliderSubtext = 'Индивидуальная постановка  номеров артистов и беспилотников, разных размеров и разной  внешности';
+
+-
+	const dronicoList1 = [
+		{img: 'circles1', alt: 'circles1', title: 'ИНДИВИДУАЛЬНЫЙ НОМЕР', text: firstSliderText1},
+		{img: 'circles2', alt: 'circles2', title: 'РАЗНЫЕ ВИДЫ ДРОНОВ', text: firstSliderText2},
+		{img: 'circles3', alt: 'circles3', title: 'ГАРАНТИЯ БЕЗОПАСНОСТИ', text: firstSliderText3},
+	];
+
 section.dronico-slider
-  .dronico-slider__container
-    .dronico-slider__img
-      img(src='images/show/dancing_photo.png', alt='dancing_photo')
-    .dronico-slider__content
-      .dronico-slider__title.title-dark
-        | Танцевальные шоу дронов и людей
-      .dronico-slider__subtitle.title-dark
-        | Индивидуальная постановка номеров артистов и беспилотников, разных размеров и разной внешности
-      .dronico-slider__types.types
-        .types__card
-          .types__icon
-            img(src='images/show/dancing_circles1.svg', alt='dancing_circles-four')
-          .types__title.title-dark
-            | Индивидуальный номер
-          .types__text
-            | Разрабатывается индивидуальный танцевальный номер людей и дронов специально для вашего мероприятия.
-        .types__card
-          .types__icon
-            img(src='images/show/dancing_circles2.svg', alt='dancing_circles-three')
-          .types__title.title-dark РАЗНЫЕ ВИДЫ ДРОНОВ
-          .types__text
-            | У нас в распоряжении дроны разных размеров и внешнего вида, которые гибко настраиваются для сцены с любыми возможностями.
-        .types__card
-          .types__icon
-            img(src='images/show/dancing_circles3.svg', alt='dancing_circles-some')
-          .types__title.title-dark ГАРАНТИЯ БЕЗОПАСНОСТИ
-          .types__text
-            | Мы используем систему RTK, которая позволяет контролировать положение всех дронов с точностью до 1 см.
-    .dronico-slider__pagination
-      .dronico-slider__arrow-left
-      .dronico-slider__arrow-right
+	.dronico-slider__container
+		.dronico-slider__wrapper
+			+dronicoSlide('01', 'photo', 'Танцевальные шоу дронов и людей', firstSliderSubtext, dronicoList1)
+	.dronico-slider__pagination
+		.dronico-slider__pagination-prev
+		.dronico-slider__pagination-next
