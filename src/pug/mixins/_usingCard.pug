@@ -1,11 +1,11 @@
 mixin usingCard(img, count, title, text)
 	.swiper-slide.using-card__card
 		.using-card__top
-			img(src=`images/show/use_${img}.png` alt='#{img}')
+			img(src=`images/show/use_${img}.png` alt=`${img}`)
 			.using-card__top-line
 		.using-card__bottom
 			.using-card__count
-				img(src=`images/show/use_${count}.svg`, alt='#{count}')
+				img(src=`images/show/use_${count}.svg`, alt=`${count}`)
 			.using-card__visible
 				.using-card__title
 					| #{title}

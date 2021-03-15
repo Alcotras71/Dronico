@@ -1,0 +1,7 @@
+mixin historyCard(img, alt, title, text)
+	.history__card
+		img.history__card-icon(src=`images/show/history_${img}.svg` alt=`${alt}`)
+		.history__card-title.title-dark
+			| #{title}
+		.history__card-text
+			|	#{text}

@@ -1,12 +1,10 @@
 @import "node_modules/mathsass/dist/math";
 
-$calcWidth: 449;
-$calcHeight: 344;
-$cardWidth: $calcWidth + 1px;
-$cardHeight: $calcHeight + 1px;
+
+$cardWidth: 23vw;
+$cardHeight: 37vh;
 $corn: 35px;
 $calculate: $corn + $borderWidth;
-$calcWidth: findHypotenuse($calcWidth, $calcHeight);
 
 .using-areas {
 	position: relative;
@@ -78,13 +76,13 @@ $calcWidth: findHypotenuse($calcWidth, $calcHeight);
 		-webkit-mask-repeat: no-repeat;
 		transition: all 0.5s ease;
 		&-line {
-			width: $calcWidth;
-			height: 1px;
-			background: $cardBorderColor;
+			width: 23vw;
+			height: 37vh;
 			position: absolute;
-			top: 50%;
+			bottom: 0;
 			left: 0;
-			transform: translate(-11%, 0) rotate(142.5deg);
+			background:url('../images/show/use_line.png') no-repeat center;
+			background-size: 100% 100%;
 			transition: all 0.5s ease;
 		}
 
@@ -133,7 +131,7 @@ $calcWidth: findHypotenuse($calcWidth, $calcHeight);
 		left: 0;
 		padding: 37px 0 0 23px;
 		height: $cardHeight;
-		transform: translateY(216px);
+		transform: translateY(23vh);
 		transition: $transition;
 	}
 	&__title {
