@@ -1,0 +1,3 @@
+@function findHypotenuse($calcWidth, $calcHeight) {
+	@return sqrt(pow($calcWidth, 2) + pow($calcHeight, 2)) + 1px;
+}

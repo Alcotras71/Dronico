@@ -33,3 +33,15 @@ body {
 		color: $main;
 	}
 }
+
+.swiper-button-prev:after,
+.swiper-button-next:after{
+	content: '';
+}
+.swiper-button-prev,
+.swiper-bundle-next {
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+}

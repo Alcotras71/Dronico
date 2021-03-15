@@ -1,3 +1,7 @@
+$corn: 13px;
+$borderWidth: 2px;
+$calculate: $corn + $borderWidth;
+
 .presentation {
 	position: relative;
 	color: #fff;
@@ -98,7 +102,7 @@
 	&__plus {
 		font-size: 24px;
 		position: absolute;
-		bottom: 100px;
+		bottom: 90px;
 		&--right {
 			left: 30px;
 		}

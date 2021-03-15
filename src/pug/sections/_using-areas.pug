@@ -1,16 +1,15 @@
+include ../mixins/_usingCard.pug
+- var text1 = 'У нас в распоряжении дроны разных размеров и внешнего вида, которые гибко настраиваются для сцены с любыми возможностями.'
+
 section.using-areas.using-areas-dark
+	.using-areas__pagination
+		.using-areas__pagination-prev
+		.using-areas__pagination-next
 	h2.using-areas__title.title.title-dark
 		| Области применения
-	.using-areas__slider
-		.using__card
-			.using__card--top.card-img
-				img(src='images/show/use_sphere.png' alt='sphere')
-				.using__card--top-line
-			.using__card--bottom
-				.using__card-count.card-title.title-dark
-					| Церемонии открытия
-				.using__card-text.card-bigtext
-					| У нас в распоряжении дроны разных размеров и внешнего вида, которые гибко настраиваются для сцены с любыми возможностями.
-	.using__card-pagination.card-pagination
-		.card-pagination__left
-		.card-pagination__right
+	.using-areas__slider.using-card__container.swiper-container
+		.using-card__wrapper.swiper-wrapper
+			+usingCard('sphere', '01', 'Спортивные мероприятия ', text1)
+			+usingCard('sphere', '02', 'Церемонии открытия', text1)
+			+usingCard('sphere', '03', 'Спортивные мероприятия ', text1)
+			+usingCard('sphere', '04', 'Наука и образование', text1)
