@@ -1,0 +1,79 @@
+$cornCl: 40px;
+$borderWidthCl: 2px;
+$calculateCl: $cornCl + $borderWidthCl;
+
+.our-clients {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		max-width: 360px;
+	}
+
+	&__tabs {
+		max-width: 1240px;
+	}
+	&__tabs-top,
+	&__tabs-middle,
+	&__tabs-bottom{
+		display: flex;
+		li{
+			width: 310px;
+			height: 260px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid $main;
+			transition: $transition;
+			cursor: pointer;
+		}
+		.wborder {
+			border: none;
+		}
+		.notched {
+			position: relative;
+			border: $borderWidthCl solid $main;
+			background: linear-gradient(135deg, $main 0 $calculateCl, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornCl, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+				-webkit-mask-size: 50.5% 50.5%!important;
+			-webkit-mask-repeat: no-repeat!important;
+		}
+		li:hover {
+			background: $main;
+		}
+		li.none:hover{
+			background: none;
+			cursor: default;
+		}
+		li.notched:hover {
+			background:
+				linear-gradient(135deg, $main 0 $calculateCl, transparent 0) top left / 50% 50%, $main;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+		}
+
+	}
+	&__tabs-top {
+	}
+
+	&__tabs-middle {
+	}
+
+	&__tabs-bottom {
+	}
+}
+.title {
+}
+.title-dark {
+}
+.tabs-bottom {
+	&__left {
+	}
+}
