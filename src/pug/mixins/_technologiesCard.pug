@@ -1,0 +1,7 @@
+mixin technoCard(img, text, colorText, className)
+	.technologies__tab
+			.technologies__tab-icon
+				img(src=`images/show/tech_${img}.svg` alt=`tech_${img}`)
+			div(class=`technologies__tab-text ${className}`)
+				| #{text}
+				span  #{colorText}

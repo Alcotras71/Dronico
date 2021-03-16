@@ -1,13 +1,13 @@
+include ../mixins/_technologiesCard.pug
+
 section.technologies
-  h1.technologies__title.big-title.title-dark Технологии
-  .technologies__image-container
-    img.technologies__image(src='images/show/tech_sphere.png', alt='tech_sphere')
-    .technologies__coord-left 70.512323, 45.11974
-    .technologies__coord-right 70.512323, 45.11974
-  .technologies__tabs
-    .technologies__tab
-      .technologies__tab-icon
-        img(src='images/show/tech_circle1.svg', alt='tech_target')
-      .technologies__tab-text
-        | Контроль маршрута каждого беспилотника с
-        span точностью до 1 см.
+	.technologies__title
+		img(src='images/show/tech_text.svg' alt='tech_text')
+	.technologies__image-container
+		img.technologies__image(src='images/show/tech_sphere.png' alt='tech_sphere')
+		.technologies__coord-left 70.512323, 45.11974
+		.technologies__coord-right 70.512323, 45.11974
+	.technologies__tabs
+		+technoCard('circle1', 'Контроль маршрута каждого беспилотника с', 'точностью до 1 см.','new-stroke')
+		+technoCard('circle2', 'ВРЕМЯ ЗАДЕРЖКИ СИНХРОНИЗАЦИИ ДРОНОВ', '5-500 НАНОСЕКУНД', '')
+		+technoCard('circle3', 'ВРЕМЯ ЗАДЕРЖКИ ОБРАТНОЙ СВЯЗИ', '5-20 НАНОСЕКУНД', '')

@@ -1,8 +1,7 @@
 .tech-dronico {
+	position: relative;
 	padding-top: 177px;
 	display: flex;
-	&__text-container {
-	}
 	&__title {
 		font-weight: 900;
 		font-size: 9.6rem;
@@ -50,11 +49,8 @@
 			opacity: 0.02;
 		}
 		&::after {
-			@include pseudoCorn(2px, 0, 0, 2px, -35px, auto, auto, 0);
+			@include pseudoCorn(2px, 0, 0, 2px, -35px, auto, auto, 0, #ffffff00);
 		}
-	}
-	&__img-container {
-		position: relative;
 	}
 	&__img {
 		position: absolute;
@@ -86,20 +82,20 @@
 				line-height: 4.5rem;
 				transition: $transition;
 				&::after {
-					@include pseudoCorn(0, 2px, 2px, 0, auto, -19px, -10px, auto);
+					@include pseudoCorn(0, 2px, 2px, 0, auto, -19px, -10px, auto, #ffffff00);
 				}
 				&::before {
-					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -19px);
+					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -19px, #ffffff00);
 				}
 			}
 			.active-text {
 				display: none;
 			}
 			&::after {
-				@include pseudoCorn(2px, 2px, 0, 0, -9px, -10px, auto, auto);
+				@include pseudoCorn(2px, 2px, 0, 0, -9px, -10px, auto, auto, #ffffff00);
 			}
 			&::before {
-				@include pseudoCorn(2px, 0, 0, 2px, -9px, auto, auto, -10px);
+				@include pseudoCorn(2px, 0, 0, 2px, -9px, auto, auto, -10px, #ffffff00);
 			}
 		}
 	}
@@ -123,23 +119,23 @@
 				font-size: 2.4rem;
 				line-height: 4.6rem;
 				&::after {
-					@include pseudoCorn(0, 2px, 2px, 0, auto, -21px, -10px, auto);
+					@include pseudoCorn(0, 2px, 2px, 0, auto, -21px, -10px, auto,  #ffffff00);
 				}
 				&::before {
-					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -19px);
+					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -19px,  #ffffff00);
 				}
 			}
 			&::after {
-				@include pseudoCorn(2px, 2px, 0, 0, -2px, -2px, auto, auto);
+				@include pseudoCorn(2px, 2px, 0, 0, -2px, -2px, auto, auto,  #ffffff00);
 			}
 			&::before {
-				@include pseudoCorn(2px, 0, 0, 2px, -2px, auto, auto, -2px);
+				@include pseudoCorn(2px, 0, 0, 2px, -2px, auto, auto, -2px,  #ffffff00);
 			}
 		}
 	}
 	&__img.small {
-		top: 10%;
-		left: 8vw;
+		top: 25%;
+		left: 44%;
 		width: 10vw;
 		.tech-dronico__btn {
 			top: 20%;
@@ -147,8 +143,8 @@
 		}
 	}
 	&__img.medium {
-		top: 26%;
-		left: -26.6vw;
+		top: 38%;
+		left: 9%;
 		width: 30vw;
 		.tech-dronico__btn {
 			top: 36%;
@@ -156,8 +152,8 @@
 		}
 	}
 	&__img.big {
-		top: 50%;
-		left: 5vw;
-		width: 55vw;
+		top: 55%;
+		left: 45%;
+		width: 50vw;
 	}
 }

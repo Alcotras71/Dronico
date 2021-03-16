@@ -1,4 +1,4 @@
-@mixin pseudoCorn($bordTop, $bordRight, $bordBot, $bordLeft, $top, $right, $bot, $left) {
+@mixin pseudoCorn($bordTop, $bordRight, $bordBot, $bordLeft, $top, $right, $bot, $left, $bgColor) {
 	content: "";
 	width: 10px;
 	height: 10px;
@@ -7,6 +7,7 @@
 	border-left: $bordLeft solid #fff;
 	border-right: $bordRight solid #fff;
 	position: absolute;
+	background: $bgColor;
 	top: $top;
 	bottom: $bot;
 	left: $left;
