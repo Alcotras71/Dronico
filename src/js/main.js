@@ -10,6 +10,7 @@ const usingAreas = new Swiper('.using-card__container', {
   },
 });
 
+// Initialize dronico slider
 const dronicoSlider = new Swiper('.dronico-slider__container', {
 	speed: 400,
 	slidesPerView: 1,
@@ -19,3 +20,14 @@ const dronicoSlider = new Swiper('.dronico-slider__container', {
     prevEl: '.dronico-slider__pagination-prev',
   },
 });
+
+// Initialize work slider
+const workSlider = new Swiper('.work__container', {
+	speed: 400,
+	slidesPerView: 6,
+	spaceBetween: 23,
+	navigation: {
+		nextEl: '.work__navigation-next',
+		prevEl: '.work__navigation-prev'
+	}
+})

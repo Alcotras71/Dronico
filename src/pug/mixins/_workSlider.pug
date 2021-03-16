@@ -1,0 +1,5 @@
+mixin workCard(img, text)
+	.work__slide.swiper-slide
+		.work__slide-number
+			img(src=`images/show/work_${img}.svg` alt=`work_${img}`)
+		.work__slide-text #{text}

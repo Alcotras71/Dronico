@@ -1,4 +1,27 @@
+include ../mixins/_workSlider.pug
+
 section.work.work-dark
-  .work__title.title.title-dark
-    span Как мы
-    | работаем
+	.work__title.title.title-dark
+		span Как мы
+		|  работаем
+	.work__navigation
+		.work__navigation-prev
+		.work__navigation-next
+	.work__container.swiper-container
+		.work__wrapper.swiper-wrapper
+			.work__line
+				.work__line-wrapper
+					.work__line-1
+						.work__line-1--text Подготовка, от 2 дней
+					.work__line-2
+						.work__line-2--text Логистика, от 1 дня
+					.work__line-3
+						.work__line-3--text Репетиция и выступление, от 2 дней
+			+workCard('01', 'Составляем  договор')
+			+workCard('02', 'Составляем  договор')
+			+workCard('03', 'Составляем  договор')
+			+workCard('04', 'Составляем  договор')
+			+workCard('05', 'Составляем  договор')
+			+workCard('06', 'Составляем  договор')
+			+workCard('07', 'Составляем  договор')
+			+workCard('08', 'Составляем  договор')

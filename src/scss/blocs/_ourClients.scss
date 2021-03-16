@@ -3,6 +3,7 @@ $borderWidthCl: 2px;
 $calculateCl: $cornCl + $borderWidthCl;
 
 .our-clients {
+	padding-bottom: 50px;
 	&__container {
 		display: flex;
 		justify-content: space-between;
@@ -59,21 +60,5 @@ $calculateCl: $cornCl + $borderWidthCl;
 			background-repeat: no-repeat;
 		}
 
-	}
-	&__tabs-top {
-	}
-
-	&__tabs-middle {
-	}
-
-	&__tabs-bottom {
-	}
-}
-.title {
-}
-.title-dark {
-}
-.tabs-bottom {
-	&__left {
 	}
 }
