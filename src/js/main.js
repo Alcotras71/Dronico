@@ -9,3 +9,13 @@ const usingAreas = new Swiper('.using-card__container', {
     prevEl: '.using-areas__pagination-prev',
   },
 });
+
+const dronicoSlider = new Swiper('.dronico-slider__container', {
+	speed: 400,
+	slidesPerView: 1,
+	loop: true,
+	navigation: {
+    nextEl: '.dronico-slider__pagination-next',
+    prevEl: '.dronico-slider__pagination-prev',
+  },
+});

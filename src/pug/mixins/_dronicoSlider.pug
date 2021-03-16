@@ -8,7 +8,7 @@ mixin typesCard(listObject)
 			| #{listObject.text}
 
 mixin dronicoSlide(imgNum, imgBg, title, subtitle, myList)
-	.dronico-slider__slide
+	.dronico-slider__slide.swiper-slide
 		.dronico-slider__num
 			img(src=`images/show/dronico-sl_${imgNum}.svg` alt=`${imgNum}`)
 		.dronico-slider__img

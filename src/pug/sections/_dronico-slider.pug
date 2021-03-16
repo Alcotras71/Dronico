@@ -13,8 +13,9 @@ include ../mixins/_dronicoSlider.pug
 	];
 
 section.dronico-slider
-	.dronico-slider__container
-		.dronico-slider__wrapper
+	.dronico-slider__container.swiper-container
+		.dronico-slider__wrapper.swiper-wrapper
+			+dronicoSlide('01', 'photo', 'Танцевальные шоу дронов и людей', firstSliderSubtext, dronicoList1)
 			+dronicoSlide('01', 'photo', 'Танцевальные шоу дронов и людей', firstSliderSubtext, dronicoList1)
 	.dronico-slider__pagination
 		.dronico-slider__pagination-prev

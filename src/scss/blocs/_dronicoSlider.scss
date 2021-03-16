@@ -90,6 +90,7 @@ $calculateDron: $cornDron + $borderWidthDron;
 			width: 113px;
 			height: 82px;
 			cursor: pointer;
+			z-index: 22;
 		}
 		&-prev {
 			right: 145px;
