@@ -2,22 +2,15 @@ $cornPres: 13px;
 $borderWidthPres: 2px;
 $calculatePres: $cornPres + $borderWidthPres;
 
-
 .presentation {
 	position: relative;
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
 	max-height: 100vh;
-	background: url(../../images/pattern_top.png) repeat;
 	img {
 		width: 100%;
 		height: 100vh;
-	}
-
-	&__title {
-		position: absolute;
-		top: -13%;
 	}
 
 	&__subtitle {
@@ -27,10 +20,6 @@ $calculatePres: $cornPres + $borderWidthPres;
 		font-size: 9.6rem;
 		line-height: 9.7rem;
 		width: 100%;
-		.title-dark {
-			width: 700px;
-			margin: 0 auto;
-		}
 	}
 
 	&__text {
@@ -66,8 +55,8 @@ $calculatePres: $cornPres + $borderWidthPres;
 				linear-gradient(-45deg, transparent 0 $cornPres, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 $cornPres, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5%!important;
-			-webkit-mask-repeat: no-repeat!important;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
 			transition: all 0.5s ease;
 		}
 		p {
@@ -114,5 +103,81 @@ $calculatePres: $cornPres + $borderWidthPres;
 			top: 20px;
 			right: 20px;
 		}
+	}
+}
+
+.dark {
+	.presentation {
+		background: url(../../images/pattern_top.png) repeat;
+
+		.video-white {
+			display: none;
+		}
+
+		&__title {
+			position: absolute;
+			top: -13%;
+		}
+
+		&__subtitle {
+			.title-dark {
+				max-width: 700px;
+				margin: 0 auto;
+			}
+			.title-white {
+				display: none;
+			}
+		}
+		.bg-white {
+			display: none;
+		}
+	}
+}
+
+.white {
+	.presentation {
+		background: url(../../images/patternB_top.png) repeat;
+
+		.video-dark {
+			display: none;
+		}
+
+		&__title {
+			position: absolute;
+			top: -13%;
+		}
+
+		&__subtitle {
+			top: 22%;
+			.title-dark {
+				display: none;
+			}
+			.title-white {
+				font-size: 7.2rem;
+				line-height: 7.3rem;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+		}
+		&__text {
+			top: 70%;
+		}
+		.bg-dark {
+			display: none;
+		}
+		.bg-white {
+			display: block;
+		}
+	}
+}
+
+.line-animation {
+	stroke-dashoffset: 600;
+	stroke-dasharray: 600;
+	animation: anidash 5s infinite 6s;
+}
+@keyframes anidash {
+	to {
+		stroke-dashoffset: 0;
 	}
 }

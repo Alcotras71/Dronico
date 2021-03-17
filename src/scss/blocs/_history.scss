@@ -8,11 +8,17 @@
 	&__title {
 		width: 30vw;
 	}
+	.title-white{
+		display: none;
+	}
 	.cards-left,
 	.cards-right {
 		grid-row-gap: 55px;
 		display: grid;
 		grid-auto-rows: minmax(300px, auto);
+	}
+	.white-text {
+		display: none;
 	}
 	&__card {
 		width: 27vw;
@@ -34,6 +40,28 @@
 			font-size: 2.4rem;
 			line-height: 3rem;
 			opacity: 0.6;
+		}
+	}
+}
+
+.white {
+	.history {
+		.title-white {
+			display: block;
+		}
+		.white-text {
+			display: grid;
+		}
+		.title-dark,
+		.dark-text {
+			display: none;
+		}
+		&__card {
+			width: auto;
+			max-width: 590px;
+			&-title {
+				color: $main;
+			}
 		}
 	}
 }

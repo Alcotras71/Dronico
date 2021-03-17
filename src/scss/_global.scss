@@ -3,8 +3,11 @@ html {
 }
 
 body {
-	&.dark-bg{
+	&.dark{
 		background: $background url('../images/pattern.png') repeat;
+	}
+	&.white{
+		background: #fff url('../images/patternB.png') repeat;
 	}
 	font-family: "RoadRadio", Arial, Helvetica, sans-serif;
 	font-weight: 300;
@@ -17,6 +20,10 @@ body {
 .wrapper-dark,
 .wrapper-dark a {
 	color: #fff;
+}
+.wrapper-white,
+.wrapper-white a{
+	color: #000;
 }
 
 .big-title img,

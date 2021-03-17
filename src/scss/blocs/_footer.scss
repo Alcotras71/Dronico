@@ -6,7 +6,7 @@
 	line-height: 2rem;
 	letter-spacing: 0.055em;
 	color: #ffffff;
-	&__wrapper{
+	&__wrapper {
 		display: flex;
 		width: 50%;
 		justify-content: space-between;
@@ -21,7 +21,31 @@
 		}
 	}
 
-	&__policy {
-		text-decoration: underline;
+	&__policy a {
+		color: #fff;
+		position: relative;
+	}
+	&__policy a:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: #fff;
+		transition: $transition;
+	}
+	&__policy a:hover:after {
+		width: 100%;
+	}
+}
+
+.white {
+	.footer,
+	.footer__policy a {
+		color: #000;
+	}
+	.footer__policy a:after {
+		background: #000;
 	}
 }

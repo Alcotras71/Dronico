@@ -153,9 +153,13 @@ $calculateWork: $cornWork + $borderWidthWork;
 
 		&-number {
 			padding-bottom: 80px;
+			path {
+				transition: $transition;
+			}
 		}
 		&-text {
 			max-width: 175px;
+			transition: $transition;
 		}
 		&:hover {
 			background: linear-gradient(-45deg, $main 0 $calculateWork, transparent 0) bottom right/50% 50%,
@@ -166,5 +170,37 @@ $calculateWork: $cornWork + $borderWidthWork;
 	}
 	&__slide:nth-child(2n) {
 		margin-bottom: 158px;
+	}
+	&__dronico-img img{
+		display: none;
+		width: 100%;
+		padding-bottom: 26px;
+	}
+	.white {
+		display: none;
+	}
+}
+
+.white {
+	.work {
+		.white {
+			display: block;
+		}
+		.dark {
+			display: none;
+		}
+		&__dronico-img img{
+			display: block;
+		}
+		&__slide:hover {
+			.work__slide-text {
+				color: #fff;
+			}
+			.work__slide-number{
+				path{
+					stroke: #fff;
+				}
+			}
+		}
 	}
 }

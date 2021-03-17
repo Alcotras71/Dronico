@@ -11,7 +11,8 @@ const gulp = require("gulp"),
   imageMin = require("gulp-imagemin"),
   cssMin = require("gulp-minify-css"),
   uglify = require("gulp-uglify"),
-  rename = require("gulp-rename");
+	rename = require("gulp-rename"),
+	requirejs = require('requirejs');
 
 gulp.task("pug", function () {
   return gulp

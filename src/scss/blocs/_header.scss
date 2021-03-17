@@ -15,9 +15,6 @@
 		.header__show a {
 			color: $main;
 		}
-		.header__show a:hover {
-			color: #fff;
-		}
 		path {
 			transition: all 0.5s ease;
 		}
@@ -55,5 +52,22 @@
 		font-weight: bold;
 		position: relative;
 		transition: all 0.5s ease;
+	}
+}
+
+.white {
+	.header{
+		.header__show a {
+			color: #fff;
+		}
+		.header__aero a{
+			color: #000;
+		}
+		svg:hover > path {
+			fill: #000;
+		}
+		a:hover{
+			color: #000;
+		}
 	}
 }

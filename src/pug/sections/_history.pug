@@ -4,6 +4,11 @@ include ../mixins/_historyCard.pug
 - const histText3 = 'Управлением полетом  может  осуществлять один человек  с одним компьютером или телефоном. Это не требует участия я пилотов- дронов. Это позволяет гибко  регулировать количество  участвующих дронов и значительно снизить затраты.';
 - const histText4 = 'Полноцветное световое  шоу — светодиодные лампы высокой яркости 24W, намного  ярче галогенных лампочек, они  прекрасно видны даже днем; 32-битные цвета предоставляют  16 777 216 оттенков цветов и 256 градаций прозрачности; 20 режимов мерцания цвета  на выбор.';
 
+- const histText1W = 'Дирижабли настраиваются и пилотируются исключительно квалифицированными пилотами и техническими специалистами.';
+- const	histText2W = 'Сверхлегкие летающие модели перевозятся нашим персоналом в качестве дополнительного багажа на авиарейсах';
+- const histText3W = 'Благодаря сверхлегкому весу и мини-силовым установкам с предохранительными винтами все дирижабли могут летать над аудиторией или исполнителями без каких-либо проблем с безопасностью.';
+- const histText4W = 'Наши бригады привозят с собой запасные части, ремонтные комплекты, перезаряжаемые LiPo батареи и т. д., чтобы гарантировать непрерывную работу дирижаблей.';
+
 section.history
 	.history__container
 		h2.history__title.title.title-dark
@@ -11,9 +16,19 @@ section.history
 			|  C помощью текста, логотипов
 			br
 			| и анимации
-		.history__cards.cards-left
+		h2.history__title.title.title-white
+			span мы преобразуем концепции
+			|  или продукты в летающие конструкции
+		.history__cards.cards-left.dark-text
 			+historyCard('quantity1', 'card__quantity', '200 дронов в одном помещении', histText1)
 			+historyCard('radar3', 'card__radar', 'устойчивость к магнитным полям', histText2)
-		.history__cards.cards-right
+		.history__cards.cards-right.dark-text
 			+historyCard('target2', 'card__target', 'Управление из одного места', histText3)
 			+historyCard('mobile4', 'card__mobile', 'Управление цветом с одной  кнопки', histText4)
+
+		.history__cards.cards-left.white-text
+			+historyCard('img', 'card__quantity', 'Опытные пилоты', histText1W)
+			+historyCard('img', 'card__radar', 'Транспортировка моделей', histText2W)
+		.history__cards.cards-right.white-text
+			+historyCard('img', 'card__target', 'Безопасность', histText3W)
+			+historyCard('img', 'card__mobile', 'Непрерывная работа', histText4W)

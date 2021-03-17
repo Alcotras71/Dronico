@@ -1,5 +1,6 @@
-mixin workCard(img, text)
-	.work__slide.swiper-slide
+mixin workCard(width, coord ,color, text, className)
+	div(class=`work__slide swiper-slide ${className}`)
 		.work__slide-number
-			img(src=`images/show/work_${img}.svg` alt=`work_${img}`)
+			svg(width=`${width}` height='59' viewbox=`0 0 ${width} 59` fill='none' xmlns='http://www.w3.org/2000/svg')
+				path(fill-rule='evenodd' clip-rule='evenodd' d=`${coord}` stroke=`${color}` stroke-width='1')
 		.work__slide-text #{text}

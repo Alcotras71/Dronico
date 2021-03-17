@@ -1,0 +1,16 @@
+extends ../layouts/main.pug
+
+block variables
+	- const titleShow = 'Радиоуправляемые аэростаты';
+	- const bodyClass = 'white';
+
+block content
+	include ../sections/_presentation.pug
+	.wrapper.wrapper-white
+		main.main.main-white
+			include ../sections/_using-areas.pug
+			include ../sections/_dolphins.pug
+			include ../sections/_history.pug
+			include ../sections/_projects.pug
+			include ../sections/_work.pug
+			include ../sections/_map.pug

@@ -1,6 +1,6 @@
 @import "node_modules/mathsass/dist/math";
 $cardWidthUs: 23vw;
-$carcardHeightUs: 37vh;
+$cardHeightUs: 37vh;
 $cornUs: 35px;
 $borderWidthUs: 2px;
 $calculateUs: $cornUs + $borderWidthUs;
@@ -22,24 +22,25 @@ $calculateUs: $cornUs + $borderWidthUs;
 			cursor: pointer;
 		}
 		&-prev {
+			top: 51px;
 			right: 9%;
-			background-image: url("../images/show/use_arrow-prev.svg");
-			transition: background-image .5s ease;
+			background-image: url("../images/show/use_arrow.svg");
+			transform: rotate(180deg);
+			transition: background-image 0.5s ease;
 		}
 		&-next {
 			right: 1%;
-			background-image: url("../images/show/use_arrow-next.svg");
-			transition: background-image .5s ease;
+			background-image: url("../images/show/use_arrow.svg");
+			transition: background-image 0.5s ease;
 		}
 		&-prev:hover {
-			background-image: url("../images/show/use_arrow-prev-enable.svg");
+			background-image: url("../images/show/use_arrow-enable.svg");
 		}
 		&-next:hover {
-			background-image: url("../images/show/use_arrow-next-enable.svg");
+			background-image: url("../images/show/use_arrow-enable.svg");
 		}
 	}
 }
-
 .using-card {
 	&__card {
 		width: $cardWidthUs;
@@ -61,7 +62,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 	&__top {
 		position: relative;
 		width: $cardWidthUs;
-		height: $carcardHeightUs;
+		height: $cardHeightUs;
 		display: inline-block;
 		border: $borderWidthUs solid $cardBorderColor;
 		background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
@@ -71,15 +72,15 @@ $calculateUs: $cornUs + $borderWidthUs;
 			linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 			linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5%!important;
-		-webkit-mask-repeat: no-repeat!important;
+		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-repeat: no-repeat !important;
 		&-line {
 			width: 23vw;
 			height: 37vh;
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			background:url('../images/show/use_line.png') no-repeat center;
+			background: url("../images/show/use_line.png") no-repeat center;
 			background-size: 100% 100%;
 			transition: all 0.5s ease;
 		}
@@ -90,17 +91,18 @@ $calculateUs: $cornUs + $borderWidthUs;
 				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50% 50%!important;
-			-webkit-mask-repeat: no-repeat!important;
+			-webkit-mask-size: 50% 50% !important;
+			-webkit-mask-repeat: no-repeat !important;
 			width: 100%;
-			height: 100%;
+			height: calc(100% + 4px);
+			margin-top: -1px;
 			transition: all 0.5s ease;
 		}
 	}
 	&__bottom {
 		position: relative;
 		width: $cardWidthUs;
-		height: $carcardHeightUs;
+		height: $cardHeightUs;
 		display: inline-block;
 		overflow: hidden;
 		border: $borderWidthUs solid $cardBorderColor;
@@ -112,8 +114,8 @@ $calculateUs: $cornUs + $borderWidthUs;
 			linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
 			linear-gradient(135deg, transparent 0 0, #fff 0) top left,
 			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5%!important;
-		-webkit-mask-repeat: no-repeat!important;
+		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-repeat: no-repeat !important;
 	}
 	&__count {
 		font-size: 9.9rem;
@@ -129,7 +131,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 		top: 0;
 		left: 0;
 		padding: 37px 0 0 23px;
-		height: $carcardHeightUs;
+		height: $cardHeightUs;
 		transform: translateY(23vh);
 		transition: $transition;
 	}
@@ -167,6 +169,41 @@ $calculateUs: $cornUs + $borderWidthUs;
 		}
 		&:after {
 			opacity: 1;
+		}
+	}
+}
+
+.white {
+	.using-areas {
+		&__title {
+			color: $mainB;
+		}
+		&__pagination {
+			&-prev {
+				background-image: url("../images/balloon/use_arrow.svg");
+			}
+			&-next {
+				background-image: url("../images/balloon/use_arrow.svg");
+			}
+			&-prev:hover {
+				background-image: url("../images/show/use_arrow-enable.svg");
+			}
+			&-next:hover {
+				background-image: url("../images/show/use_arrow-enable.svg");
+			}
+		}
+	}
+	.using-card {
+		&__card {
+		}
+		&__text {
+			color: #fff;
+		}
+		&__card:hover {
+			color: #fff;
+			.using-card__visible {
+				background: $mainB;
+			}
 		}
 	}
 }

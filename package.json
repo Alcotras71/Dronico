@@ -27,6 +27,7 @@
     "mathsass": "^0.11.0"
   },
   "dependencies": {
+    "requirejs": "^2.3.6",
     "swiper": "^6.5.0"
   }
 }
