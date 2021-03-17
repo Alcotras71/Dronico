@@ -1,0 +1,152 @@
+$cornMap: 45px;
+$borderWidthMap: 2px;
+$calculateMap: $cornMap + $borderWidthMap;
+$mapColor: #6024ba;
+
+.map {
+	display: flex;
+	&__container {
+		padding: 68px 0 0 22px;
+		position: relative;
+		width: 50%;
+		height: 88vh;
+		border: $borderWidthMap solid $cardBorderColor;
+		background: linear-gradient(135deg, $cardBorderColor 0 $calculateMap, transparent 0) top left / 50% 50%, $alpha;
+		background-origin: border-box;
+		background-repeat: no-repeat;
+		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+			linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+			linear-gradient(135deg, transparent 0 $cornMap, #fff 0) top left,
+			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-repeat: no-repeat !important;
+		&-line {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: url("../images/show/map_line.png") no-repeat;
+			background-size: 100% 100%;
+			transition: all 0.5s ease;
+		}
+	}
+
+	&__contacts {
+		position: absolute;
+		bottom: 100px;
+		right: 100px;
+		font-size: 3.6rem;
+		line-height: 3.6rem;
+		letter-spacing: 0.055em;
+		a {
+			transition: $transition;
+			&:hover {
+				color: $main;
+			}
+		}
+	}
+	&__title {
+		position: relative;
+		z-index: 22;
+	}
+
+	&__social-icons {
+		padding-bottom: 20px;
+		img {
+			cursor: pointer;
+			width: 45px;
+			height: 45px;
+			margin-right: 30px;
+		}
+	}
+
+	&__contacts-phone {
+		padding-bottom: 20px;
+	}
+
+	&__map {
+		position: relative;
+		width: 50%;
+		height: 88vh;
+		border: $borderWidthMap solid $cardBorderColor;
+		border-left: none;
+		background: linear-gradient(-45deg, $cardBorderColor 0 $calculateMap, transparent 0) bottom right / 50% 50%, $alpha;
+		background-origin: border-box;
+		background-repeat: no-repeat;
+		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+			linear-gradient(-45deg, transparent 0 $cornMap, #fff 0) bottom right,
+			linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-repeat: no-repeat !important;
+	}
+	#map {
+		width: 100%;
+		height: 100%;
+		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+			linear-gradient(-45deg, transparent 0 $cornMap, #fff 0) bottom right,
+			linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-repeat: no-repeat !important;
+	}
+	&__zoom {
+		position: absolute;
+		bottom: 15%;
+		left: 20px;
+		&-plus,
+		&-minus {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: $transition;
+		}
+		&-plus {
+			background: $mapColor;
+			margin-bottom: 20px;
+		}
+		&-minus {
+			bottom: 10%;
+			background: #fff;
+		}
+		&-plus:after,
+		&-minus:after {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-family: Geometria;
+			font-weight: 500;
+			font-size: 2.4rem;
+			line-height: 3rem;
+			transition: $transition;
+		}
+		&-plus:after {
+			content: "+";
+		}
+		&-minus:after {
+			content: "-";
+			color: $mapColor;
+			font-size: 3.6rem;
+			line-height: 4rem;
+		}
+		&-minus:hover:after {
+			color: #fff;
+		}
+		&-plus:hover,
+		&-minus:hover {
+			background: #9a45e6;
+			transform: scale(1.1);
+		}
+		&-minus:hover:after,
+		&-plus:hover:after {
+			transform: translate(-50.7%, -50.7%) scale(0.9);
+		}
+	}
+}

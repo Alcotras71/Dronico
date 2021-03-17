@@ -1,13 +1,25 @@
 section.map.map-dark
-  .map__container
-    .map__text
-      .map__title.title.title-dark
-        span Москва,
-        |  Партийный пер.,д. 1, корп. 58, с. 1, 3-й этаж
-      .map__contacts
-        .map__social-icons
-          img.whatsapp(src='images/whatsapp.svg', alt='whatsapp')
-          img.telegram(src='images/telegram.svg', alt='telegram')
-        .map__contacts-phone
-          a(href='tel:84959685757') +7 (495) 968 57 57
-    .map__map
+	.map__container
+		.map__container-line
+		.map__text
+			.map__title.title.title-dark
+				span Москва,
+				br
+				|  Партийный пер.,д.
+				br
+				|  1, корп. 58, с. 1,
+				br
+				|  3-й этаж
+			.map__contacts
+				.map__social-icons
+					img.whatsapp(src='images/whatsapp.svg' alt='whatsapp')
+					img.telegram(src='images/telegram.svg' alt='telegram')
+				.map__contacts-phone
+					a(href='tel:84959685757') +7 (495) 968 57 57
+				.map__contacts-mail
+					a(href='email:info@dronico.ru') info@dronico.ru
+	.map__map
+		#map
+		.map__zoom
+			.map__zoom-plus
+			.map__zoom-minus

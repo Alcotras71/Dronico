@@ -103,7 +103,7 @@ gulp.task("js", () => {
       })
     )
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("build/js/"))
