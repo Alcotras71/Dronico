@@ -1,0 +1,27 @@
+.footer {
+	padding: 0 30px 70px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 2rem;
+	line-height: 2rem;
+	letter-spacing: 0.055em;
+	color: #ffffff;
+	&__wrapper{
+		display: flex;
+		width: 50%;
+		justify-content: space-between;
+	}
+
+	&__social-icons {
+		display: flex;
+		justify-content: space-between;
+		min-width: 283px;
+		li {
+			cursor: pointer;
+		}
+	}
+
+	&__policy {
+		text-decoration: underline;
+	}
+}
