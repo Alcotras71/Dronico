@@ -13,14 +13,45 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Initialize dronico slider
   const dronicoSlider = new Swiper(".dronico-slider__container", {
-    speed: 400,
+    speed: 500,
     slidesPerView: 1,
     loop: true,
+    spaceBetween: 100,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+		},
+		grabCursor: true,
     navigation: {
       nextEl: ".dronico-slider__pagination-next",
       prevEl: ".dronico-slider__pagination-prev",
     },
   });
+  const dronicoImgSlider = new Swiper(".dronico-slider__img-container", {
+    speed: 500,
+    slidesPerView: 1,
+    loop: true,
+    direction: "vertical",
+    simulateTouch: false,
+    mousewheelControl: false,
+    freeMode: false,
+  });
+  const dronicoImgNumSlider = new Swiper(".dronico-slider__imgNum-container", {
+    speed: 500,
+    slidesPerView: 1,
+    loop: true,
+    mousewheelControl: false,
+    freeMode: false,
+    simulateTouch: false,
+		spaceBetween: 100,
+		effect: "fade",
+		fadeEffect: {
+      crossFade: true,
+    },
+  });
+
+  dronicoSlider.controller.control = dronicoImgNumSlider;
+  dronicoImgNumSlider.controller.control = dronicoImgSlider;
 
   // Initialize work slider
   const workSlider = new Swiper(".work__container", {

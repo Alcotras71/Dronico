@@ -3,18 +3,19 @@ html {
 }
 
 body {
-	&.dark{
-		background: $background url('../images/pattern.png') repeat;
+	&.dark {
+		background: $background url("../images/pattern.png") repeat;
 	}
-	&.white{
-		background: #fff url('../images/patternB.png') repeat;
+	&.white {
+		background: #fff url("../images/patternB.png") repeat;
 	}
 	font-family: "RoadRadio", Arial, Helvetica, sans-serif;
 	font-weight: 300;
 }
 
 .wrapper {
-	margin: 0 30px 0 30px;
+	padding: 0 30px 0 30px;
+	background: url('../images/show/use_radialBG.png') no-repeat 0 -5%;
 }
 
 .wrapper-dark,
@@ -22,7 +23,7 @@ body {
 	color: #fff;
 }
 .wrapper-white,
-.wrapper-white a{
+.wrapper-white a {
 	color: #000;
 }
 
@@ -42,8 +43,8 @@ body {
 }
 
 .swiper-button-prev:after,
-.swiper-button-next:after{
-	content: '';
+.swiper-button-next:after {
+	content: "";
 }
 .swiper-button-prev,
 .swiper-bundle-next {
@@ -56,4 +57,10 @@ body {
 .gmnoprint,
 .gm-style-cc {
 	display: none;
+}
+
+.bloc {
+	width: 50px;
+	height: 50px;
+	background: rgba(255, 255, 255, 0.02);
 }

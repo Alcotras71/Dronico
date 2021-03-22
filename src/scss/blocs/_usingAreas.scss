@@ -7,9 +7,9 @@ $calculateUs: $cornUs + $borderWidthUs;
 
 .using-areas {
 	position: relative;
+	padding-top: 50px;
 	&__title {
 		width: 450px;
-		margin-top: 50px;
 		margin-bottom: 60px;
 	}
 	&__pagination {

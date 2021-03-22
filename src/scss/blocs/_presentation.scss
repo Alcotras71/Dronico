@@ -88,6 +88,34 @@ $calculatePres: $cornPres + $borderWidthPres;
 		opacity: 0.2;
 		font-weight: 400;
 	}
+	.presentation__blocs-left,
+	.presentation__bloc-left,
+	.presentation__blocs-right,
+	.presentation__bloc-right {
+		position: absolute;
+	}
+	.presentation__blocs-left {
+		width: 160px;
+		height: 160px;
+		background: url("../images/show/presentation_blocs-left.png") no-repeat;
+		bottom: 21%;
+		left: 0%;
+	}
+	.presentation__blocs-right {
+		width: 100px;
+		height: 200px;
+		background: url("../images/show/presentation_blocs-right.png") no-repeat;
+		bottom: 22.5%;
+		right: 3.5%;
+	}
+	.presentation__bloc-left {
+		bottom: 45%;
+		left: 5.5%;
+	}
+	.presentation__bloc-right {
+		bottom: 33.5%;
+		right: 11.5%;
+	}
 
 	&__plus {
 		font-size: 24px;

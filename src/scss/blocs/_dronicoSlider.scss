@@ -3,70 +3,94 @@ $borderWidthDron: 2px;
 $calculateDron: $cornDron + $borderWidthDron;
 
 .dronico-slider {
+	display: flex;
+	margin-bottom: -60px;
+	justify-content: end;
 	position: relative;
+	width: 100%;
+	height: 90vh;
+	border: 2px solid $cardBorderColor;
+	background: linear-gradient(-45deg, $cardBorderColor 0 $calculateDron, transparent 0) bottom right / 50% 50%,
+		linear-gradient(135deg, $cardBorderColor 0 $calculateDron, transparent 0) top left / 50% 50%, $alpha;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+		linear-gradient(-45deg, transparent 0 $cornDron, #fff 0) bottom right,
+		linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
+		linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+	-webkit-mask-size: 50.5% 50.5% !important;
+	-webkit-mask-repeat: no-repeat !important;
+
 	&__container {
-		width: 100%;
-	}
-	&__slide {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		border: 2px solid $cardBorderColor;
-		background: linear-gradient(-45deg, $cardBorderColor 0 $calculateDron, transparent 0) bottom right / 50% 50%,
-			linear-gradient(135deg, $cardBorderColor 0 $calculateDron, transparent 0) top left / 50% 50%, $alpha;
-		background-origin: border-box;
-		background-repeat: no-repeat;
-		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-			linear-gradient(-45deg, transparent 0 $cornDron, #fff 0) bottom right,
-			linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
-			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-		-webkit-mask-size: 50.5% 50.5% !important;
-		-webkit-mask-repeat: no-repeat !important;
-	}
-	&__img {
-		img {
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50% 50% !important;
-			-webkit-mask-repeat: no-repeat !important;
-			max-width: 610px;
-			height: 90vh;
-		}
-	}
-	&__content {
-		margin-left: 171px;
-		margin-top: 150px;
-	}
-	&__num {
 		position: absolute;
 		z-index: 2;
-		top: 150px;
-		left: 365px;
+		top: 0;
+		right: 0;
+		width: 55vw;
+	}
+	&__slide {
+		display: flex;
+	}
+	&__img {
+		width: 32vw;
+		&-container {
+			position: absolute;
+			top: 0;
+			height: 89.6vh;
+			padding: 2px;
+			z-index: 1;
+			max-width: 560px;
+			img {
+				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+					linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
+					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+				-webkit-mask-size: 50% 50% !important;
+				-webkit-mask-repeat: no-repeat !important;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+	&__imgNum-container {
+		position: absolute;
+		width: 350px;
+		top: 20%;
+		left: 22%;
+		z-index: 5;
+	}
+
+	&__content {
+		margin-top: 150px;
 	}
 	&__title {
 		font-size: 6.4rem;
 		line-height: 6.5rem;
 		color: #8e42ff;
 		max-width: 742px;
+		opacity: 0;
+		transition: all 0.8s ease 0.6s;
 	}
 	&__subtitle {
 		margin-top: 35px;
+		max-width: 810px;
 		font-family: "Geometria";
 		font-size: 2.4rem;
 		line-height: 3rem;
+		opacity: 0;
+		transition: all 0.9s ease 0.7s;
 	}
 	&__types {
 		margin-top: 100px;
 		display: flex;
 		justify-content: space-between;
-		max-width: 921px;
+		width: 48vw;
+		opacity: 0;
+		transition: all 1s ease 0.8s;
 	}
 	.types {
 		&__card {
-			max-width: 288px;
+			max-width: 290px;
 		}
 		&__icon {
 		}
@@ -77,10 +101,12 @@ $calculateDron: $cornDron + $borderWidthDron;
 			max-width: 200px;
 		}
 		&__text {
+			font-family: "Geometria";
 			margin-top: 32px;
 			font-size: 1.6rem;
 			line-height: 2rem;
 			opacity: 0.6;
+			text-transform: none;
 		}
 	}
 	&__pagination {
@@ -95,22 +121,36 @@ $calculateDron: $cornDron + $borderWidthDron;
 		&-prev {
 			right: 145px;
 			top: 23px;
-			background: url("../images/show/use_arrow-prev.svg") no-repeat;
+			background: url("../images/show/use_arrow.svg") no-repeat;
 			background-size: 90%;
+			transform: rotate(180deg);
 			transition: background-image 0.5s ease;
 		}
 		&-next {
 			right: 25px;
 			top: 105px;
-			background: url("../images/show/use_arrow-next.svg") no-repeat;
+			background: url("../images/show/use_arrow.svg") no-repeat;
 			background-size: 90%;
 			transition: background-image 0.5s ease;
 		}
 		&-prev:hover {
-			background-image: url("../images/show/use_arrow-prev-enable.svg");
+			background-image: url("../images/show/use_arrow-enable.svg");
+			transform: rotate(180deg);
 		}
 		&-next:hover {
-			background-image: url("../images/show/use_arrow-next-enable.svg");
+			background-image: url("../images/show/use_arrow-enable.svg");
 		}
 	}
 }
+
+.swiper-slide-active {
+	.dronico-slider {
+		&__title,
+		&__subtitle,
+		&__types {
+			opacity: 1;
+		}
+	}
+}
+
+

@@ -7,17 +7,21 @@ mixin typesCard(listObject)
 		.types__text
 			| #{listObject.text}
 
-mixin dronicoSlide(imgNum, imgBg, title, subtitle, myList)
-	.dronico-slider__slide.swiper-slide
-		.dronico-slider__num
+mixin dronicoImgSlide(img)
+	.dronico-slider__img-slide.swiper-slide
+		img(src=`images/show/dronico-sl_${img}.png` alt=`${img}`)
+
+mixin dronicoImgNumSlider(imgNum)
+	.dronico-slider__imgNum-slide.swiper-slide
 			img(src=`images/show/dronico-sl_${imgNum}.svg` alt=`${imgNum}`)
-		.dronico-slider__img
-			img(src=`images/show/dronico-sl_${imgBg}.png` alt=`${imgBg}`)
+
+mixin dronicoSlide(title, subtitle, myList)
+	.dronico-slider__slide.swiper-slide
 		.dronico-slider__content
-			.dronico-slider__title.title-dark
+			div(class="dronico-slider__title title-dark")
 				| #{title}
-			.dronico-slider__subtitle.title-dark
+			div(class="dronico-slider__subtitle title-dark")
 				| #{subtitle}
-			.dronico-slider__types.types
+			div(class="dronico-slider__types types")
 				each listItemObject in myList
 					+typesCard(listItemObject)

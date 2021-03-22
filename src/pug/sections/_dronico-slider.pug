@@ -3,7 +3,8 @@ include ../mixins/_dronicoSlider.pug
 -const firstSliderText1 = 'Разрабатывается индивидуальный  танцевальный номер людей и дронов  специально для вашего мероприятия.';
 -const firstSliderText2 = 'У нас в распоряжении дроны разных  размеров и внешнего вида, которые  гибко настраиваются для сцены с любыми  возможностями.';
 -const firstSliderText3 = 'Мы используем систему RTK, которая  позволяет контролировать положение всех  дронов с точностью до 1 см.';
--const firstSliderSubtext = 'Индивидуальная постановка  номеров артистов и беспилотников, разных размеров и разной  внешности';
+
+-const firstSliderSubtext1 = 'Индивидуальная постановка  номеров артистов и беспилотников, разных размеров и разной  внешности';
 
 -
 	const dronicoList1 = [
@@ -12,11 +13,26 @@ include ../mixins/_dronicoSlider.pug
 		{img: 'circles3', alt: 'circles3', title: 'ГАРАНТИЯ БЕЗОПАСНОСТИ', text: firstSliderText3},
 	];
 
+-
+	const dronicoList2 = [
+		{img: 'circles1', alt: 'circles1', title: 'Какая то рыба', text: firstSliderText1},
+		{img: 'circles2', alt: 'circles2', title: 'Виды рыб', text: firstSliderText2},
+		{img: 'circles3', alt: 'circles3', title: 'ГАРАНТИЯ рыб', text: firstSliderText3},
+	];
+
 section.dronico-slider
+	.dronico-slider__img-container.swiper-container
+		.dronico-slider__img-wrapper.swiper-wrapper
+			+dronicoImgSlide('photo')
+			+dronicoImgSlide('photo')
 	.dronico-slider__container.swiper-container
 		.dronico-slider__wrapper.swiper-wrapper
-			+dronicoSlide('01', 'photo', 'Танцевальные шоу дронов и людей', firstSliderSubtext, dronicoList1)
-			+dronicoSlide('01', 'photo', 'Танцевальные шоу дронов и людей', firstSliderSubtext, dronicoList1)
+			+dronicoSlide( 'Танцевальные шоу дронов и людей', firstSliderSubtext1, dronicoList1)
+			+dronicoSlide( 'Танцевальные шоу дронов и людей', firstSliderSubtext1, dronicoList2)
+	.dronico-slider__imgNum-container.swiper-container
+		.dronico-slider__imgNum-wrapper.swiper-wrapper
+			+dronicoImgNumSlider('01')
+			+dronicoImgNumSlider('02')
 	.dronico-slider__pagination
 		.dronico-slider__pagination-prev
 		.dronico-slider__pagination-next
