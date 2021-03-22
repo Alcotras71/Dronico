@@ -170,14 +170,3 @@ $calculatePres: $cornPres + $borderWidthPres;
 		}
 	}
 }
-
-.line-animation {
-	stroke-dashoffset: 600;
-	stroke-dasharray: 600;
-	animation: anidash 5s infinite 6s;
-}
-@keyframes anidash {
-	to {
-		stroke-dashoffset: 0;
-	}
-}

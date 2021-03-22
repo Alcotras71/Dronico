@@ -1,15 +1,17 @@
+include ../mixins/_projectsCard.pug
+-const textArr1 = ['pilot controlled', '1:1 scale with working front and rear lights', 'can also be operated in outdoor situations (only when absolutely wind free)'];
+-const textArr2 = ['pilot controlled', '1:1 scale with working front and rear lights', 'can also be operated in outdoor situations (only when absolutely wind free)'];
+-const textArr3 = ['pilot controlled', '1:1 scale with working front and rear lights', 'can also be operated in outdoor situations (only when absolutely wind free)'];
+
 section.projects
 	.projects__title-big
-		img(src="#" alt="#")
+		img(src="images/balloon/projects_logo.svg" alt="projects_logo")
 	.projects__title.title
 		span Примеры проектов
 	.projects__wrapper
-		.projects__card
-			.projects__card-img
-				img(src="#" alt="#")
-			.projects__card-text
-				.projects__card-title BMW Car
-				.projects__card-text
-					p pilot controlled
-					p 1:1 scale with working front and rear lights
-					p can also be operated in outdoor situations (only when absolutely wind free)
+		+projectsCard('1', 'BMW car', textArr1)
+		+projectsCard('2', 'AirOrbs (computer controlled)', textArr2)
+		+projectsCard('3', 'BMW car', textArr3)
+	.presentation__button-wrapper
+		.presentation__button.box
+			p Загрузить еще

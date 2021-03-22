@@ -1,0 +1,93 @@
+$cornPr: 50px;
+
+.projects {
+	position: relative;
+
+	&__title-big {
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		position: absolute;
+		top: 55px;
+		left: 0;
+		max-width: 270px;
+	}
+
+	&__wrapper {
+		margin-top: 59px;
+	}
+
+	&__card {
+		display: grid;
+		grid-template-areas: "text image";
+		grid-template-columns: auto-fill auto-fill;
+		margin-bottom: 117px;
+		&-img {
+			grid-area: image;
+			max-width: 1230px;
+			max-height: 790px;
+			img {
+				width: 100%;
+				height: 100%;
+				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+					linear-gradient(-45deg, transparent 0 $cornPr, #fff 0) bottom right,
+					linear-gradient(135deg, transparent 0 $cornPr, #fff 0) top left,
+					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+				-webkit-mask-size: 50% 50% !important;
+				-webkit-mask-repeat: no-repeat !important;
+			}
+		}
+		&-textcontainer {
+			grid-area: text;
+			max-width: 532px;
+			text-transform: uppercase;
+			padding-top: 250px;
+		}
+		&-title {
+			font-weight: 900;
+			font-size: 6.4rem;
+			line-height: 6.5rem;
+		}
+		&-text {
+			padding-top: 106px;
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+			p {
+				padding-bottom: 31px;
+			}
+		}
+	}
+	&__card:nth-child(odd) {
+		grid-template-areas: "image text";
+		.projects__card-textcontainer {
+			padding-left: 15px;
+		}
+	}
+	.presentation__button-wrapper {
+		margin-bottom: 35px;
+		position: relative;
+		width: 100%;
+	}
+	.presentation__button {
+		&.box {
+			display: block;
+			margin: 0 auto;
+		}
+		p {
+			color: #fff;
+			position: relative;
+			text-align: center;
+			transition: $transition;
+		}
+	}
+	.presentation__button:hover {
+		p {
+			color: $mainB;
+		}
+	}
+}
+
+

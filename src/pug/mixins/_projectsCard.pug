@@ -1,0 +1,9 @@
+mixin projectsCard(img, title, texts)
+	.projects__card
+		.projects__card-img
+			img(src=`images/balloon/projects_${img}.jpg` alt=`${img}`)
+		.projects__card-textcontainer
+			.projects__card-title #{title}
+			.projects__card-text
+				each text in texts
+					p= text
