@@ -65,7 +65,15 @@
 	}
 	.footer{
 		&__social-icons {
+			svg{
+				path{
+					stroke: #000;
+				}
+			}
 			svg:hover{
+				path{
+					fill: #000;
+				}
 				path.stroke{
 					fill: #fff;
 				}

@@ -3,11 +3,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const usingAreas = new Swiper(".using-card__container", {
     speed: 400,
     spaceBetween: 10,
-    slidesPerView: 4,
+    slidesPerView: 1,
     loop: true,
     navigation: {
       nextEl: ".using-areas__pagination-next",
       prevEl: ".using-areas__pagination-prev",
+    },
+    breakpoints: {
+			769: {
+				slidesPerView: 4,
+				spaceBetween: 10
+			}
     },
   });
 
@@ -43,10 +49,18 @@ document.addEventListener("DOMContentLoaded", (e) => {
     mousewheelControl: false,
     freeMode: false,
     simulateTouch: false,
-    spaceBetween: 100,
     effect: "fade",
     fadeEffect: {
       crossFade: true,
+		},
+		breakpoints: {
+			769: {
+				slidesPerView: 1,
+				spaceBetween: 0
+			},
+			1441: {
+				spaceBetween: 100,
+			}
     },
   });
 
@@ -70,19 +84,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
     dronTexts = document.querySelectorAll(".tech-dronico__text"),
     active = "active-btn";
 
-  dronsContainer.addEventListener("click", (e) => {
-    const target = e.target;
-    if (target.classList.contains("tech-dronico__circle")) {
-      dronsBtns.forEach((btn) => {
-        btn.classList.remove(active);
-      });
-      dronTexts.forEach((text) => {
-        text.classList.remove(active);
-        if (text.dataset.text == target.dataset.text) {
-          text.classList.add(active);
-          target.classList.add(active);
-        }
-      });
-    }
-  });
+  if (dronsContainer !== null && dronsContainer !== undefined) {
+    dronsContainer.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target.classList.contains("tech-dronico__circle")) {
+        dronsBtns.forEach((btn) => {
+          btn.classList.remove(active);
+        });
+        dronTexts.forEach((text) => {
+          text.classList.remove(active);
+          if (text.dataset.text == target.dataset.text) {
+            text.classList.add(active);
+            target.classList.add(active);
+          }
+        });
+      }
+    });
+  }
 });

@@ -7,12 +7,19 @@ $calculatePres: $cornPres + $borderWidthPres;
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
-	max-height: 100vh;
+	height: 100vh;
+	overflow: hidden;
+
 	img {
-		width: 100%;
+		width: 100vw;
 		height: 100vh;
 	}
-
+	&__title {
+		img {
+			width: 98vw;
+			padding-left: 21px;
+		}
+	}
 	&__subtitle {
 		position: absolute;
 		top: 38%;
@@ -188,13 +195,86 @@ $calculatePres: $cornPres + $borderWidthPres;
 			}
 		}
 		&__text {
-			top: 70%;
+			top: calc(38% + 270px);
 		}
+
 		.bg-dark {
 			display: none;
 		}
 		.bg-white {
 			display: block;
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.presentation {
+		&__subtitle {
+			font-size: 11.7rem;
+			line-height: 11.8rem;
+		}
+
+		&__text {
+			font-size: 2.95rem;
+			line-height: 3.05rem;
+			top: calc(38% + 210px);
+		}
+		&__button {
+			&.box {
+				width: 300px;
+			}
+			p {
+				font-size: 2.3rem;
+				line-height: 2.3rem;
+				width: 300px;
+			}
+		}
+
+		&__coords {
+			bottom: 14%;
+		}
+
+		&__plus {
+			bottom: 9%;
+		}
+	}
+
+	.dark {
+		.presentation {
+			&__title {
+				position: absolute;
+				top: -10%;
+			}
+			&__subtitle {
+				.title-dark {
+					max-width: 600px;
+				}
+			}
+		}
+	}
+
+	.white {
+		.presentation {
+			background: url(../../images/patternB_top.png) repeat;
+
+			.video-dark {
+				display: none;
+			}
+
+			&__title {
+				position: absolute;
+				top: -10%;
+			}
+
+			&__subtitle {
+				top: 27%;
+				.title-white {
+					max-width: 860px;
+				}
+			}
+			&__text {
+				top: calc(38% + 220px);
+			}
 		}
 	}
 }

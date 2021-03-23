@@ -20,18 +20,19 @@ $calculateUs: $cornUs + $borderWidthUs;
 			height: 82px;
 			top: 50px;
 			cursor: pointer;
+			transition: $transition;
+			background-repeat: no-repeat;
+			background-size: 100%;
 		}
 		&-prev {
 			top: 51px;
 			right: 9%;
 			background-image: url("../images/show/use_arrow.svg");
 			transform: rotate(180deg);
-			transition: background-image 0.5s ease;
 		}
 		&-next {
 			right: 1%;
 			background-image: url("../images/show/use_arrow.svg");
-			transition: background-image 0.5s ease;
 		}
 		&-prev:hover {
 			background-image: url("../images/show/use_arrow-enable.svg");
@@ -47,15 +48,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 		cursor: pointer;
 		margin-top: 25px;
 		&:after {
-			content: "+";
-			width: 15px;
-			height: 15px;
-			font-family: Geometria;
-			font-size: 2.4rem;
-			position: absolute;
-			top: -30px;
-			right: -1px;
-			opacity: 0;
+			@include pseudoPlus(2.4rem, auto, -30px, -1px, auto, 0);
 			transition: $transition;
 		}
 	}
@@ -75,8 +68,8 @@ $calculateUs: $cornUs + $borderWidthUs;
 		-webkit-mask-size: 50.5% 50.5% !important;
 		-webkit-mask-repeat: no-repeat !important;
 		&-line {
-			width: 23vw;
-			height: 37vh;
+			width: $cardWidthUs;
+			height: $cardHeightUs;
 			position: absolute;
 			bottom: 0;
 			left: 0;
@@ -118,9 +111,6 @@ $calculateUs: $cornUs + $borderWidthUs;
 		-webkit-mask-repeat: no-repeat !important;
 	}
 	&__count {
-		font-size: 9.9rem;
-		line-height: 9.9rem;
-		letter-spacing: 0.055em;
 		padding: 21px 0 0 23px;
 		opacity: 1;
 		transition: opacity 0.5s ease;
@@ -146,7 +136,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 		font-family: Geometria;
 		font-size: 2.4rem;
 		line-height: 3rem;
-		opacity: 0.6;
+		opacity: 0;
 		transition: $transition;
 	}
 	&__card:hover {
@@ -163,6 +153,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 		}
 		.using-card__text {
 			margin-top: 18px;
+			opacity: 0.6;
 		}
 		.using-card__count {
 			opacity: 0;
@@ -203,6 +194,78 @@ $calculateUs: $cornUs + $borderWidthUs;
 			color: #fff;
 			.using-card__visible {
 				background: $mainB;
+			}
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	$cardWidthUs: 23vw;
+	$cardHeightUs: 30vh;
+	.using-areas {
+		&__pagination {
+			&-prev,
+			&-next {
+				position: absolute;
+				width: 113px;
+				height: 82px;
+				top: 50px;
+				cursor: pointer;
+				background-size: 80%;
+				background-position: center;
+			}
+			&-prev {
+				right: 10%;
+			}
+		}
+	}
+	.using-card {
+		&__top {
+			height: $cardHeightUs;
+			&-line {
+				height: $cardHeightUs;
+			}
+		}
+		&__bottom {
+			height: $cardHeightUs;
+		}
+		&__visible {
+			height: $cardHeightUs;
+			transform: translateY(16vh);
+		}
+	}
+
+	.white {
+		.using-areas {
+			&__title {
+				color: $mainB;
+			}
+			&__pagination {
+				&-prev {
+					background-image: url("../images/balloon/use_arrow.svg");
+				}
+				&-next {
+					background-image: url("../images/balloon/use_arrow.svg");
+				}
+				&-prev:hover {
+					background-image: url("../images/show/use_arrow-enable.svg");
+				}
+				&-next:hover {
+					background-image: url("../images/show/use_arrow-enable.svg");
+				}
+			}
+		}
+		.using-card {
+			&__card {
+			}
+			&__text {
+				color: #fff;
+			}
+			&__card:hover {
+				color: #fff;
+				.using-card__visible {
+					background: $mainB;
+				}
 			}
 		}
 	}

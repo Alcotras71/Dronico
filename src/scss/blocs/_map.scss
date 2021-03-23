@@ -160,3 +160,21 @@ $mapColor: #6024ba;
 		}
 	}
 }
+
+.white {
+	.map {
+		&__social-icons {
+			svg {
+				path {
+					fill: #000;
+					transition: $transition;
+				}
+			}
+			svg:hover {
+				path {
+					fill: $main;
+				}
+			}
+		}
+	}
+}

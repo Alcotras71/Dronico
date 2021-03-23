@@ -11,9 +11,14 @@ mixin dronicoImgSlide(img)
 	.dronico-slider__img-slide.swiper-slide
 		img(src=`images/show/dronico-sl_${img}.png` alt=`${img}`)
 
-mixin dronicoImgNumSlider(imgNum)
+mixin dronicoImgNumSlider(imgPath, imgHeight, imgWidth)
 	.dronico-slider__imgNum-slide.swiper-slide
-			img(src=`images/show/dronico-sl_${imgNum}.svg` alt=`${imgNum}`)
+		svg(width=`${imgWidth}` height=`${imgHeight}` viewBox=`0 0 ${imgWidth} ${imgHeight}` fill="none" xmlns="http://www.w3.org/2000/svg")
+			path(fill-rule="evenodd" clip-rule="evenodd" d=`${imgPath}` stroke="url(#num-gradient)" stroke-width="1.2")
+			defs
+				linearGradient(id="num-gradient" x1="172.39" y1="-51.3909" x2="172.39" y2="230.524" gradientUnits="userSpaceOnUse")
+					stop(stop-color="white")
+					stop(offset="1" stop-color="#8533FF")
 
 mixin dronicoSlide(title, subtitle, myList)
 	.dronico-slider__slide.swiper-slide

@@ -1,5 +1,5 @@
 mixin historyCard(img, alt, title, text)
-	.history__card
+	div(class=`history__card ${alt}`)
 		img.history__card-icon(src=`images/show/history_${img}.svg` alt=`${alt}`)
 		.history__card-title
 			| #{title}
