@@ -1,9 +1,9 @@
 .tech-dronico {
 	position: relative;
 	padding-top: 230px;
-	padding-bottom: 200px;
+	padding-bottom: 150px;
 	display: flex;
-	background: url('../images/show/techDron_radialBg.png') no-repeat -120% 30%;
+	background: url("../images/show/techDron_radialBg.png") no-repeat -120% 30%;
 	&__title {
 		font-weight: 900;
 		font-size: 9.6rem;
@@ -30,16 +30,22 @@
 			background: #fff;
 		}
 	}
-	&__text {
+	&__text-wrapper {
 		position: relative;
-		font-size: 2.4rem;
-		line-height: 127.9%;
-		max-width: 512px;
 		padding-left: 23px;
-		padding-bottom: 72px;
+		padding-bottom: 250px;
 		border-bottom: 1px solid $main;
 		border-image: linear-gradient(to right top, $main, #fff, $main);
 		border-image-slice: 1;
+		p {
+			position: absolute;
+			opacity: 0;
+			transform: scale(0);
+			font-size: 2.4rem;
+			line-height: 127.9%;
+			width: 512px;
+			transition: $transition;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -54,6 +60,10 @@
 			@include pseudoCorn(2px, 0, 0, 2px, -35px, auto, auto, 0, #ffffff00);
 		}
 	}
+	&__text.active-btn {
+		opacity: 1;
+		transform: scale(1);
+	}
 	&__img {
 		position: absolute;
 		z-index: 22;
@@ -64,16 +74,16 @@
 	.tech-dronico__btn {
 		position: absolute;
 		top: 60%;
-		cursor: pointer;
-		transition: $transition;
 		.tech-dronico__circle {
 			position: relative;
+			cursor: pointer;
 			width: 42px;
 			height: 42px;
 			border-radius: 50%;
 			background: rgba(255, 255, 255, 0.3);
-			transition: $transition;
-			.plus {
+			transition: all 0.3s ease;
+			.tech-dronico__text-container {
+				pointer-events: none;
 				display: inline-block;
 				position: absolute;
 				top: 50%;
@@ -82,15 +92,17 @@
 				font-family: Geometria;
 				font-size: 3.6rem;
 				line-height: 4.5rem;
-				transition: $transition;
 				&::after {
 					@include pseudoCorn(0, 2px, 2px, 0, auto, -19px, -10px, auto, #ffffff00);
+					transition: all 0.3s ease;
 				}
 				&::before {
 					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -19px, #ffffff00);
+					transition: all 0.3s ease;
 				}
 			}
 			.active-text {
+				pointer-events: none;
 				display: none;
 			}
 			&::after {
@@ -100,12 +112,18 @@
 				@include pseudoCorn(2px, 0, 0, 2px, -9px, auto, auto, -10px, #ffffff00);
 			}
 		}
-	}
-	.tech-dronico__btn.active-btn {
-		.tech-dronico__circle {
+		.tech-dronico__circle.active-btn {
 			width: 260px;
 			height: 60px;
 			border-radius: 0;
+			.tech-dronico__text-container {
+				&::after {
+					@include pseudoCorn(0, 2px, 2px, 0, auto, -132px, -33px, auto, #ffffff00);
+				}
+				&::before {
+					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -33px, -132px, #ffffff00);
+				}
+			}
 			.plus {
 				display: none;
 			}
@@ -120,28 +138,23 @@
 				font-family: RoadRadio;
 				font-size: 2.4rem;
 				line-height: 4.6rem;
-				&::after {
-					@include pseudoCorn(0, 2px, 2px, 0, auto, -21px, -10px, auto,  #ffffff00);
-				}
-				&::before {
-					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -19px,  #ffffff00);
-				}
 			}
 			&::after {
-				@include pseudoCorn(2px, 2px, 0, 0, -2px, -2px, auto, auto,  #ffffff00);
+				@include pseudoCorn(2px, 2px, 0, 0, -2px, -2px, auto, auto, #ffffff00);
 			}
 			&::before {
-				@include pseudoCorn(2px, 0, 0, 2px, -2px, auto, auto, -2px,  #ffffff00);
+				@include pseudoCorn(2px, 0, 0, 2px, -2px, auto, auto, -2px, #ffffff00);
 			}
 		}
 	}
+
 	&__img.small {
 		top: 25%;
 		left: 44%;
 		width: 10vw;
 		.tech-dronico__btn {
 			top: 20%;
-			right: 0;
+			left: 100%;
 		}
 	}
 	&__img.medium {
@@ -149,13 +162,16 @@
 		left: 9%;
 		width: 30vw;
 		.tech-dronico__btn {
-			top: 36%;
-			right: 17%;
+			top: 40%;
+			left: 70%;
 		}
 	}
 	&__img.big {
 		top: 55%;
 		left: 45%;
 		width: 50vw;
+		.tech-dronico__btn {
+			right: 78%;
+		}
 	}
 }

@@ -23,17 +23,19 @@ $calculateWork: $cornWork + $borderWidthWork;
 		}
 		&-prev {
 			right: 8%;
-			background: url("../images/show/use_arrow-prev.svg");
+			background: url("../images/show/use_arrow.svg");
+			transform: rotate(180deg);
 		}
 		&-next {
 			right: 0%;
-			background: url("../images/show/use_arrow-next.svg");
+			background: url("../images/show/use_arrow.svg");
 		}
 		&-prev:hover {
-			background: url("../images/show/use_arrow-prev-enable.svg");
+			background: url("../images/show/use_arrow-enable.svg");
+			transform: rotate(180deg);
 		}
 		&-next:hover {
-			background: url("../images/show/use_arrow-next-enable.svg");
+			background: url("../images/show/use_arrow-enable.svg");
 		}
 	}
 
@@ -152,7 +154,7 @@ $calculateWork: $cornWork + $borderWidthWork;
 		transition: all 0.5s ease;
 
 		&-number {
-			padding-bottom: 80px;
+			padding-bottom: 60px;
 			path {
 				transition: $transition;
 			}
@@ -171,7 +173,7 @@ $calculateWork: $cornWork + $borderWidthWork;
 	&__slide:nth-child(2n) {
 		margin-bottom: 158px;
 	}
-	&__dronico-img img{
+	&__dronico-img img {
 		display: none;
 		width: 100%;
 		padding-bottom: 26px;
@@ -189,18 +191,52 @@ $calculateWork: $cornWork + $borderWidthWork;
 		.dark {
 			display: none;
 		}
-		&__dronico-img img{
+		&__dronico-img img {
 			display: block;
 		}
 		&__slide:hover {
 			.work__slide-text {
 				color: #fff;
 			}
-			.work__slide-number{
-				path{
+			.work__slide-number {
+				path {
 					stroke: #fff;
 				}
 			}
 		}
+		&__line {
+			&-wrapper {
+				&:after {
+					background: url("../images/show/work_slider_line-white.svg") no-repeat;
+				}
+			}
+			&-1 {
+				&:after {
+					background: url("../images/show/work_slider_dashed1-white.svg") no-repeat;
+				}
+			}
+			&-2 {
+				&:before {
+					background: #7A22FF;
+				}
+			}
+			&-3 {
+				&:before {
+					background: #7A22FF;
+				}
+			}
+		}
 	}
+}
+
+.swiper-button-disabled{
+	transition: $transition;
+	opacity: 0.2;
+}
+
+.swiper-button-disabled.work__navigation-prev:hover{
+	background: url("../images/show/use_arrow.svg");
+}
+.swiper-button-disabled.work__navigation-next:hover{
+	background: url("../images/show/use_arrow.svg");
 }

@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     effect: "fade",
     fadeEffect: {
       crossFade: true,
-		},
-		grabCursor: true,
+    },
+    grabCursor: true,
     navigation: {
       nextEl: ".dronico-slider__pagination-next",
       prevEl: ".dronico-slider__pagination-prev",
@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     mousewheelControl: false,
     freeMode: false,
     simulateTouch: false,
-		spaceBetween: 100,
-		effect: "fade",
-		fadeEffect: {
+    spaceBetween: 100,
+    effect: "fade",
+    fadeEffect: {
       crossFade: true,
     },
   });
@@ -65,4 +65,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   // Main code
+  const dronsContainer = document.querySelector(".tech-dronico__img-container"),
+    dronsBtns = document.querySelectorAll(".tech-dronico__circle"),
+    dronTexts = document.querySelectorAll(".tech-dronico__text"),
+    active = "active-btn";
+
+  dronsContainer.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.classList.contains("tech-dronico__circle")) {
+      dronsBtns.forEach((btn) => {
+        btn.classList.remove(active);
+      });
+      dronTexts.forEach((text) => {
+        text.classList.remove(active);
+        if (text.dataset.text == target.dataset.text) {
+          text.classList.add(active);
+          target.classList.add(active);
+        }
+      });
+    }
+  });
 });

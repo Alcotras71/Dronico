@@ -31,6 +31,37 @@
 	}
 	&__logo {
 		width: 183px;
+		svg{
+			path:nth-child(1){
+				transition: all 0.5s ease 0.1s;
+			}
+			path:nth-child(2) {
+				transition: all 0.5s ease 0.2s;
+			}
+			path:nth-child(3) {
+				transition: all 0.5s ease 0.3s;
+			}
+			path:nth-child(4) {
+				transition: all 0.5s ease 0.4s;
+			}
+			path:nth-child(5) {
+				transition: all 0.5s ease 0.5s;
+			}
+			path:nth-child(6) {
+				transition: all 0.5s ease 0.6s;
+			}
+			path:nth-child(7) {
+				transition: all 0.5s ease 0.7s;
+			}
+			path:nth-child(8) {
+				transition: all 0.5s ease 0.8s;
+			}
+		}
+		svg:hover{
+			path{
+				fill: $main;
+			}
+		}
 	}
 	&__menu {
 		display: flex;

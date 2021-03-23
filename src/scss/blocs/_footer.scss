@@ -21,6 +21,18 @@
 		min-width: 283px;
 		svg{
 			cursor: pointer;
+			path {
+				fill: transparent;
+				transition: $transition;
+			}
+		}
+		svg:hover{
+			path {
+				fill: rgba(122, 34, 255, 0.9);
+			}
+			path.stroke{
+				fill: #121421;
+			}
 		}
 	}
 
@@ -50,5 +62,14 @@
 	}
 	.footer__policy a:after {
 		background: #000;
+	}
+	.footer{
+		&__social-icons {
+			svg:hover{
+				path.stroke{
+					fill: #fff;
+				}
+			}
+		}
 	}
 }
