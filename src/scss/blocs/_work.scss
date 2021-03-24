@@ -3,7 +3,6 @@ $borderWidthWork: 2px;
 $calculateWork: $cornWork + $borderWidthWork;
 
 .work {
-	overflow: hidden;
 	position: relative;
 	padding-bottom: 106px;
 	&__title {
@@ -241,6 +240,12 @@ $calculateWork: $cornWork + $borderWidthWork;
 }
 .swiper-button-disabled.work__navigation-next:hover {
 	background: url("../images/show/use_arrow.svg");
+}
+
+@media(min-width: 1950px) {
+	.work__wrapper {
+		height: 850px;
+	}
 }
 
 @media (max-width: 1650px) {

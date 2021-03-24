@@ -3,6 +3,9 @@
 	padding-bottom: 131px;
 	&__title {
 		position: absolute;
+		img {
+			width: 96vw;
+		}
 	}
 
 	&__text-container {
