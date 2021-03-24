@@ -39,11 +39,10 @@
 		p {
 			position: absolute;
 			opacity: 0;
-			transform: scale(0);
 			font-size: 2.4rem;
 			line-height: 127.9%;
 			width: 512px;
-			transition: $transition;
+			transition: all 0.7s ease 0.3s;
 		}
 		&::before {
 			content: "";
@@ -61,7 +60,6 @@
 	}
 	&__text.active-btn {
 		opacity: 1;
-		transform: scale(1);
 	}
 	&__img {
 		position: absolute;
@@ -72,10 +70,19 @@
 	}
 	.tech-dronico__btn {
 		position: absolute;
+		cursor: pointer;
 		top: 60%;
+		&::after {
+			@include pseudoCorn(0, 2px, 2px, 0, auto, -9px, -10px, auto, #ffffff00);
+			transition: all 0.3s ease;
+		}
+		&::before {
+			@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -10px, -9px, #ffffff00);
+			transition: all 0.3s ease;
+		}
 		.tech-dronico__circle {
 			position: relative;
-			cursor: pointer;
+			pointer-events: none;
 			width: 42px;
 			height: 42px;
 			border-radius: 50%;
@@ -91,25 +98,17 @@
 				font-family: Geometria;
 				font-size: 3.6rem;
 				line-height: 4.5rem;
-				&::after {
-					@include pseudoCorn(0, 2px, 2px, 0, auto, -30px, -30px, auto, #ffffff00);
-					transition: all 0.3s ease;
-				}
-				&::before {
-					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -30px, -30px, #ffffff00);
-					transition: all 0.3s ease;
-				}
 				.plus {
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					transform: translate(-51%, -51%);
+					transform: translate(-45%, -50%);
 				}
-
 			}
 			.active-text {
 				pointer-events: none;
-				display: none;
+				opacity: 0;
+				transition: opacity 0s ease 0s;
 			}
 			&::after {
 				@include pseudoCorn(2px, 2px, 0, 0, -9px, -10px, auto, auto, #ffffff00);
@@ -118,18 +117,23 @@
 				@include pseudoCorn(2px, 0, 0, 2px, -9px, auto, auto, -10px, #ffffff00);
 			}
 		}
-		.tech-dronico__circle.active-btn {
-			width: 260px;
+	}
+	.tech-dronico__btn.active-btn {
+		&::after {
+			@include pseudoCorn(0, 2px, 2px, 0, auto, -2px, -2px, auto, #ffffff00);
+			transition: all 0.3s ease;
+		}
+		&::before {
+			@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -2px, -2px, #ffffff00);
+			transition: all 0.3s ease;
+		}
+		.tech-dronico__circle {
+			animation: fromBoxToRectangle 0.5s ease;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
 			height: 60px;
 			border-radius: 0;
-			.tech-dronico__text-container {
-				&::after {
-					@include pseudoCorn(0, 2px, 2px, 0, auto, -132px, -33px, auto, #ffffff00);
-				}
-				&::before {
-					@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -33px, -132px, #ffffff00);
-				}
-			}
+
 			.plus {
 				display: none;
 			}
@@ -144,6 +148,8 @@
 				font-family: RoadRadio;
 				font-size: 2.4rem;
 				line-height: 4.6rem;
+				opacity: 1;
+				transition: opacity 0.5s ease 0.4s;
 			}
 			&::after {
 				@include pseudoCorn(2px, 2px, 0, 0, -2px, -2px, auto, auto, #ffffff00);
@@ -179,5 +185,14 @@
 		.tech-dronico__btn {
 			right: 78%;
 		}
+	}
+}
+
+@keyframes fromBoxToRectangle {
+	50% {
+		width: 60px;
+	}
+	100% {
+		width: 260px;
 	}
 }

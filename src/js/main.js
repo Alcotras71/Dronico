@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Main code
   const dronsContainer = document.querySelector(".tech-dronico__img-container"),
-    dronsBtns = document.querySelectorAll(".tech-dronico__circle"),
+    dronsBtns = document.querySelectorAll(".tech-dronico__btn"),
     dronTexts = document.querySelectorAll(".tech-dronico__text"),
     active = "active-btn";
 
-  if (dronsContainer !== null && dronsContainer !== undefined) {
+  if (dronsContainer) {
     dronsContainer.addEventListener("click", (e) => {
       const target = e.target;
-      if (target.classList.contains("tech-dronico__circle")) {
+      if (target.classList.contains("tech-dronico__btn")) {
         dronsBtns.forEach((btn) => {
           btn.classList.remove(active);
         });
