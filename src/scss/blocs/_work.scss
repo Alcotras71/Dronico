@@ -186,6 +186,9 @@ $calculateWork: $cornWork + $borderWidthWork;
 	.work {
 		.white {
 			display: block;
+			img {
+				width: 96vw;
+			}
 		}
 		.dark {
 			display: none;
@@ -207,14 +210,19 @@ $calculateWork: $cornWork + $borderWidthWork;
 			&-wrapper {
 				&:after {
 					background: url("../images/show/work_slider_line-white.svg") repeat-x;
+					background-size: 33.8%;
 				}
 			}
 			&-1 {
 				&:after {
 					background: url("../images/show/work_slider_dashed1-white.svg") no-repeat;
+					background-size: 100%;
 				}
 			}
 			&-2 {
+				&:after{
+					background-size: 100%;
+				}
 				&:before {
 					background: #7a22ff;
 				}

@@ -22,16 +22,18 @@ body {
 .wrapper-dark a {
 	color: #fff;
 }
+.wrapper-white,
+.wrapper-white a {
+	color: #000;
+}
 
 .wrapper-dark {
 	background: url('../images/show/use_radialBG.png') no-repeat 0 -5%,
 							url('../images/show/work_radialBg.png') no-repeat -60% 92%,
 							url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
 }
-
-.wrapper-white,
-.wrapper-white a {
-	color: #000;
+.wrapper-white{
+	background: url('../images/balloon/dolphin_radialBg.png') no-repeat 50% 14%;
 }
 
 .big-title img,
