@@ -122,7 +122,9 @@ gulp.task("cssLibs", () => {
 gulp.task("jsLibs", () => {
   const modules = [
     "node_modules/swiper/swiper-bundle.min.js",
-    "node_modules/swiper/swiper-bundle.min.js.map",
+		"node_modules/swiper/swiper-bundle.min.js.map",
+		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js",
+		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js.map"
   ];
   return gulp
     .src(modules)

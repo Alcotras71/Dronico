@@ -1,7 +1,7 @@
 mixin technoCard(img, text, colorText, className)
 	.technologies__tab
 			.technologies__tab-icon
-				img(src=`images/show/tech_${img}.svg` alt=`tech_${img}`)
+				lottie-player(class='lottie-tech' mode='normal', src=`images/lottie-json/tech_${img}.json`, style='width: 4.5vw')
 			div(class=`technologies__tab-text ${className}`)
 				| #{text}
 				span  #{colorText}

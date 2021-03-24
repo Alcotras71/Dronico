@@ -143,7 +143,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 .dark {
 	.presentation {
-		background: url(../../images/pattern_top.png) repeat;
+		background: url('../images/pattern_top.png') repeat;
 
 		.video-white {
 			display: none;
@@ -171,7 +171,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 .white {
 	.presentation {
-		background: url(../../images/patternB_top.png) repeat;
+		background: url('../images/patternB_top.png') repeat;
 
 		.video-dark {
 			display: none;
@@ -255,7 +255,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 	.white {
 		.presentation {
-			background: url(../../images/patternB_top.png) repeat;
+			background: url('../images/patternB_top.png') repeat;
 
 			.video-dark {
 				display: none;

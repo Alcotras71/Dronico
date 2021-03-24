@@ -53,15 +53,18 @@
 		cursor: pointer;
 		&-icon {
 			margin-bottom: 32px;
+			pointer-events: none;
 		}
 		&-text {
 			font-size: 2.4rem;
 			line-height: 3rem;
+			pointer-events: none;
 			span {
 				color: $main;
 			}
 		}
 		.new-stroke {
+			pointer-events: none;
 			max-width: 400px;
 		}
 	}

@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       prevEl: ".using-areas__pagination-prev",
     },
     breakpoints: {
-			769: {
-				slidesPerView: 4,
-				spaceBetween: 10
-			}
+      769: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
     },
   });
 
@@ -52,15 +52,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
     effect: "fade",
     fadeEffect: {
       crossFade: true,
-		},
-		breakpoints: {
-			769: {
-				slidesPerView: 1,
-				spaceBetween: 0
-			},
-			1441: {
-				spaceBetween: 100,
-			}
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      1441: {
+        spaceBetween: 100,
+      },
     },
   });
 
@@ -100,5 +100,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
         });
       }
     });
+  }
+
+  //Lottie svg handlers
+  const techTab = document.querySelector(".technologies__tabs");
+  if (techTab) {
+    techTab.onmouseover = techTab.onmouseout = (e) => {
+      const target = e.target;
+      if (target.classList.contains("technologies__tab")) {
+        const techLottie = target.querySelector(".lottie-tech");
+        if (techLottie) {
+          if (e.type == "mouseover") {
+            techLottie.play();
+            techLottie.setLooping(true);
+          } else {
+            techLottie.setLooping(false);
+          }
+        }
+      }
+    };
   }
 });
