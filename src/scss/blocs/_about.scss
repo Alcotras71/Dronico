@@ -28,8 +28,6 @@
 
 @media (max-width: 1440px) {
 	.about {
-		position: relative;
-		padding-bottom: 131px;
 		&__title {
 			position: absolute;
 		}
@@ -47,8 +45,32 @@
 		}
 
 		&__text-text {
-			width: 1000px;
+			width: 60vw;
 			max-width: 900px;
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	.about {
+		&__title {
+			display: none;
+		}
+		&__text-container {
+			display: block;
+			padding-bottom: 50px;
+		}
+		&__text-title {
+			width: 100%;
+			max-width: 100%;
+			margin-bottom: 50px;
+		}
+
+		&__text-text {
+			font-size: 2.6rem;
+			line-height: 143%;
+			width: 100%;
+			max-width: 100%;
 		}
 	}
 }

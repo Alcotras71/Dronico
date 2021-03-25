@@ -1,0 +1,179 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="875.0000000000005" scrolly="430.4999999999998" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id=",:$r!cO(-WuuD5oN7Sbh" x="-690" y="-370">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">FALSE</field>
+      <field name="BKG_TRANSPARENCY">TRUE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+  </tab>
+  <tab name="main" type="MainTab" active="true" scrollx="1022.525001721581" scrolly="323.37874988233045" scale="0.9922500000000001">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="2mckSqiAR.|5joZz9*ZR" type="">speed_rotation</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="hide" id="Y.*nUrS{Y;)u/=Sw/Wf6" x="-810" y="-90">
+      <value name="VALUE">
+        <shadow type="objectList" id="}xTTR+Zxw4.?/R|F]s@T">
+          <field name="FIELDNAME">Torus001</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="hide" id="/t@(j}I$i?_.|I~ZV.RY">
+          <value name="VALUE">
+            <shadow type="objectList" id="n^_mkgb#;YPr/P/=:G^q">
+              <field name="FIELDNAME">Box001.001</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="variables_set" id="bc[2b0+!X48@40]i,=_H">
+              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+              <value name="VALUE">
+                <block type="angle" id="L=SPm%di.@J_EPvb$nfY">
+                  <field name="ANGLE">0.3</field>
+                </block>
+              </value>
+              <next>
+                <block type="bloom" id="5p15h@N2-*m3JBlOoR7:">
+                  <value name="THRESHOLD">
+                    <shadow type="number_slider" id="!p)+9H2KK]tqa|$x[xuI">
+                      <field name="NUM" min="0" max="10" step="0.1">0</field>
+                    </shadow>
+                  </value>
+                  <value name="STRENGTH">
+                    <shadow type="number_slider" id="@q5IJO%)y*3CHk];dUO$">
+                      <field name="NUM" min="0" max="10" step="0.1">3</field>
+                    </shadow>
+                  </value>
+                  <value name="RADIUS">
+                    <shadow type="number_slider" id="=_^WBrebS$u7%PKG;@,Y">
+                      <field name="NUM" min="0" max="10" step="0.1">0.1</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="everyFrame" id="z6w=0oQ7#=1ZJ9/Pl,2T">
+                      <statement name="DO">
+                        <block type="applyObjLocalTransform" id="80JTlD)au%P!X6Jq]jZt">
+                          <field name="MODE">rotation</field>
+                          <value name="TARGETOBJ">
+                            <shadow type="objectList" id="?Jw-G,JuFfXmC,aaeojH">
+                              <field name="FIELDNAME">GeoSphere001</field>
+                            </shadow>
+                          </value>
+                          <value name="X">
+                            <block type="variables_get" id="@XD;me6xFX4*2JQwo$1B">
+                              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                            </block>
+                          </value>
+                          <value name="Y">
+                            <block type="variables_get" id="i{uO@R]i20~D@S$q-:Ti">
+                              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                            </block>
+                          </value>
+                          <value name="Z">
+                            <block type="variables_get" id="w%e]Q#}e9oIjg.=_j~WT">
+                              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="applyObjLocalTransform" id="dc@g[qFycjde,]=u[FY%">
+                              <field name="MODE">rotation</field>
+                              <value name="TARGETOBJ">
+                                <shadow type="objectList" id="QJC9fu/PETgIhF!x5FS:">
+                                  <field name="FIELDNAME">Box001.001</field>
+                                </shadow>
+                              </value>
+                              <value name="X">
+                                <block type="variables_get" id="eeF$0GLo1nyA5psZ})UI">
+                                  <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                </block>
+                              </value>
+                              <value name="Y">
+                                <block type="variables_get" id="(VB0dYt0#p(R;#42V5LO">
+                                  <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                </block>
+                              </value>
+                              <value name="Z">
+                                <block type="variables_get" id="V0huVB+@~!GtnZ:R8?/-">
+                                  <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="applyObjLocalTransform" id="]Kf/59z!boi`/SBaJ}Pt">
+                                  <field name="MODE">rotation</field>
+                                  <value name="TARGETOBJ">
+                                    <shadow type="objectList" id="ilq37)5odn9hv]Bx1Kxv">
+                                      <field name="FIELDNAME">Torus001</field>
+                                    </shadow>
+                                  </value>
+                                  <value name="X">
+                                    <block type="variables_get" id="U#}~m59[5UYWwDgd_OP}">
+                                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                    </block>
+                                  </value>
+                                  <value name="Y">
+                                    <block type="variables_get" id="|vQ4_J2*~J|x$,wxONqm">
+                                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                    </block>
+                                  </value>
+                                  <value name="Z">
+                                    <block type="variables_get" id="4|=NxAX))+j7L7S!%N$N">
+                                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="eventHTMLElem" id="4)?8A{Q-_i+VK-kJ`wmq">
+                          <field name="EVENT">click</field>
+                          <field name="PARENT">FALSE</field>
+                          <value name="ID">
+                            <shadow type="text" id="MDWzq32B#K!$Br`rA=pI">
+                              <field name="TEXT">first</field>
+                            </shadow>
+                          </value>
+                          <statement name="DO">
+                            <block type="hide" id="Z1eq,b6H~9PEQ[pARL}O">
+                              <value name="VALUE">
+                                <shadow type="objectList" id="cW+(1!/yb0F7_A=u(j=D">
+                                  <field name="FIELDNAME">Torus001</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="hide" id="HTZnp2GORJo+@.|#A(!p">
+                                  <value name="VALUE">
+                                    <shadow type="objectList" id="iCSv|p{T7MN.(y*$NFAe">
+                                      <field name="FIELDNAME">Box001.001</field>
+                                    </shadow>
+                                  </value>
+                                  <next>
+                                    <block type="show" id="U)2#X2y]`)EVD%_m7p.[">
+                                      <value name="VALUE">
+                                        <shadow type="objectList" id="=8i{wjq,O1cYG+_rW-aN">
+                                          <field name="FIELDNAME">GeoSphere001</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="468.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

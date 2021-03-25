@@ -10,9 +10,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
       prevEl: ".using-areas__pagination-prev",
     },
     breakpoints: {
+			400: {
+				slidesPerView: 2
+			},
       769: {
+				slidesPerView: 3,
+				spaceBetween: 11
+			},
+			1026: {
         slidesPerView: 4,
-        spaceBetween: 10,
       },
     },
   });
@@ -77,6 +83,33 @@ document.addEventListener("DOMContentLoaded", (e) => {
       prevEl: ".work__navigation-prev",
     },
   });
+
+  const workContainer = document.createElement("div"),
+    workCards = document.querySelectorAll(".work__slide"),
+    workWrapper = document.querySelector(".work__wrapper");
+
+  // check resize slider
+  // function handleTabletChange(e) {
+  //   if (e.matches) {
+  //     workSlider.destroy(false, true);
+
+  //     workContainer.className = "work__cards";
+  //     workCards.forEach((card) => {
+  //       workContainer.append(card);
+  //     });
+	// 		workWrapper.append(workContainer);
+
+  //   } else {
+	// 		workSlider.init();
+
+	// 		workCards.forEach((card) => {
+	// 			workWrapper.append(card);
+	// 		});
+  //   }
+  // }
+  // const mediaQuery = window.matchMedia("(max-width: 1251px)");
+  // mediaQuery.addListener(handleTabletChange);
+  // handleTabletChange(mediaQuery);
 
   // Main code
   const dronsContainer = document.querySelector(".tech-dronico__img-container"),

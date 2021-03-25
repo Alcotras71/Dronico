@@ -19,18 +19,18 @@
 		justify-content: space-between;
 		align-items: center;
 		min-width: 283px;
-		svg{
+		svg {
 			cursor: pointer;
 			path {
 				fill: transparent;
 				transition: $transition;
 			}
 		}
-		svg:hover{
+		svg:hover {
 			path {
 				fill: rgba(122, 34, 255, 0.9);
 			}
-			path.stroke{
+			path.stroke {
 				fill: #121421;
 			}
 		}
@@ -41,7 +41,7 @@
 		position: relative;
 	}
 	&__policy a:after {
-		content: '';
+		content: "";
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -63,21 +63,31 @@
 	.footer__policy a:after {
 		background: #000;
 	}
-	.footer{
+	.footer {
 		&__social-icons {
-			svg{
-				path{
+			svg {
+				path {
 					stroke: #000;
 				}
 			}
-			svg:hover{
-				path{
+			svg:hover {
+				path {
 					fill: #000;
 				}
-				path.stroke{
+				path.stroke {
 					fill: #fff;
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	.footer{
+		display: block;
+		&__wrapper{
+			display: flex;
+			width: 100%;
 		}
 	}
 }

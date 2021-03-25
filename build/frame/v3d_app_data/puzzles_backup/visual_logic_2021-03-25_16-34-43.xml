@@ -1,0 +1,112 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="875" scrolly="430.5" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id=",:$r!cO(-WuuD5oN7Sbh" x="-690" y="-370">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">FALSE</field>
+      <field name="BKG_TRANSPARENCY">TRUE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+  </tab>
+  <tab name="main" type="MainTab" active="true" scrollx="835.525001721581" scrolly="449.37874988233045" scale="0.9922500000000001">
+    <block xmlns="https://developers.google.com/blockly/xml" type="hide" id="-hU?1a`Opud2-:hLMsV6" x="-730" y="-350">
+      <value name="VALUE">
+        <shadow type="objectList" id="(O2Vv)dn)3;OfEG;TdoK">
+          <field name="FIELDNAME">GeoSphere001</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="bloom" id="4^8NU17/QF$t/hQ$9F.w" x="-750" y="-70">
+      <value name="THRESHOLD">
+        <shadow type="number_slider" id="M=KwOlvWaSh58J0PtM5f">
+          <field name="NUM" min="0" max="10" step="0.1">0.2</field>
+        </shadow>
+      </value>
+      <value name="STRENGTH">
+        <shadow type="number_slider" id="zG.Oa0*{_Cmapo7Io(vM">
+          <field name="NUM" min="0" max="10" step="0.1">0.5</field>
+        </shadow>
+      </value>
+      <value name="RADIUS">
+        <shadow type="number_slider" id="!]hMSZVg_X^O#@z?,|5j">
+          <field name="NUM" min="0" max="10" step="0.1">0.5</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="everyFrame" id="z6w=0oQ7#=1ZJ9/Pl,2T" x="-730" y="50"/>
+    <block xmlns="https://developers.google.com/blockly/xml" type="applyObjLocalTransform" id="80JTlD)au%P!X6Jq]jZt" x="-390" y="90">
+      <field name="MODE">rotation</field>
+      <value name="TARGETOBJ">
+        <shadow type="objectList" id="?Jw-G,JuFfXmC,aaeojH">
+          <field name="FIELDNAME">GeoSphere001</field>
+        </shadow>
+      </value>
+      <value name="X">
+        <block type="angle" id="33L5lBLo}a|2sA0ZayO8">
+          <field name="ANGLE">1</field>
+        </block>
+      </value>
+      <value name="Y">
+        <block type="angle" id="h5wW8A89UX7#GNwE/{;E">
+          <field name="ANGLE">1</field>
+        </block>
+      </value>
+      <value name="Z">
+        <block type="angle" id="K,)AkH3WVCfr3c^#Ie!u">
+          <field name="ANGLE">1</field>
+        </block>
+      </value>
+      <next>
+        <block type="applyObjLocalTransform" id="dc@g[qFycjde,]=u[FY%">
+          <field name="MODE">rotation</field>
+          <value name="TARGETOBJ">
+            <shadow type="objectList" id="QJC9fu/PETgIhF!x5FS:">
+              <field name="FIELDNAME">Box001.001</field>
+            </shadow>
+          </value>
+          <value name="X">
+            <block type="angle" id="9PKFo7U5@[vi,UucJJo+">
+              <field name="ANGLE">1</field>
+            </block>
+          </value>
+          <value name="Y">
+            <block type="angle" id="7VEHJ$%^{,e#{]S=~G7^">
+              <field name="ANGLE">1</field>
+            </block>
+          </value>
+          <value name="Z">
+            <block type="angle" id="m{+mg]JP+#!38#x6uydi">
+              <field name="ANGLE">1</field>
+            </block>
+          </value>
+          <next>
+            <block type="applyObjLocalTransform" id="]Kf/59z!boi`/SBaJ}Pt">
+              <field name="MODE">rotation</field>
+              <value name="TARGETOBJ">
+                <shadow type="objectList" id="ilq37)5odn9hv]Bx1Kxv">
+                  <field name="FIELDNAME">Torus001</field>
+                </shadow>
+              </value>
+              <value name="X">
+                <block type="angle" id="HuFiuEqzfqjZbGxaQF*`">
+                  <field name="ANGLE">1</field>
+                </block>
+              </value>
+              <value name="Y">
+                <block type="angle" id="DO,-M=eO/]+u(p@9v66u">
+                  <field name="ANGLE">1</field>
+                </block>
+              </value>
+              <value name="Z">
+                <block type="angle" id="Z;`X;Q?zwXWw@N8x`,!C">
+                  <field name="ANGLE">1</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="468.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

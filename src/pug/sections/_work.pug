@@ -10,10 +10,34 @@ include ../mixins/_workSlider.pug
 
 section.work.work-dark
 	.work__dronico-img.white
-		img(src="images/balloon/dronico_text_work.svg", alt="dronico_text")
+		img(src="images/balloon/dronico_text_work.svg" alt="dronico_text")
 	.work__title.title.title-dark
 		span Как мы
-		|  работаем
+		p  работаем
+
+	.work__mobile
+		.work__mobile-container
+			.work__mobile-image
+			.work__mobile-cards
+				+workCard('89', coord1 ,'#ffffff', 'Составляем  договор' , 'dark')
+				+workCard('123', coord2 ,'#ffffff', 'Просмотр площадки', 'dark')
+				+workCard('124', coord3 ,'#ffffff', 'Создаём  дизайн', 'dark')
+				+workCard('128', coord4 ,'#ffffff', 'Оптимизируем алгоритмы', 'dark')
+				+workCard('125', coord5 ,'#ffffff', 'Проводим  испытательные  полёты', 'dark')
+				+workCard('127', coord6 ,'#ffffff', 'Устраиваем шоу', 'dark')
+				+workCard('120', coord7 ,'#ffffff', 'Составляем  договор', 'dark')
+				+workCard('129', coord8 ,'#ffffff', 'Составляем  договор', 'dark')
+
+				+workCard('89', coord1 ,'#7A22FF', 'Составляем  договор' , 'white')
+				+workCard('123', coord2 ,'#7A22FF', 'Просмотр площадки', 'white')
+				+workCard('124', coord3 ,'#7A22FF', 'Создаём  дизайн', 'white')
+				+workCard('128', coord4 ,'#7A22FF', 'Оптимизируем алгоритмы', 'white')
+				+workCard('125', coord5 ,'#7A22FF', 'Проводим  испытательные  полёты', 'white')
+				+workCard('127', coord6 ,'#7A22FF', 'Устраиваем шоу', 'white')
+				+workCard('120', coord7 ,'#7A22FF', 'Составляем  договор', 'white')
+				+workCard('129', coord8 ,'#7A22FF', 'Составляем  договор', 'white')
+
+
 	.work__navigation
 		.work__navigation-prev
 		.work__navigation-next

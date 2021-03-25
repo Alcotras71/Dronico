@@ -1,10 +1,13 @@
-$cornWork: 40px;
+$cornWork: 2.05vw;
 $borderWidthWork: 2px;
-$calculateWork: $cornWork + $borderWidthWork;
+$calculateWork: calc(2.05vw + 2px);
 
 .work {
 	position: relative;
 	padding-bottom: 106px;
+	&__mobile {
+		display: none;
+	}
 	&__title {
 		max-width: 364px;
 		padding-bottom: 30px;
@@ -139,7 +142,7 @@ $calculateWork: $cornWork + $borderWidthWork;
 		align-content: flex-end;
 	}
 	&__slide {
-		padding-left: 26px;
+		padding-left: 2vw;
 		padding-top: 50px;
 		width: 15vw;
 		height: 14vw;
@@ -158,6 +161,10 @@ $calculateWork: $cornWork + $borderWidthWork;
 
 		&-number {
 			padding-bottom: 2vw;
+			svg {
+				height: 3.6vw;
+				width: auto;
+			}
 			path {
 				transition: $transition;
 			}
@@ -182,6 +189,19 @@ $calculateWork: $cornWork + $borderWidthWork;
 	}
 }
 
+.swiper-button-disabled {
+	transition: $transition;
+	opacity: 0.2;
+	cursor: default;
+}
+
+.swiper-button-disabled.work__navigation-prev:hover {
+	background: url("../images/show/use_arrow.svg");
+}
+.swiper-button-disabled.work__navigation-next:hover {
+	background: url("../images/show/use_arrow.svg");
+}
+
 .white {
 	.work {
 		.white {
@@ -193,6 +213,28 @@ $calculateWork: $cornWork + $borderWidthWork;
 		.dark {
 			display: none;
 		}
+
+		&__navigation {
+			&-prev,
+			&-next {
+				top: 18%;
+			}
+			&-prev {
+				background: url("../images/balloon/use_arrow.svg");
+				transform: rotate(0);
+			}
+			&-next {
+				background: url("../images/balloon/use_arrow.svg");
+				transform: rotate(180deg);
+			}
+			&-prev:hover {
+				background: url("../images/balloon/use_arrow_enable.svg");
+			}
+			&-next:hover {
+				background: url("../images/balloon/use_arrow_enable.svg");
+			}
+		}
+
 		&__dronico-img img {
 			display: block;
 		}
@@ -220,7 +262,7 @@ $calculateWork: $cornWork + $borderWidthWork;
 				}
 			}
 			&-2 {
-				&:after{
+				&:after {
 					background-size: 100%;
 				}
 				&:before {
@@ -234,19 +276,12 @@ $calculateWork: $cornWork + $borderWidthWork;
 			}
 		}
 	}
-}
-
-.swiper-button-disabled {
-	transition: $transition;
-	opacity: 0.2;
-	cursor: default;
-}
-
-.swiper-button-disabled.work__navigation-prev:hover {
-	background: url("../images/show/use_arrow.svg");
-}
-.swiper-button-disabled.work__navigation-next:hover {
-	background: url("../images/show/use_arrow.svg");
+	.swiper-button-disabled.work__navigation-prev:hover {
+		background: url("../images/balloon/use_arrow.svg");
+	}
+	.swiper-button-disabled.work__navigation-next:hover {
+		background: url("../images/balloon/use_arrow.svg");
+	}
 }
 
 @media (min-width: 1950px) {
@@ -290,9 +325,6 @@ $calculateWork: $cornWork + $borderWidthWork;
 			padding-top: 40px;
 			&-number {
 				padding-bottom: 2vw;
-				svg {
-					height: 50px;
-				}
 			}
 			&-text {
 				font-size: 1.2vw;
@@ -319,36 +351,140 @@ $calculateWork: $cornWork + $borderWidthWork;
 				background-position: center;
 			}
 		}
+		&__slide {
+			padding-left: 20px;
+			padding-top: 30px;
+		}
+	}
+	.white {
+		.work {
+			&__navigation {
+				&-prev,
+				&-next,
+				.swiper-button-disabled.work__navigation-prev:hover,
+				.swiper-button-disabled.work__navigation-next:hover,
+				&-prev:hover,
+				&-next:hover {
+					top: 15%;
+					background-size: 80%;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+			}
+		}
+	}
+}
 
-		// &__line {
-		// 	&-wrapper {
-		// 		&:after {
-		// 			background-size: 34%;
-		// 		}
-		// 	}
-		// 	&-1 {
-		// 		&:after {
-		// 			background-size: 67%;
-		// 		}
-		// 	}
-		// 	&-2 {
-		// 		left: 12.3%;
-		// 		&:after {
-		// 			background-size: 65.5%;
-		// 		}
-		// 	}
-		// 	&-3 {
-		// 		left: 29.65%;
-		// 		&:before {
-		// 			width: 1px;
-		// 			height: 190px;
-		// 			top: 46px;
-		// 			left: 0px;
-		// 		}
-		// 		&:after {
-		// 			background-size: 57.5%;
-		// 		}
-		// 	}
-		// }
+@media (max-width: 1250px) {
+	.work {
+		&__title {
+			max-width: 60vw;
+			padding-bottom: 30px;
+		}
+
+		&__slide {
+			padding-left: 16px;
+			padding-top: 25px;
+
+			&-number {
+				path {
+					transition: $transition;
+				}
+			}
+			&-text {
+				max-width: 175px;
+				transition: $transition;
+				font-size: 1.2vw;
+			}
+			&:hover {
+				background: linear-gradient(-45deg, $main 0 $calculateWork, transparent 0) bottom right/50% 50%,
+					linear-gradient(135deg, $main 0 $calculateWork, transparent 0) top left / 50% 50%, $main;
+				background-origin: border-box;
+				background-repeat: no-repeat;
+			}
+		}
+		.white {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	$cornWork: 4.05vw;
+	$borderWidthWork: 2px;
+	$calculateWork: calc(4.05vw + 2px);
+
+	.work {
+		&__mobile {
+			display: block;
+			&-container {
+				display: flex;
+			}
+			&-image {
+				width: 30vw;
+				background: url("../images/show/work_slider_timeline.png") no-repeat;
+				background-size: contain;
+			}
+		}
+
+		&__slide {
+			padding-left: 3vw;
+			padding-top: 50px;
+			width: 25vw;
+			height: 24vw;
+			border: $borderWidthWork solid $main;
+			background: linear-gradient(-45deg, $main 0 $calculateWork, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculateWork, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornWork, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornWork, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
+			transition: all 0.5s ease;
+
+			&-number {
+				padding-bottom: 4vw;
+				svg {
+					height: 6vw;
+					width: auto;
+				}
+			}
+			&-text {
+				max-width: 175px;
+				transition: $transition;
+				font-size: 2vw;
+			}
+			&:hover {
+				background: linear-gradient(-45deg, $main 0 $calculateWork, transparent 0) bottom right/50% 50%,
+					linear-gradient(135deg, $main 0 $calculateWork, transparent 0) top left / 50% 50%, $main;
+				background-origin: border-box;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&__slide:nth-child(2n) {
+			margin-bottom: 0;
+			margin-left: 120%;
+		}
+
+		&__navigation {
+			display: none;
+		}
+		&__container {
+			display: none;
+		}
+	}
+
+	.white {
+		.work {
+			&__mobile {
+				&-image {
+					background: url("../images/show/work_slider_timeline.png") no-repeat;
+				}
+			}
+		}
 	}
 }

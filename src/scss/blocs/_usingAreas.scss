@@ -1,9 +1,11 @@
 @import "node_modules/mathsass/dist/math";
 $cardWidthUs: 23vw;
-$cardHeightUs: 37vh;
-$cornUs: 35px;
+$cardHeightUs: 19vw;
+$cornUs: 1.9vw;
 $borderWidthUs: 2px;
-$calculateUs: $cornUs + $borderWidthUs;
+$borderBottomWidthUs: 3px;
+$calculateUs: calc(1.9vw + 2px);
+$calculateBottomUs: calc(1.9vw + 3px);
 
 .using-areas {
 	position: relative;
@@ -16,13 +18,14 @@ $calculateUs: $cornUs + $borderWidthUs;
 		&-prev,
 		&-next {
 			position: absolute;
-			width: 113px;
-			height: 82px;
+			width: 5.8vw;
+			height: 4.2vw;
 			top: 50px;
 			cursor: pointer;
 			transition: $transition;
 			background-repeat: no-repeat;
 			background-size: 100%;
+			background-position: center;
 		}
 		&-prev {
 			top: 51px;
@@ -86,7 +89,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
 			-webkit-mask-size: 50% 50% !important;
 			-webkit-mask-repeat: no-repeat !important;
-			width: 100%;
+			width: auto;
 			height: calc(100% + 4px);
 			margin-top: -1px;
 			transition: all 0.5s ease;
@@ -99,8 +102,10 @@ $calculateUs: $cornUs + $borderWidthUs;
 		display: inline-block;
 		overflow: hidden;
 		border: $borderWidthUs solid $cardBorderColor;
+		border-bottom: $borderBottomWidthUs solid $cardBorderColor;
 		border-top: none;
-		background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+		background: linear-gradient(-45deg, $cardBorderColor 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%,
+			$alpha;
 		background-origin: border-box;
 		background-repeat: no-repeat;
 		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
@@ -114,6 +119,10 @@ $calculateUs: $cornUs + $borderWidthUs;
 		padding: 21px 0 0 23px;
 		opacity: 1;
 		transition: opacity 0.5s ease;
+		img {
+			height: 3.8vw;
+			width: auto;
+		}
 	}
 	&__visible {
 		opacity: 1;
@@ -122,7 +131,7 @@ $calculateUs: $cornUs + $borderWidthUs;
 		left: 0;
 		padding: 37px 0 0 23px;
 		height: $cardHeightUs;
-		transform: translateY(23vh);
+		transform: translateY(11vw);
 		transition: $transition;
 	}
 	&__title {
@@ -172,15 +181,17 @@ $calculateUs: $cornUs + $borderWidthUs;
 		&__pagination {
 			&-prev {
 				background-image: url("../images/balloon/use_arrow.svg");
+				transform: rotate(0deg);
 			}
 			&-next {
 				background-image: url("../images/balloon/use_arrow.svg");
+				transform: rotate(180deg);
 			}
 			&-prev:hover {
-				background-image: url("../images/show/use_arrow-enable.svg");
+				background-image: url("../images/balloon/use_arrow_enable.svg");
 			}
 			&-next:hover {
-				background-image: url("../images/show/use_arrow-enable.svg");
+				background-image: url("../images/balloon/use_arrow_enable.svg");
 			}
 		}
 	}
@@ -200,19 +211,11 @@ $calculateUs: $cornUs + $borderWidthUs;
 }
 
 @media (max-width: 1440px) {
-	$cardWidthUs: 23vw;
-	$cardHeightUs: 30vh;
 	.using-areas {
 		&__pagination {
 			&-prev,
 			&-next {
-				position: absolute;
-				width: 113px;
-				height: 82px;
 				top: 50px;
-				cursor: pointer;
-				background-size: 80%;
-				background-position: center;
 			}
 			&-prev {
 				right: 10%;
@@ -220,18 +223,21 @@ $calculateUs: $cornUs + $borderWidthUs;
 		}
 	}
 	.using-card {
-		&__top {
-			height: $cardHeightUs;
-			&-line {
-				height: $cardHeightUs;
-			}
-		}
 		&__bottom {
+			width: $cardWidthUs;
 			height: $cardHeightUs;
-		}
-		&__visible {
-			height: $cardHeightUs;
-			transform: translateY(16vh);
+			border: $borderWidthUs solid $cardBorderColor;
+			border-bottom: $borderWidthUs solid $cardBorderColor;
+			border-top: none;
+			background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
 		}
 	}
 
@@ -248,10 +254,10 @@ $calculateUs: $cornUs + $borderWidthUs;
 					background-image: url("../images/balloon/use_arrow.svg");
 				}
 				&-prev:hover {
-					background-image: url("../images/show/use_arrow-enable.svg");
+					background-image: url("../images/balloon/use_arrow_enable.svg");
 				}
 				&-next:hover {
-					background-image: url("../images/show/use_arrow-enable.svg");
+					background-image: url("../images/balloon/use_arrow_enable.svg");
 				}
 			}
 		}
@@ -266,6 +272,78 @@ $calculateUs: $cornUs + $borderWidthUs;
 				.using-card__visible {
 					background: $mainB;
 				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	.using-areas {
+		width: 95vw;
+		&__pagination {
+			&-prev,
+			&-next {
+				top: 12%;
+				width: 7vw;
+				height: 5.6vw;
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.using-card {
+		&__visible {
+			padding: 15px 0 0 15px;
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	$cardWidthUs: 29.5vw;
+	$cardHeightUs: 25.5vw;
+	.using-areas {
+		width: 100%;
+		&__title {
+			width: 30vw;
+		}
+		&__pagination {
+			&-prev,
+			&-next {
+				top: 10%;
+				width: 7.5vw;
+				height: 6vw;
+			}
+			&-prev{
+				right: 13%;
+			}
+		}
+	}
+	.using-card {
+		&__card {
+			width: $cardWidthUs;
+			margin-top: 0px;
+		}
+		&__top {
+			width: $cardWidthUs;
+			height: $cardHeightUs;
+			&-line {
+				width: $cardWidthUs;
+				height: $cardHeightUs;
+			}
+		}
+		&__bottom {
+			width: $cardWidthUs;
+			height: $cardHeightUs;
+		}
+		&__visible {
+			padding: 20px 15px 0 15px;
+			height: $cardHeightUs;
+			transform: translateY(13vw);
+		}
+		&__count {
+			img {
+				height: 5vw;
 			}
 		}
 	}

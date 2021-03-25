@@ -4,10 +4,10 @@ section.technologies
 	.technologies__title
 		img(src='images/show/tech_text.svg' alt='tech_text')
 	.technologies__image-container
-		img.technologies__image(src='images/show/tech_sphere.png' alt='tech_sphere')
+		iframe(src="frame/Drone.html" frameborder="0" class="technologies__particles")
 		.technologies__coord-left 70.512323, 45.11974
 		.technologies__coord-right 70.512323, 45.11974
 	.technologies__tabs
-		+technoCard('2', 'Контроль маршрута каждого беспилотника с', 'точностью до 1 см.','new-stroke')
-		+technoCard('3', 'ВРЕМЯ ЗАДЕРЖКИ СИНХРОНИЗАЦИИ ДРОНОВ', '5-500 НАНОСЕКУНД', '')
-		+technoCard('3', 'ВРЕМЯ ЗАДЕРЖКИ ОБРАТНОЙ СВЯЗИ', '5-20 НАНОСЕКУНД', '')
+		+technoCard('2', 'Контроль маршрута каждого беспилотника с', 'точностью до 1 см.','new-stroke', 'first')
+		+technoCard('3', 'ВРЕМЯ ЗАДЕРЖКИ СИНХРОНИЗАЦИИ ДРОНОВ', '5-500 НАНОСЕКУНД', '','second')
+		+technoCard('3', 'ВРЕМЯ ЗАДЕРЖКИ ОБРАТНОЙ СВЯЗИ', '5-20 НАНОСЕКУНД', '','third')

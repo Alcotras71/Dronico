@@ -79,3 +79,16 @@ body {
 		font-size: 7.5px;
 	}
 }
+
+@media(max-width:1250px) {
+	html {
+		font-size: 7px;
+	}
+}
+
+@media(max-width: 1025px) {
+	.title {
+		font-size: 5.3rem;
+		line-height: 5.4rem;
+	}
+}

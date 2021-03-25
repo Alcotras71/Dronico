@@ -1,0 +1,30 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="875" scrolly="430.5" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="937.5250017215808" scrolly="419.3787498823305" scale="0.9922500000000001">
+    <block xmlns="https://developers.google.com/blockly/xml" type="setObjDirection" id="cycb|#+07)7To6N+xhg~" x="-690" y="30">
+      <field name="POINT">TRUE</field>
+      <field name="LOCK_UP">FALSE</field>
+      <value name="TARGETOBJ">
+        <shadow type="objectList" id="8=@I_[w1Grk8IY5;K7M7">
+          <field name="FIELDNAME">Cube</field>
+        </shadow>
+      </value>
+      <value name="X">
+        <shadow type="math_number" id="=NKvifl^FKwCy-2CjjLh">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="Y">
+        <shadow type="math_number" id="Q#!WPab7.mvo)Q^*FPUq">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="Z">
+        <shadow type="math_number" id="|tHe6tgNwW$;ZNVSFf-P">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="468.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

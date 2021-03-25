@@ -196,3 +196,115 @@
 		width: 260px;
 	}
 }
+
+@media (max-width: 1440px) {
+	.tech-dronico {
+		&__title {
+			max-width: 400px;
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	.tech-dronico {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		&__title {
+			font-size: 5.1rem;
+			line-height: 5.5rem;
+			max-width: 300px;
+		}
+		.tech-dronico__btn {
+			position: absolute;
+			cursor: pointer;
+			top: 60%;
+			&::after {
+				@include pseudoCorn(0, 2px, 2px, 0, auto, -5px, -5px, auto, #ffffff00);
+				transition: all 0.3s ease;
+			}
+			&::before {
+				@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -5px, -5px, #ffffff00);
+				transition: all 0.3s ease;
+			}
+			.tech-dronico__circle {
+				width: 30px;
+				height: 30px;
+				&::after {
+					@include pseudoCorn(2px, 2px, 0, 0, -5px, -5px, auto, auto, #ffffff00);
+				}
+				&::before {
+					@include pseudoCorn(2px, 0, 0, 2px, -5px, auto, auto, -5px, #ffffff00);
+				}
+			}
+		}
+		.tech-dronico__btn.active-btn {
+			&::after {
+				@include pseudoCorn(0, 2px, 2px, 0, auto, -2px, -2px, auto, #ffffff00);
+				transition: all 0.3s ease;
+			}
+			&::before {
+				@include pseudoCorn(0, 0, 2px, 2px, auto, auto, -2px, -2px, #ffffff00);
+				transition: all 0.3s ease;
+			}
+			.tech-dronico__circle {
+				animation: fromBoxToRectangle 0.5s ease;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				height: 40px;
+				border-radius: 0;
+
+				.plus {
+					display: none;
+				}
+				.active-text {
+					width: 150px;
+					font-size: 1.8rem;
+					line-height: 2rem;
+				}
+				&::after {
+					@include pseudoCorn(2px, 2px, 0, 0, -2px, -2px, auto, auto, #ffffff00);
+				}
+				&::before {
+					@include pseudoCorn(2px, 0, 0, 2px, -2px, auto, auto, -2px, #ffffff00);
+				}
+			}
+		}
+
+		&__text-wrapper {
+			position: relative;
+			padding-left: 23px;
+			padding-bottom: 100px;
+			width: 90vw;
+			p {
+				line-height: 127.9%;
+				width: 95vw;
+			}
+		}
+
+		&__img.small {
+			top: 15%;
+			left: 45%;
+			width: 10vw;
+		}
+		&__img.medium {
+			top: 27%;
+			width: 30vw;
+		}
+		&__img.big {
+			top: 33%;
+			left: 52%;
+			width: 40vw;
+			.tech-dronico__btn {
+				right: 78%;
+			}
+		}
+	}
+	@keyframes fromBoxToRectangle {
+		50% {
+			width: 40px;
+		}
+		100% {
+			width: 150px;
+		}
+	}
+}

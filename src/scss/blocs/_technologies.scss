@@ -8,10 +8,12 @@
 			width: 96vw;
 		}
 	}
-
+	&__particles{
+		width: 100vw;
+		height: 50vw;
+	}
 	&__image-container {
 		padding-top: 70px;
-		width: 550px;
 		position: relative;
 		margin: 0 auto;
 		padding-bottom: 115px;
@@ -79,6 +81,15 @@
 					width: 15%;
 				}
 			}
+		}
+	}
+}
+
+@media(max-width:1025px) {
+	.technologies{
+		padding-bottom: 50px;
+		&__title{
+			display: none;
 		}
 	}
 }

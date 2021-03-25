@@ -1,9 +1,9 @@
 .dolphins{
 	position: relative;
 	padding-top: 65px;
-	padding-bottom: 507px;
+	padding-bottom: 30vw;
 	&__text{
-		max-width: 1108px;
+		max-width: 60vw;
 	}
 	&__big,
 	&__medium,
@@ -13,7 +13,7 @@
 	&__big{
 		top: 45%;
 		left: 7%;
-		max-width: 1144px;
+		width: 60vw;
 		img {
 			width: 100%;
 		}
@@ -21,7 +21,7 @@
 	&__medium{
 		top: 67%;
 		right: 11%;
-		max-width: 520px;
+		width: 30vw;
 		img {
 			width: 100%;
 		}
@@ -29,7 +29,7 @@
 	&__small{
 		top: 20%;
 		right: 11%;
-		max-width: 262px;
+		width: 15vw;
 		img {
 			width: 100%;
 		}

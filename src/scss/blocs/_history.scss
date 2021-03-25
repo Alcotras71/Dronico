@@ -97,3 +97,30 @@
 		}
 	}
 }
+
+@media(max-width:1025px) {
+	.history {
+		padding-top: 100px;
+		padding-bottom: 60px;
+		&__container {
+			display: block;
+		}
+		&__title {
+			width: 60vw;
+			padding-bottom: 60px;
+		}
+		.cards-left,
+		.cards-right {
+			display: flex;
+			justify-content: space-between;
+		}
+		.white-text {
+			display: none;
+		}
+		&__card {
+			padding-bottom: 40px;
+			width: 40vw;
+		}
+	}
+}
+

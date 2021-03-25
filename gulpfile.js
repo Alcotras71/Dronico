@@ -147,6 +147,12 @@ gulp.task("copy:fonts", () => {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task("copy:video", () => {
+  return gulp
+    .src("src/video/**/*.*")
+    .pipe(gulp.dest("build/video/"))
+    .pipe(browserSync.reload({ stream: true }));
+});
 
 gulp.task("watch", () => {
   gulp.watch("src/pug/**/*.pug", gulp.parallel("pug"));
@@ -155,6 +161,7 @@ gulp.task("watch", () => {
   gulp.watch("src/js/**/**.js", gulp.parallel("js"));
 
   gulp.watch("src/fonts/**/**.*", gulp.parallel("copy:fonts"));
+  gulp.watch("src/video/**/**.*", gulp.parallel("copy:video"));
 });
 
 gulp.task("server", () => {
@@ -179,6 +186,7 @@ gulp.task(
       "img",
       "js",
       "copy:fonts",
+      "copy:video",
       "cssLibs",
       "jsLibs"
     ),

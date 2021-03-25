@@ -1,0 +1,417 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="875.0000000000005" scrolly="430.49999999999955" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id=",:$r!cO(-WuuD5oN7Sbh" x="-690" y="-370">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">FALSE</field>
+      <field name="BKG_TRANSPARENCY">TRUE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="initPreloader" id="8dNxX_NY[XY|No*(NCcF" x="-890" y="-10">
+      <statement name="DO_START">
+        <block type="createCSSRule" id="e12#X?1]k0WCsV)xV7rJ">
+          <field name="PARENT">FALSE</field>
+          <value name="CSS_RULE">
+            <shadow type="text" id="e|8$1Hu}fyu=Xv7FVOuq">
+              <field name="TEXT">.v3d-simple-preloader-bar</field>
+            </shadow>
+          </value>
+          <value name="CSS_RULE_CONT">
+            <shadow type="text" id="IfvLW#;Wl#nwFa*zTB.b">
+              <field name="TEXT">color: red;</field>
+            </shadow>
+            <block type="textMultiline" id="~,6)p,C$5ZiN*7T0:ny[">
+              <field name="HIGHLIGHT_MODE">css</field>
+              <field name="TEXT">    background: #000;&#10;	border-color: #000;&#10;	margin-top: 50%;</field>
+            </block>
+          </value>
+          <next>
+            <block type="createCSSRule" id="NV4O0aD@iH[tAEe=I]#;">
+              <field name="PARENT">FALSE</field>
+              <value name="CSS_RULE">
+                <shadow type="text" id="TyRwiw(JY#Qb+~h[wb)Q">
+                  <field name="TEXT">.v3d-simple-preloader-logo</field>
+                </shadow>
+              </value>
+              <value name="CSS_RULE_CONT">
+                <shadow type="text" id="x{n-3mXzK?gXdfYIgIVt">
+                  <field name="TEXT">display:none;</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="createCSSRule" id="KO5e48kVC)Zja1X2d85q">
+                  <field name="PARENT">FALSE</field>
+                  <value name="CSS_RULE">
+                    <shadow type="text" id="3V]zK]*o+g@j0)MPB_/v">
+                      <field name="TEXT">.v3d-simple-preloader-logo</field>
+                    </shadow>
+                  </value>
+                  <value name="CSS_RULE_CONT">
+                    <shadow type="text" id="EV#JfiAdP,+4=AL#vg|d">
+                      <field name="TEXT">background: #fff0;</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <tab name="main" type="MainTab" active="true" scrollx="1211.5966333788801" scrolly="111.0339550835194" scale="0.6715938569729647">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="2mckSqiAR.|5joZz9*ZR" type="">speed_rotation</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="playAnimationAdv" id="l5FDF60|Jhy$*^=qu`jc" x="-1310" y="-110">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+      <field name="REVERSED">FALSE</field>
+      <field name="LOOP">LoopOnce</field>
+      <value name="VALUE">
+        <shadow type="animationList" id="1QOK0ABr!I0)ET-HUu`b">
+          <field name="FIELDNAME">Box001.001</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="playAnimationAdv" id="eXH$oa!ettFKb`Dta+}c">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+          <field name="REVERSED">FALSE</field>
+          <field name="LOOP">LoopOnce</field>
+          <value name="VALUE">
+            <shadow type="animationList" id="3K~mKVpocV*_IYN`X,zA">
+              <field name="FIELDNAME">Torus001</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="hide" id="Y.*nUrS{Y;)u/=Sw/Wf6">
+              <value name="VALUE">
+                <shadow type="objectList" id="}xTTR+Zxw4.?/R|F]s@T">
+                  <field name="FIELDNAME">Torus001</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="hide" id="/t@(j}I$i?_.|I~ZV.RY">
+                  <value name="VALUE">
+                    <shadow type="objectList" id="n^_mkgb#;YPr/P/=:G^q">
+                      <field name="FIELDNAME">Box001.001</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="variables_set" id="bc[2b0+!X48@40]i,=_H">
+                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                      <value name="VALUE">
+                        <block type="angle" id="L=SPm%di.@J_EPvb$nfY">
+                          <field name="ANGLE">0.3</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="bloom" id="5p15h@N2-*m3JBlOoR7:">
+                          <value name="THRESHOLD">
+                            <shadow type="number_slider" id="!p)+9H2KK]tqa|$x[xuI">
+                              <field name="NUM" min="0" max="10" step="0.1">0</field>
+                            </shadow>
+                          </value>
+                          <value name="STRENGTH">
+                            <shadow type="number_slider" id="@q5IJO%)y*3CHk];dUO$">
+                              <field name="NUM" min="0" max="10" step="0.1">5</field>
+                            </shadow>
+                          </value>
+                          <value name="RADIUS">
+                            <shadow type="number_slider" id="=_^WBrebS$u7%PKG;@,Y">
+                              <field name="NUM" min="0" max="10" step="0.1">0.1</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="everyFrame" id="z6w=0oQ7#=1ZJ9/Pl,2T">
+                              <statement name="DO">
+                                <block type="applyObjLocalTransform" id="80JTlD)au%P!X6Jq]jZt">
+                                  <field name="MODE">rotation</field>
+                                  <value name="TARGETOBJ">
+                                    <shadow type="objectList" id="?Jw-G,JuFfXmC,aaeojH">
+                                      <field name="FIELDNAME">GeoSphere001</field>
+                                    </shadow>
+                                  </value>
+                                  <value name="X">
+                                    <block type="variables_get" id="@XD;me6xFX4*2JQwo$1B">
+                                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                    </block>
+                                  </value>
+                                  <value name="Y">
+                                    <block type="variables_get" id="i{uO@R]i20~D@S$q-:Ti">
+                                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                    </block>
+                                  </value>
+                                  <value name="Z">
+                                    <block type="variables_get" id="w%e]Q#}e9oIjg.=_j~WT">
+                                      <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="applyObjLocalTransform" id="dc@g[qFycjde,]=u[FY%">
+                                      <field name="MODE">rotation</field>
+                                      <value name="TARGETOBJ">
+                                        <shadow type="objectList" id="QJC9fu/PETgIhF!x5FS:">
+                                          <field name="FIELDNAME">Box001.001</field>
+                                        </shadow>
+                                      </value>
+                                      <value name="X">
+                                        <block type="variables_get" id="eeF$0GLo1nyA5psZ})UI">
+                                          <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                        </block>
+                                      </value>
+                                      <value name="Y">
+                                        <block type="variables_get" id="(VB0dYt0#p(R;#42V5LO">
+                                          <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                        </block>
+                                      </value>
+                                      <value name="Z">
+                                        <block type="variables_get" id="V0huVB+@~!GtnZ:R8?/-">
+                                          <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="applyObjLocalTransform" id="]Kf/59z!boi`/SBaJ}Pt">
+                                          <field name="MODE">rotation</field>
+                                          <value name="TARGETOBJ">
+                                            <shadow type="objectList" id="ilq37)5odn9hv]Bx1Kxv">
+                                              <field name="FIELDNAME">Torus001</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="X">
+                                            <block type="variables_get" id="U#}~m59[5UYWwDgd_OP}">
+                                              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                            </block>
+                                          </value>
+                                          <value name="Y">
+                                            <block type="variables_get" id="|vQ4_J2*~J|x$,wxONqm">
+                                              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                            </block>
+                                          </value>
+                                          <value name="Z">
+                                            <block type="variables_get" id="4|=NxAX))+j7L7S!%N$N">
+                                              <field name="VAR" id="2mckSqiAR.|5joZz9*ZR">speed_rotation</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="eventHTMLElem" id="4)?8A{Q-_i+VK-kJ`wmq">
+                                  <field name="EVENT">click</field>
+                                  <field name="PARENT">FALSE</field>
+                                  <value name="ID">
+                                    <shadow type="text" id="MDWzq32B#K!$Br`rA=pI">
+                                      <field name="TEXT">first</field>
+                                    </shadow>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="playAnimationAdv" id="m?]nM87[i;mn38*OU,VS">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                                      <field name="REVERSED">FALSE</field>
+                                      <field name="LOOP">LoopOnce</field>
+                                      <value name="VALUE">
+                                        <shadow type="animationList" id="S@=27,$muHR{ityOk1rC">
+                                          <field name="FIELDNAME">GeoSphere001</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="show" id="%w5{79ax*I9H].cp7Y5E">
+                                          <value name="VALUE">
+                                            <shadow type="objectList" id="R{lwS5N249]~rF0D*bwN">
+                                              <field name="FIELDNAME">Box001.001</field>
+                                            </shadow>
+                                          </value>
+                                          <next>
+                                            <block type="hide" id="A7x*77{Gv7mZdlm!b?Z2">
+                                              <value name="VALUE">
+                                                <shadow type="objectList" id="pIsKKEp]V;`ADzg7;{TB">
+                                                  <field name="FIELDNAME">Torus001</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="hide" id="[q7^k6~RaK(BA?dU+n!K">
+                                                  <value name="VALUE">
+                                                    <shadow type="objectList" id="2*;?t|vjlC@-6Weu`=jJ">
+                                                      <field name="FIELDNAME">GeoSphere001</field>
+                                                    </shadow>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                      <next>
+                                        <block type="playAnimationAdv" id="^2{?Aq%y$jI-[IWjpM~3">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+                                          <field name="REVERSED">TRUE</field>
+                                          <field name="LOOP">LoopOnce</field>
+                                          <value name="VALUE">
+                                            <shadow type="animationList" id="PK$XGCJXgw_{/~Bw*W5E">
+                                              <field name="FIELDNAME">Box001.001</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="SPEED">
+                                            <block type="math_number" id="H?0yc;Fd0K2mfW0b?S!(">
+                                              <field name="NUM">2</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                  <next>
+                                    <block type="eventHTMLElem" id="MDsh:TfdJx7g}rtuLU6c">
+                                      <field name="EVENT">click</field>
+                                      <field name="PARENT">FALSE</field>
+                                      <value name="ID">
+                                        <shadow type="text" id="4M/e/Wd3s]nIPn:%M#,T">
+                                          <field name="TEXT">second</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="playAnimationAdv" id="b.1|nUW1q3?_L1z9H8LP">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                                          <field name="REVERSED">FALSE</field>
+                                          <field name="LOOP">LoopOnce</field>
+                                          <value name="VALUE">
+                                            <shadow type="animationList" id="A;rB+!ba{m-[ST.K;gM}">
+                                              <field name="FIELDNAME">Box001.001</field>
+                                            </shadow>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="show" id="A?P|F,,NCKx!D5H{0Nwp">
+                                              <value name="VALUE">
+                                                <shadow type="objectList" id="%,J*[JN`t`KQkQ-_w/yF">
+                                                  <field name="FIELDNAME">GeoSphere001</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="hide" id="Vx6}t@`@Pv;|;b1W(2ct">
+                                                  <value name="VALUE">
+                                                    <shadow type="objectList" id=";!mPHu(?WlxaY}=T5`t0">
+                                                      <field name="FIELDNAME">Torus001</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <next>
+                                                    <block type="hide" id="vj3lNC=@{x[lmDge[?q6">
+                                                      <value name="VALUE">
+                                                        <shadow type="objectList" id="WHsEUG|V3mk(.S:-CA/Y">
+                                                          <field name="FIELDNAME">Box001.001</field>
+                                                        </shadow>
+                                                      </value>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </statement>
+                                          <next>
+                                            <block type="playAnimationAdv" id="3F1n/pBAa9n2c^56`x@c">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+                                              <field name="REVERSED">TRUE</field>
+                                              <field name="LOOP">LoopOnce</field>
+                                              <value name="VALUE">
+                                                <shadow type="animationList" id="t%xx$?w{P+%P+wGn-Sa1">
+                                                  <field name="FIELDNAME">GeoSphere001</field>
+                                                </shadow>
+                                              </value>
+                                              <value name="SPEED">
+                                                <block type="math_number" id="7Sm{?y]FS4m~$-JlxJO:">
+                                                  <field name="NUM">2</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                      <next>
+                                        <block type="eventHTMLElem" id="W4ur?(ta/.NjdMD(z2.^">
+                                          <field name="EVENT">click</field>
+                                          <field name="PARENT">FALSE</field>
+                                          <value name="ID">
+                                            <shadow type="text" id="FE%-.y|eIdxp::jd5mN|">
+                                              <field name="TEXT">third</field>
+                                            </shadow>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="playAnimationAdv" id="=vZVA/sZOqSTee]W4cDc">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                                              <field name="REVERSED">FALSE</field>
+                                              <field name="LOOP">LoopOnce</field>
+                                              <value name="VALUE">
+                                                <shadow type="animationList" id="vt,9nETHMI30Xj@ptgCG">
+                                                  <field name="FIELDNAME">Torus001</field>
+                                                </shadow>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="show" id="KNL1N(lMO-oo;Z4SUA5r">
+                                                  <value name="VALUE">
+                                                    <shadow type="objectList" id="?K=y:Pco3^ziQ7N9pCpU">
+                                                      <field name="FIELDNAME">Torus001</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <next>
+                                                    <block type="hide" id="$au(#VYA7,;8pVPQ.dC1">
+                                                      <value name="VALUE">
+                                                        <shadow type="objectList" id="@Uqiip-b6yVq@NM*-c*o">
+                                                          <field name="FIELDNAME">GeoSphere001</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <next>
+                                                        <block type="hide" id="E.^Vrvfc8Tmfja$+}AmC">
+                                                          <value name="VALUE">
+                                                            <shadow type="objectList" id=",V9tFR;e])Fln^m6AfJ,">
+                                                              <field name="FIELDNAME">Box001.001</field>
+                                                            </shadow>
+                                                          </value>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                              <next>
+                                                <block type="playAnimationAdv" id="uNCN4fp)g#s`R%Dydu8G">
+                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+                                                  <field name="REVERSED">TRUE</field>
+                                                  <field name="LOOP">LoopOnce</field>
+                                                  <value name="VALUE">
+                                                    <shadow type="animationList" id="m^4`5~^-S_|[:N!=Ye@?">
+                                                      <field name="FIELDNAME">Torus001</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <value name="SPEED">
+                                                    <block type="math_number" id="H{rq_hGhxJJ)JDsuJu|n">
+                                                      <field name="NUM">2</field>
+                                                    </block>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="468.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
