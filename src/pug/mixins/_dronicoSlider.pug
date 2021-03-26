@@ -9,7 +9,7 @@ mixin typesCard(listObject)
 
 mixin dronicoImgSlide(img)
 	.dronico-slider__img-slide.swiper-slide
-		img(src=`images/show/dronico-sl_${img}.png` alt=`${img}`)
+		img(src=`images/show/dronico-sl_${img}.jpg` alt=`${img}`)
 
 mixin dronicoImgNumSlider(imgPath, imgHeight, imgWidth)
 	.dronico-slider__imgNum-slide.swiper-slide
@@ -30,3 +30,30 @@ mixin dronicoSlide(title, subtitle, myList)
 			div(class="dronico-slider__types types")
 				each listItemObject in myList
 					+typesCard(listItemObject)
+
+mixin dronicoMobileSlider(textItem)
+	.dronico-slider__mobile-slide.swiper-slide
+		.dronico-slider__mobile-title #{textItem.title}
+		.dronico-slider__mobile-text #{textItem.text}
+
+
+mixin dronicoStaticMobile(img,imgPath, imgHeight, imgWidth, title, subtitle, textLyst)
+	.dronico-slider__static-container
+		.dronico-slider__static-imgContainer
+			img(src=`images/show/dronico-sl_${img}.jpg` alt=`${img}`)
+		svg(width=`${imgWidth}` height=`${imgHeight}` viewBox=`0 0 ${imgWidth} ${imgHeight}` fill="none" xmlns="http://www.w3.org/2000/svg")
+			path(fill-rule="evenodd" clip-rule="evenodd" d=`${imgPath}` stroke="url(#num-grad-static)" stroke-width="1.2")
+			defs
+			linearGradient(id="num-grad-static" x1="172.39" y1="-51.3909" x2="172.39" y2="230.524" gradientUnits="userSpaceOnUse")
+				stop(stop-color="white")
+				stop(offset="1" stop-color="#8533FF")
+		.dronico-slider__static-content
+			.dronico-slider__static-title
+				| #{title}
+			.dronico-slider__static-subtitle
+				| #{subtitle}
+		.dronico-slider__mobile-container.swiper-container
+			.dronico-slider__mobile-wrapper.swiper-wrapper
+				each textItem in textLyst
+					+dronicoMobileSlider(textItem)
+			.dronico-slider__mobile-pagination.swiper-pagination

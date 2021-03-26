@@ -74,3 +74,25 @@
 		}
 	}
 }
+
+@media (max-width: 550px) {
+	.about {
+		padding-bottom: 10vw;
+		&__text-container {
+			display: block;
+			padding-bottom: 8vw;
+		}
+		&__text-title {
+			width: 100%;
+			max-width: 100%;
+			margin-bottom: 8vw;
+		}
+
+		&__text-text {
+			font-size: 2.6rem;
+			line-height: 143%;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}

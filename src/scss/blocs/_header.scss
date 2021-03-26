@@ -158,3 +158,33 @@
 		}
 	}
 }
+
+@media (max-width: 550px) {
+	.header {
+		&__logo {
+			width: 100px;
+			svg {
+				width: 100px;
+			}
+		}
+		&__menu {
+			font-size: 2.65rem;
+			top: 22vh;
+			width: 100%;
+			display: block;
+			text-align: center;
+			li {
+				padding-bottom: 20px;
+			}
+		}
+		&__show{
+			margin: 0;
+		}
+		.contacts {
+			&__phone {
+				font-size: 2.4rem;
+				padding-right: 30px;
+			}
+		}
+	}
+}

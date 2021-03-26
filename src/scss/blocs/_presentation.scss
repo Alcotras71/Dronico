@@ -9,6 +9,11 @@ $calculatePres: $cornPres + $borderWidthPres;
 	text-transform: uppercase;
 	height: 100vh;
 	overflow: hidden;
+	video {
+		min-width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+	}
 
 	.pattern_top {
 		position: absolute;
@@ -292,6 +297,9 @@ $calculatePres: $cornPres + $borderWidthPres;
 			line-height: 3.5rem;
 			top: calc(38% + 210px);
 		}
+		&__button-wrapper {
+			bottom: 16%;
+		}
 		&__button {
 			&.box {
 				width: 300px;
@@ -304,11 +312,11 @@ $calculatePres: $cornPres + $borderWidthPres;
 		}
 
 		&__coords {
-			bottom: 14%;
+			bottom: 20%;
 		}
 
 		&__plus {
-			bottom: 9%;
+			bottom: 17%;
 		}
 	}
 
@@ -320,7 +328,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 			}
 			&__subtitle {
 				.title-dark {
-					max-width: 600px;
+					max-width: 550px;
 				}
 			}
 		}
@@ -347,6 +355,132 @@ $calculatePres: $cornPres + $borderWidthPres;
 			}
 			&__text {
 				top: calc(38% + 220px);
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.presentation {
+		&__title {
+			display: none;
+		}
+	}
+	.white {
+		.presentation {
+			.title-white {
+				max-width: 90%;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	$cornPres: 10px;
+	$borderWidthPres: 2px;
+	$calculatePres: $cornPres + $borderWidthPres;
+	.presentation {
+		&__subtitle {
+			font-size: 8rem;
+		}
+		&__text {
+			font-size: 2.5rem;
+			line-height: 2.6rem;
+			p {
+				width: 320px;
+			}
+		}
+		&__button {
+			cursor: pointer;
+			&.box {
+				position: relative;
+				width: 240px;
+				height: 52px;
+				display: inline-block;
+				border: $borderWidthPres solid $main;
+				background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+					linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $main;
+				background-origin: border-box;
+				background-repeat: no-repeat;
+				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+					linear-gradient(-45deg, transparent 0 $cornPres, #fff 0) bottom right,
+					linear-gradient(135deg, transparent 0 $cornPres, #fff 0) top left,
+					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+				-webkit-mask-size: 50.5% 50.5% !important;
+				-webkit-mask-repeat: no-repeat !important;
+				transition: all 0.5s ease;
+			}
+			p {
+				font-size: 2.6rem;
+				line-height: 2.7rem;
+			}
+		}
+		&__button:hover {
+			&.box {
+				background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+					linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $alpha;
+				background-origin: border-box;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+	.dark {
+		.presentation {
+			&__subtitle {
+				.title-dark {
+					max-width: 320px;
+				}
+			}
+		}
+	}
+	.white {
+		.presentation {
+			&__subtitle {
+				top: 33%;
+				.title-white {
+					font-size: 8vw;
+					line-height: 8vw;
+				}
+			}
+			&__text {
+				top: calc(50% + 220px);
+			}
+			&__button-wrapper {
+				bottom: 5%;
+			}
+			&__coords {
+				bottom: 11%
+			}
+
+			&__plus {
+				bottom: 7%;
+			}
+		}
+	}
+}
+
+@media(max-width: 375px) {
+	.white {
+		.presentation {
+			&__subtitle {
+				top: 33%;
+				.title-white {
+					font-size: 8vw;
+					line-height: 8vw;
+				}
+			}
+			&__text {
+				top: calc(38% + 220px);
+			}
+			&__button-wrapper {
+				bottom: 16%;
+			}
+			&__coords {
+				bottom: 20%
+			}
+
+			&__plus {
+				bottom: 17%;
 			}
 		}
 	}

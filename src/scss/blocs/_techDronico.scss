@@ -277,7 +277,7 @@
 			width: 90vw;
 			p {
 				line-height: 127.9%;
-				width: 95vw;
+				width: 88vw;
 			}
 		}
 
@@ -305,6 +305,56 @@
 		}
 		100% {
 			width: 150px;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.tech-dronico {
+		padding-top: 10vw;
+		&__title {
+			font-size: 5.3rem;
+			max-width: 230px;
+		}
+		.tech-dronico__btn {
+			display: none;
+		}
+		&__img.small {
+			top: 50%;
+			left: 0%;
+			width: 15vw;
+		}
+		&__img.medium {
+			top: 30%;
+			left: 5%;
+			width: 39vw;
+		}
+		&__img.big {
+			top: 41%;
+			left: 38%;
+			width: 60vw;
+		}
+		&__subtitle {
+			display: none;
+		}
+		&__text-wrapper {
+			padding-left: 0;
+			padding-top: 15vw;
+			padding-bottom: 20vw;
+			&:before {
+				top: 7vw;
+			}
+			&:after {
+				top: 7vw;
+			}
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.tech-dronico {
+		&__text-wrapper {
+			padding-bottom: 33vw;
 		}
 	}
 }

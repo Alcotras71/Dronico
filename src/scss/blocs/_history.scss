@@ -8,7 +8,7 @@
 	&__title {
 		width: 30vw;
 	}
-	.title-white{
+	.title-white {
 		display: none;
 	}
 	.cards-left,
@@ -23,8 +23,6 @@
 	&__card {
 		width: 27vw;
 		&-icon {
-			width: 60px;
-			height: 60px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -42,7 +40,7 @@
 			opacity: 0.6;
 		}
 	}
-	.card__mobile{
+	.card__mobile {
 		position: relative;
 	}
 	.card__mobile:before {
@@ -74,7 +72,7 @@
 	}
 }
 
-@media(max-width:1440px) {
+@media (max-width: 1440px) {
 	.history {
 		padding-top: 200px;
 		padding-bottom: 100px;
@@ -98,7 +96,7 @@
 	}
 }
 
-@media(max-width:1025px) {
+@media (max-width: 1025px) {
 	.history {
 		padding-top: 100px;
 		padding-bottom: 60px;
@@ -122,5 +120,68 @@
 			width: 40vw;
 		}
 	}
+	.white {
+		.history {
+			padding-top: 100px;
+			padding-bottom: 60px;
+			&__container {
+				display: block;
+			}
+			&__title {
+				width: 60vw;
+				padding-bottom: 60px;
+			}
+			.cards-left,
+			.cards-right {
+				display: flex;
+				justify-content: space-between;
+			}
+			&__card {
+				padding-bottom: 40px;
+				width: 40vw;
+			}
+			.title-dark,
+			.dark-text {
+				display: none;
+			}
+		}
+	}
 }
 
+@media (max-width: 768px) {
+	.history {
+		padding-top: 80px;
+		padding-bottom: 60px;
+		&__title {
+			width: 80vw;
+		}
+		&__card {
+			padding-bottom: 50px;
+		}
+	}
+	.white {
+		.history {
+			padding-bottom: 40px;
+			&__title {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.history {
+		padding-bottom: 10px;
+		.cards-left,
+		.cards-right {
+			display: block;
+		}
+		&__card {
+			padding-bottom: 45px;
+			width: 100%;
+		}
+		.white-text {
+			display: none;
+		}
+	}
+}

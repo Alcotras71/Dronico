@@ -83,11 +83,33 @@
 }
 
 @media (max-width: 1025px) {
-	.footer{
+	.footer {
 		display: block;
-		&__wrapper{
+		&__wrapper {
 			display: flex;
 			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.footer {
+		display: flex;
+		flex-wrap: wrap-reverse;
+		font-size: 3.8vw;
+		line-height: 3.8vw;
+		justify-content: center;
+		padding-bottom: 7vw;
+		&__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		&__policy{
+			margin-bottom: 2vw;
+		}
+		&__rights{
+			margin-bottom: 7vw;
 		}
 	}
 }

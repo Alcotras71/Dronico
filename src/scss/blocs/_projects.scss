@@ -1,4 +1,4 @@
-$cornPr: 50px;
+$cornPr: 3.5vw;
 
 .projects {
 	position: relative;
@@ -103,4 +103,54 @@ $cornPr: 50px;
 			}
 		}
 	}
+}
+
+@media (max-width: 1025px) {
+	.projects {
+		position: relative;
+
+		&__title-big {
+			display: none;
+		}
+		&__title {
+			position: static;
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.projects {
+		&__card {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 60px;
+			&-img {
+				img {
+					height: auto;
+					width: 100%;
+				}
+			}
+			&-textcontainer {
+				max-width: 100%;
+				width: 100%;
+				padding-top: 28px;
+			}
+			&-title {
+				font-size: 5rem;
+				line-height: 5.1rem;
+			}
+			&-text {
+				padding-top: 28px;
+				font-size: 2.4rem;
+				line-height: 2.4rem;
+				p {
+					padding-bottom: 23px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
 }

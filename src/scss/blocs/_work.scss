@@ -422,7 +422,7 @@ $calculateWork: calc(2.05vw + 2px);
 			}
 			&-image {
 				width: 30vw;
-				background: url("../images/show/work_slider_timeline.png") no-repeat;
+				background: url("../images/show/work_slider_timeline.svg") no-repeat;
 				background-size: contain;
 			}
 		}
@@ -466,7 +466,8 @@ $calculateWork: calc(2.05vw + 2px);
 		}
 
 		&__slide:nth-child(2n) {
-			margin-bottom: 0;
+			margin-bottom: -10%;
+			margin-top: -20%;
 			margin-left: 120%;
 		}
 
@@ -480,9 +481,107 @@ $calculateWork: calc(2.05vw + 2px);
 
 	.white {
 		.work {
+			.white {
+				img {
+					display: none;
+				}
+			}
 			&__mobile {
 				&-image {
-					background: url("../images/show/work_slider_timeline.png") no-repeat;
+					background: url("../images/balloon/work_slider_timeline.svg") no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	$cornWork: 8.05vw;
+	$borderWidthWork: 2px;
+	$calculateWork: calc(8.05vw + 2px);
+
+	.work {
+		&__mobile {
+			&-image {
+				width: 40%;
+				background: url("../images/show/work_slider_mobileTimeline.svg") no-repeat;
+				background-size: contain;
+			}
+		}
+
+		&__slide {
+			margin-left: 7vw;
+			margin-bottom: 12vw;
+			padding-left: 5vw;
+			padding-top: 8vw;
+			width: 45vw;
+			height: 44vw;
+			border: $borderWidthWork solid $main;
+			background: linear-gradient(-45deg, $main 0 $calculateWork, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculateWork, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornWork, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornWork, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
+			transition: all 0.5s ease;
+
+			&-number {
+				padding-bottom: 10vw;
+				svg {
+					height: 10vw;
+					width: auto;
+				}
+			}
+			&-text {
+				max-width: 35vw;
+				transition: $transition;
+				font-size: 2.7vw;
+			}
+			&:hover {
+				background: linear-gradient(-45deg, $main 0 $calculateWork, transparent 0) bottom right/50% 50%,
+					linear-gradient(135deg, $main 0 $calculateWork, transparent 0) top left / 50% 50%, $main;
+				background-origin: border-box;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&__slide:nth-child(2n) {
+			margin-left: 7vw;
+			margin-bottom: 12vw;
+			margin-top: 0;
+		}
+	}
+
+	.white {
+		.work {
+			&__mobile {
+				&-image {
+					background: url("../images/balloon/work_slider_mobileTimeline.svg") no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.work {
+		&__mobile {
+			&-image {
+				background-size: cover;
+			}
+		}
+	}
+	.white {
+		.work {
+			&__mobile {
+				&-image {
+					background-size: cover;
 				}
 			}
 		}

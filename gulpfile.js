@@ -154,6 +154,13 @@ gulp.task("copy:video", () => {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task("copy:iframe", () => {
+  return gulp
+    .src("src/iframe/**/*.*")
+    .pipe(gulp.dest("build/iframe/"))
+    .pipe(browserSync.reload({ stream: true }));
+});
+
 gulp.task("watch", () => {
   gulp.watch("src/pug/**/*.pug", gulp.parallel("pug"));
   gulp.watch("src/scss/**/*.scss", gulp.parallel("scss"));
@@ -162,6 +169,7 @@ gulp.task("watch", () => {
 
   gulp.watch("src/fonts/**/**.*", gulp.parallel("copy:fonts"));
   gulp.watch("src/video/**/**.*", gulp.parallel("copy:video"));
+  gulp.watch("src/iframe/**/**.*", gulp.parallel("copy:iframe"));
 });
 
 gulp.task("server", () => {
@@ -187,6 +195,7 @@ gulp.task(
       "js",
       "copy:fonts",
       "copy:video",
+      "copy:iframe",
       "cssLibs",
       "jsLibs"
     ),

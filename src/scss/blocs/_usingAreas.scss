@@ -314,7 +314,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				width: 7.5vw;
 				height: 6vw;
 			}
-			&-prev{
+			&-prev {
 				right: 13%;
 			}
 		}
@@ -345,6 +345,188 @@ $calculateBottomUs: calc(1.9vw + 3px);
 			img {
 				height: 5vw;
 			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	$cardWidthUs: 41.5vw;
+	$cardHeightUs: 33.5vw;
+	$cornUs: 3.2vw;
+	$borderWidthUs: 2px;
+	$calculateUs: calc(3.2vw + 2px);
+
+	.using-areas {
+		&__pagination {
+			&-prev,
+			&-next {
+				top: 9%;
+				width: 12vw;
+				height: 10vw;
+			}
+			&-prev {
+				right: 20%;
+			}
+			&-next {
+				right: 3%;
+			}
+		}
+	}
+	.using-card {
+		&__card {
+			width: $cardWidthUs;
+			margin-top: 0px;
+		}
+		&__top {
+			width: $cardWidthUs;
+			height: $cardHeightUs;
+			border: $borderWidthUs solid $cardBorderColor;
+			background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
+			&-line {
+				width: $cardWidthUs;
+				height: $cardHeightUs;
+			}
+
+			img {
+				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+				-webkit-mask-size: 50% 50% !important;
+				-webkit-mask-repeat: no-repeat !important;
+			}
+		}
+
+		&__bottom {
+			width: $cardWidthUs;
+			height: $cardHeightUs;
+			border: $borderWidthUs solid $cardBorderColor;
+			border-bottom: $borderWidthUs solid $cardBorderColor;
+			border-top: none;
+			background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
+		}
+		&__visible {
+			height: $cardHeightUs;
+			transform: translateY(20vw);
+		}
+		&__count {
+			img {
+				height: 6.5vw;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	$cardWidthUs: 100%;
+	$cardHeightUs: 65.5vw;
+	$cornUs: 6.5vw;
+	$borderWidthUs: 2px;
+	$calculateUs: calc(6.5vw + 2px);
+
+	.using-areas {
+		padding-bottom: 20vw;
+		&__pagination {
+			&-prev,
+			&-next {
+				top: auto;
+				bottom: -4%;
+				width: 25vw;
+				height: 20vw;
+			}
+			&-prev {
+				left: calc(50% - 28vw);
+			}
+			&-next {
+				right: calc(50% - 28vw);
+			}
+		}
+	}
+
+	.using-card {
+		&__card {
+			width: $cardWidthUs;
+		}
+		&__top {
+			width: $cardWidthUs;
+			height: $cardHeightUs;
+			border: $borderWidthUs solid $cardBorderColor;
+			background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50% 50% !important;
+			-webkit-mask-repeat: no-repeat !important;
+			&-line {
+				width: $cardWidthUs;
+				height: $cardHeightUs;
+			}
+
+			img {
+				width: $cardWidthUs;
+				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+				-webkit-mask-size: 50% 50% !important;
+				-webkit-mask-repeat: no-repeat !important;
+			}
+		}
+		&__bottom {
+			width: $cardWidthUs;
+			height: $cardHeightUs;
+			border: $borderWidthUs solid $cardBorderColor;
+			border-bottom: $borderWidthUs solid $cardBorderColor;
+			border-top: none;
+			background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-repeat: no-repeat !important;
+		}
+		&__visible {
+			height: $cardHeightUs;
+			transform: translateY(40vw);
+		}
+		&__count {
+			img {
+				height: 15vw;
+			}
+		}
+		&__title {
+			font-size: 3.8rem;
+			line-height: 3.8rem;
+		}
+		&__text {
+			margin-top: 30px;
+			font-family: Geometria;
+			font-size: 3rem;
+			line-height: 3.4rem;
+			opacity: 0;
+			transition: $transition;
 		}
 	}
 }

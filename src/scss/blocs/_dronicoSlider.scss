@@ -58,7 +58,7 @@ $calculateDron: calc(2.2vw + 2px);
 		top: 15%;
 		left: 17vw;
 		z-index: 5;
-		svg{
+		svg {
 			height: 10vw;
 		}
 	}
@@ -145,6 +145,9 @@ $calculateDron: calc(2.2vw + 2px);
 			background-image: url("../images/show/use_arrow-enable.svg");
 		}
 	}
+	&__mobile {
+		display: none;
+	}
 }
 
 .swiper-slide-active {
@@ -205,6 +208,7 @@ $calculateDron: calc(2.2vw + 2px);
 			&-next {
 				width: 7vw;
 				height: 5.6vw;
+				background-size: 100%;
 			}
 			&-prev {
 				right: 10%;
@@ -231,9 +235,10 @@ $calculateDron: calc(2.2vw + 2px);
 			&-next {
 				width: 7.5vw;
 				height: 6vw;
+				background-size: 100%;
 			}
 			&-next {
-				top: 9%;
+				top: 14%;
 			}
 			&-prev {
 				top: 4%;
@@ -252,7 +257,7 @@ $calculateDron: calc(2.2vw + 2px);
 		&__img {
 			width: 100%;
 			&-container {
-				height: 50vh;
+				height: 45vw;
 				width: 100%;
 				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
 					linear-gradient(-45deg, transparent 0 $cornDron, #fff 0) bottom right,
@@ -261,8 +266,8 @@ $calculateDron: calc(2.2vw + 2px);
 				-webkit-mask-size: 50% 50% !important;
 				-webkit-mask-repeat: no-repeat !important;
 				img {
-					height: 100%;
 					width: 100%;
+					height: auto;
 				}
 			}
 		}
@@ -275,18 +280,18 @@ $calculateDron: calc(2.2vw + 2px);
 		}
 
 		&__content {
-			margin-top: 35vh;
+			margin-top: 30vw;
 			padding: 0 15px 0 15px;
 		}
 		&__title {
 			font-size: 5rem;
 			line-height: 5.1rem;
 			color: #8e42ff;
-			max-width: 100vw;
+			max-width: 90vw;
 		}
 		&__subtitle {
 			margin-top: 20px;
-			max-width: 100%;
+			max-width: 90vw;
 		}
 		&__types {
 			margin-top: 40px;
@@ -315,6 +320,130 @@ $calculateDron: calc(2.2vw + 2px);
 				margin-top: 13px;
 				font-size: 2.5rem;
 				line-height: 3rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.dronico-slider {
+		&__pagination {
+			&-prev,
+			&-next {
+				width: 12vw;
+				height: 10vw;
+				background-size: 100%;
+			}
+			&-next {
+				top: 12%;
+			}
+			&-prev {
+				top: 3%;
+				right: 15%;
+			}
+		}
+		&__title {
+			font-size: 4.7rem;
+			line-height: 4.8rem;
+		}
+		.types {
+			width: 95%;
+			&__card {
+				max-width: 40vw;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	$cornDron: 5.2vw;
+	.dronico-slider {
+		&__img-container {
+			display: none;
+		}
+		&__container {
+			display: none;
+		}
+		&__imgNum-container {
+			display: none;
+		}
+		&__pagination {
+			display: none;
+		}
+		&__mobile {
+			position: relative;
+			display: block;
+			&-title,
+			&-text {
+				padding: 0 10px;
+			}
+			&-title {
+				padding-top: 35px;
+				padding-bottom: 15px;
+				font-size: 6.4vw;
+				line-height: 6.4vw;
+			}
+			&-text {
+				font-family: Geometria;
+				font-size: 4.6vw;
+				line-height: 5.6vw;
+				padding-bottom: 8vw;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets,
+			.swiper-pagination-custom,
+			.swiper-pagination-fraction {
+				bottom: 0;
+			}
+			&-pagination .swiper-pagination-bullet {
+				width: 1.4vw;
+				height: 1.4vw;
+				line-height: 1.4vw;
+				font-size: 3vw;
+				background-color: #fff;
+			}
+
+			.dronico-slider__static {
+				&-imgContainer {
+					-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+						linear-gradient(-45deg, transparent 0 $cornDron, #fff 0) bottom right,
+						linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
+						linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+					-webkit-mask-size: 50% 50% !important;
+					-webkit-mask-repeat: no-repeat !important;
+					img {
+						width: auto;
+						height: 110vw;
+					}
+				}
+
+				svg {
+					position: absolute;
+					top: 5%;
+					left: 5%;
+					width: auto;
+					height: 20%;
+				}
+				&-container {
+					margin-bottom: 6vw;
+					position: relative;
+				}
+				&-content {
+					position: absolute;
+					top: 30%;
+					width: 100%;
+					padding: 0 10px;
+				}
+				&-title {
+					font-size: 8.6vw;
+					line-height: 8.6vw;
+					color: #8e42ff;
+					margin-bottom: 20px;
+				}
+				&-subtitle {
+					font-family: Geometria;
+					font-size: 4.6vw;
+					line-height: 5.6vw;
+				}
 			}
 		}
 	}
