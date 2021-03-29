@@ -89,7 +89,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
 			-webkit-mask-size: 50% 50% !important;
 			-webkit-mask-repeat: no-repeat !important;
-			width: auto;
+			width: 100%;
 			height: calc(100% + 4px);
 			margin-top: -1px;
 			transition: all 0.5s ease;
@@ -487,7 +487,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-				-webkit-mask-size: 50% 50% !important;
+				-webkit-mask-size: 50.5% 50.5% !important;
 				-webkit-mask-repeat: no-repeat !important;
 			}
 		}

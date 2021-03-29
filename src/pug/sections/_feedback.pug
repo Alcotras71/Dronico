@@ -1,0 +1,18 @@
+.feedback
+	.feedback__content
+		.feedback__title Заказать звонок
+		.feedback__subtitle Оставьте ваши контактные данные и менеджер свяжеться с Вами в ближайшее время
+		form(class="feedback__form" action="#" method="post" enctype="multipart/form-data")
+			.feedback__inputs
+				input(class="feedback__name _req _name" type="text" name="name" placeholder="Вас зовут")
+				input(class="feedback__phone _req _phone" type="tel" name="phone" placeholder="+7(999) 999-99-99")
+				input(class="feedback__comment" type="text" name="comment" placeholder="Комментарий")
+			.feedback__btns
+				label(class="feedback__agree")
+					input(class="feedback__agree-btn _req" type="checkbox" name="agree")
+					span.feedback__agree-checkbox
+					p  Я согласен на обработку персональных данных
+				button(class="feedback__submit" type="submit")
+					| Заказать звонок
+		div(class="feedback__exit" data-close="")
+			.feedback__exit-cross

@@ -1,6 +1,16 @@
 mixin historyCard(img, alt, title, text)
 	div(class=`history__card ${alt}`)
-		img.history__card-icon(src=`images/show/history_${img}.svg` alt=`${alt}`)
+		.history__card-lottie
+			img(src=`images/show/history_${img}.svg` alt=`${alt}`)
+		.history__card-title
+			| #{title}
+		.history__card-text
+			|	#{text}
+
+mixin historyCardW(img, alt, title, text)
+	div(class=`history__card ${alt}`)
+		.history__card-lottie
+			lottie-player(class='lottie-history' autoplay loop mode='normal', src=`images/lottie-json/history_${img}.json`)
 		.history__card-title
 			| #{title}
 		.history__card-text

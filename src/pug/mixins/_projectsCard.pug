@@ -1,5 +1,6 @@
-mixin projectsCard(img, title, texts)
-	.projects__card
+mixin projectsCard(id, videoNum ,img, title, texts)
+	a(class="projects__card" data-fslightbox="lightbox" href=`#${id}`)
+		iframe(title=`${id}` id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen)
 		.projects__card-img
 			img(src=`images/balloon/projects_${img}.jpg` alt=`${img}`)
 		.projects__card-textcontainer

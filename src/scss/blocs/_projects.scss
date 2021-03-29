@@ -3,6 +3,10 @@ $cornPr: 3.5vw;
 .projects {
 	position: relative;
 
+	iframe{
+		display: none;
+	}
+
 	&__title-big {
 		img {
 			width: 96vw;
@@ -28,7 +32,7 @@ $cornPr: 3.5vw;
 		margin-bottom: 117px;
 		&-img {
 			grid-area: image;
-			max-width: 1230px;
+			width: 1230px;
 			max-height: 790px;
 			img {
 				height: 40vw;

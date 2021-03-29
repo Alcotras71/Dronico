@@ -85,11 +85,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
     effect: "fade",
     fadeEffect: {
       crossFade: true,
-		},
-		pagination: {
-			el: '.dronico-slider__mobile-pagination',
-			clickable: true
-		}
+    },
+    pagination: {
+      el: ".dronico-slider__mobile-pagination",
+      clickable: true,
+    },
   });
 
   // Initialize work slider
@@ -174,92 +174,219 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 });
 
-
 // ——————————————————————————————————————————————————
 // TextScramble
 // ——————————————————————————————————————————————————
 
 class TextScramble {
   constructor(el) {
-    this.el = el
-    this.chars = '0123456789><+-.%'
-    this.update = this.update.bind(this)
+    this.el = el;
+    this.chars = "0123456789><+-.%";
+    this.update = this.update.bind(this);
   }
   setText(newText) {
-    const oldText = this.el.innerText
-    const length = Math.max(oldText.length, newText.length)
-    const promise = new Promise((resolve) => this.resolve = resolve)
-    this.queue = []
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
     for (let i = 0; i < length; i++) {
-      const from = oldText[i] || ''
-      const to = newText[i] || ''
-      const start = Math.floor(Math.random() * 40)
-      const end = start + Math.floor(Math.random() * 40)
-      this.queue.push({ from, to, start, end })
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
     }
-    cancelAnimationFrame(this.frameRequest)
-    this.frame = 0
-    this.update()
-    return promise
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
   }
   update() {
-    let output = ''
-    let complete = 0
+    let output = "";
+    let complete = 0;
     for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i]
+      let { from, to, start, end, char } = this.queue[i];
       if (this.frame >= end) {
-        complete++
-        output += to
+        complete++;
+        output += to;
       } else if (this.frame >= start) {
         if (!char || Math.random() < 0.28) {
-          char = this.randomChar()
-          this.queue[i].char = char
+          char = this.randomChar();
+          this.queue[i].char = char;
         }
-        output += `<span class="dud">${char}</span>`
+        output += `<span class="dud">${char}</span>`;
       } else {
-        output += from
+        output += from;
       }
     }
-    this.el.innerHTML = output
+    this.el.innerHTML = output;
     if (complete === this.queue.length) {
-      this.resolve()
+      this.resolve();
     } else {
-      this.frameRequest = requestAnimationFrame(this.update)
-      this.frame++
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
     }
   }
   randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)]
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
 }
 const phrases = [
-  '70.512323, 45.11974',
-  '2.3513, -78.28398690',
-  '74.32334, 24.34523',
-  '-12.512323, 45.11974',
-  '72.512344, 3.129043',
-  '-70.512323, 20.11974',
-  '83.123341, 42.75656'
-]
+  "70.512323, 45.11974",
+  "2.3513, -78.28398690",
+  "74.32334, 24.34523",
+  "-12.512323, 45.11974",
+  "72.512344, 3.129043",
+  "-70.512323, 20.11974",
+  "83.123341, 42.75656",
+];
 
-const el = document.querySelectorAll('.scrumble-text');
+// const el = document.querySelectorAll(".scrumble-text");
 
-const fx1 = new TextScramble(el[0])
-let counter1 = 0;
-const next1 = () => {
-  fx1.setText(phrases[counter1]).then(() => {
-    setTimeout(next1, 800)
-  })
-  counter1 = (counter1 + 1) % phrases.length
+// const fx1 = new TextScramble(el[0]);
+// let counter1 = 0;
+// const next1 = () => {
+//   fx1.setText(phrases[counter1]).then(() => {
+//     setTimeout(next1, 800);
+//   });
+//   counter1 = (counter1 + 1) % phrases.length;
+// };
+// next1();
+
+// const fx2 = new TextScramble(el[1]);
+// let counter2 = 0;
+// const next2 = () => {
+//   fx2.setText(phrases[counter2]).then(() => {
+//     setTimeout(next2, 800);
+//   });
+//   counter2 = (counter2 + 1) % phrases.length;
+// };
+// next2();
+
+// Modal
+
+function closeModal(modalSelector) {
+  const modalWindow = document.querySelector(modalSelector);
+
+  modalWindow.classList.remove("active");
 }
-next1();
 
-const fx2 = new TextScramble(el[1])
-let counter2 = 0;
-const next2 = () => {
-  fx2.setText(phrases[counter2]).then(() => {
-    setTimeout(next2, 800)
-  })
-  counter2 = (counter2 + 1) % phrases.length
+function openModal(modalSelector, modalTimerId) {
+  const modalWindow = document.querySelector(modalSelector);
+
+  modalWindow.classList.add("active");
+  if (modalTimerId) {
+    clearInterval(modalTimerId);
+  }
 }
-next2();
+
+function modal(triggerSelector, modalSelector, modalTimerId) {
+  const modalBtn = document.querySelectorAll(triggerSelector),
+    modalWindow = document.querySelector(modalSelector);
+
+  modalBtn.forEach((btn) => {
+    btn.addEventListener("click", () => openModal(modalSelector, modalTimerId));
+  });
+
+  modalWindow.addEventListener("click", (e) => {
+    if (e.target.getAttribute("data-close") == "") {
+      closeModal(modalSelector);
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Escape" && modalWindow.classList.contains("active")) {
+      closeModal(modalSelector);
+    }
+  });
+
+  function showModalByScroll() {
+    if (
+      window.pageYOffset + document.documentElement.clientHeight >=
+      document.documentElement.scrollHeight
+    ) {
+      openModal(modalSelector, modalTimerId);
+      window.removeEventListener("scroll", showModalByScroll);
+    }
+  }
+
+  window.addEventListener("scroll", showModalByScroll);
+}
+
+const modalTimerId = setTimeout(
+  () => openModal(".feedback", modalTimerId),
+  600000
+);
+
+modal(".box", ".feedback", modalTimerId);
+
+//FORM
+const form = document.querySelector(".feedback__form");
+form.addEventListener("submit", formSend);
+
+async function formSend(e) {
+  e.preventDefault();
+
+  let error = formValidate(form);
+
+  const formData = new FormData(form);
+
+  if (error === 0) {
+    form.classList.add("._sending");
+    let response = await fetch("php/sendmail.php", {
+      method: "POST",
+      body: formData,
+    });
+    if (response.ok) {
+      let result = await response.json();
+      alert(result.message);
+      form.reset();
+      form.classList.remove("_sending");
+    } else {
+      alert("Ошибка");
+      form.classList.remove("_sending");
+    }
+  } else {
+    alert("Заполни");
+  }
+}
+
+function formValidate(form) {
+  let error = 0;
+  const formReq = document.querySelectorAll("._req");
+
+  for (let i = 0; i < formReq.length; i++) {
+    const input = formReq[i];
+    formRemoveError(input);
+
+    if (input.classList.contains("_name")) {
+      if (!/^\w{4,20}$/gi.test(input.value)) {
+        formAddError(input);
+      }
+    } else if (input.classList.contains("_phone")) {
+      if (!/^\d{4,12}$/g.test(input.value)) {
+        formAddError(input);
+      }
+    } else if (
+      input.getAttribute("type") === "checkbox" &&
+      input.checked === false
+    ) {
+      formAddError(input);
+      error++;
+    } else if (input.value === "") {
+      formAddError(input);
+      error++;
+    }
+  }
+  return error;
+}
+
+function formAddError(input) {
+  input.parentElement.classList.add("_error");
+  input.classList.add("_error");
+}
+
+function formRemoveError(input) {
+  input.parentElement.classList.remove("_error");
+  input.classList.remove("_error");
+}

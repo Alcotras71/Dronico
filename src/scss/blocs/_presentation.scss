@@ -9,10 +9,16 @@ $calculatePres: $cornPres + $borderWidthPres;
 	text-transform: uppercase;
 	height: 100vh;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	video {
 		min-width: 100%;
 		min-height: 100%;
 		object-fit: cover;
+	}
+	.mobile {
+		display: none;
 	}
 
 	.pattern_top {
@@ -362,12 +368,27 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 @media (max-width: 768px) {
 	.presentation {
+		video {
+			display: none;
+		}
+		.mobile {
+			display: block;
+		}
+		.img-white {
+			display: none;
+		}
 		&__title {
 			display: none;
 		}
 	}
 	.white {
 		.presentation {
+			.img-white {
+				display: block;
+			}
+			.img-dark {
+				display: none;
+			}
 			.title-white {
 				max-width: 90%;
 			}
@@ -449,7 +470,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 				bottom: 5%;
 			}
 			&__coords {
-				bottom: 11%
+				bottom: 11%;
 			}
 
 			&__plus {
@@ -459,7 +480,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 	}
 }
 
-@media(max-width: 375px) {
+@media (max-width: 375px) {
 	.white {
 		.presentation {
 			&__subtitle {
@@ -476,7 +497,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 				bottom: 16%;
 			}
 			&__coords {
-				bottom: 20%
+				bottom: 20%;
 			}
 
 			&__plus {
