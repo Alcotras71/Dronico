@@ -12,7 +12,7 @@ $mail->setLanguage('ru', 'phpmailer/languege');
 $mail->IsHTML(true);
 
 //From
-$mail->setFrom('fdsafs', 'ANdrey');
+$mail->setFrom('AimDragMan2@yandex.ru', 'ANdrey');
 // To
 $mail->addAddress('AimDragMan2@yandex.ru');
 //Theme

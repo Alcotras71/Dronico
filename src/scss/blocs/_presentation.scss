@@ -17,6 +17,10 @@ $calculatePres: $cornPres + $borderWidthPres;
 		min-height: 100%;
 		object-fit: cover;
 	}
+
+	lottie-player {
+		width: 99%;
+	}
 	.mobile {
 		display: none;
 	}

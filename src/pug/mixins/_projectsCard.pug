@@ -1,8 +1,12 @@
 mixin projectsCard(id, videoNum ,img, title, texts)
 	a(class="projects__card" data-fslightbox="lightbox" href=`#${id}`)
-		iframe(title=`${id}` id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen)
+		iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
 		.projects__card-img
 			img(src=`images/balloon/projects_${img}.jpg` alt=`${img}`)
+			.projects__card-btn
+				svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
+					path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
+					circle(cx="63.7292" cy="63.7292" r="60.7292" stroke="white" stroke-opacity="1" stroke-width="6")
 		.projects__card-textcontainer
 			.projects__card-title #{title}
 			.projects__card-text

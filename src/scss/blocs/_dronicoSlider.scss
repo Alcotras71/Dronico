@@ -21,6 +21,10 @@ $calculateDron: calc(2.2vw + 2px);
 	-webkit-mask-size: 50.5% 50.5% !important;
 	-webkit-mask-repeat: no-repeat !important;
 
+	.video-frame {
+		display: none;
+	}
+
 	&__container {
 		position: absolute;
 		z-index: 2;
@@ -33,6 +37,20 @@ $calculateDron: calc(2.2vw + 2px);
 	}
 	&__img {
 		width: 36vw;
+		transition: all 0.5s ease;
+		&-btn {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0.9);
+			opacity: 0.3;
+			transition: $transition;
+			&:hover{
+				opacity: 1;
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
 		&-container {
 			position: absolute;
 			top: 0;
@@ -54,7 +72,7 @@ $calculateDron: calc(2.2vw + 2px);
 	}
 	&__imgNum-container {
 		position: absolute;
-		width: 350px;
+		width: 360px;
 		top: 15%;
 		left: 17vw;
 		z-index: 5;
@@ -65,7 +83,11 @@ $calculateDron: calc(2.2vw + 2px);
 
 	&__content {
 		margin-top: 150px;
+		&-top{
+			min-height: 13vw;
+		}
 	}
+
 	&__title {
 		font-size: 6.4rem;
 		line-height: 6.5rem;
@@ -93,7 +115,8 @@ $calculateDron: calc(2.2vw + 2px);
 	}
 	.types {
 		&__card {
-			max-width: 290px;
+			max-width: 300px;
+			padding-right: 25px;
 		}
 		&__title {
 			margin-top: 60px;
@@ -160,6 +183,17 @@ $calculateDron: calc(2.2vw + 2px);
 	}
 }
 
+@media (max-width: 1650px) {
+	.dronico-slider {
+		&__pagination {
+			&-next {
+				position: absolute;
+				top: 5vw;
+			}
+		}
+	}
+}
+
 @media (max-width: 1440px) {
 	.dronico-slider {
 		&__container {
@@ -187,15 +221,12 @@ $calculateDron: calc(2.2vw + 2px);
 			}
 		}
 		&__pagination {
-			&-prev,
-			&-next {
-				background-size: 80%;
-			}
 			&-prev {
 				top: 1%;
+				right: 9%;
 			}
 			&-next {
-				top: 10%;
+				top: 8%;
 			}
 		}
 	}
@@ -208,13 +239,6 @@ $calculateDron: calc(2.2vw + 2px);
 			&-next {
 				width: 7vw;
 				height: 5.6vw;
-				background-size: 100%;
-			}
-			&-prev {
-				right: 10%;
-			}
-			&-next {
-				top: 8%;
 			}
 		}
 	}
@@ -280,18 +304,18 @@ $calculateDron: calc(2.2vw + 2px);
 		}
 
 		&__content {
-			margin-top: 30vw;
+			margin-top: 28vw;
 			padding: 0 15px 0 15px;
 		}
 		&__title {
 			font-size: 5rem;
 			line-height: 5.1rem;
 			color: #8e42ff;
-			max-width: 90vw;
+			max-width: 85vw;
 		}
 		&__subtitle {
 			margin-top: 20px;
-			max-width: 90vw;
+			max-width: 85vw;
 		}
 		&__types {
 			margin-top: 40px;
@@ -300,8 +324,9 @@ $calculateDron: calc(2.2vw + 2px);
 			flex-wrap: wrap;
 		}
 		.types {
+			width: 90vw;
 			&__card {
-				max-width: 45vw;
+				max-width: 42vw;
 			}
 			&__card:nth-child(3) {
 				max-width: 100%;
@@ -341,6 +366,13 @@ $calculateDron: calc(2.2vw + 2px);
 				top: 3%;
 				right: 15%;
 			}
+		}
+		&__content {
+			margin-top: 25vw;
+			padding: 0 35px 0 15px;
+		}
+		&__imgNum-container {
+			top: 6%;
 		}
 		&__title {
 			font-size: 4.7rem;

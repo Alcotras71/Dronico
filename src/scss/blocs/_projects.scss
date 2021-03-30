@@ -32,8 +32,9 @@ $cornPr: 3.5vw;
 		margin-bottom: 117px;
 		&-img {
 			grid-area: image;
-			width: 1230px;
+			width: auto;
 			max-height: 790px;
+			position: relative;
 			img {
 				height: 40vw;
 				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
@@ -43,6 +44,14 @@ $cornPr: 3.5vw;
 				-webkit-mask-size: 50% 50% !important;
 				-webkit-mask-repeat: no-repeat !important;
 			}
+		}
+		&-btn{
+			position: absolute;
+			opacity: 0.3;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0.9);
+			transition: $transition;
 		}
 		&-textcontainer {
 			grid-area: text;
@@ -61,6 +70,12 @@ $cornPr: 3.5vw;
 			line-height: 2.4rem;
 			p {
 				padding-bottom: 31px;
+			}
+		}
+		&:hover{
+			.projects__card-btn {
+				opacity: 1;
+				transform: translate(-50%, -50%) scale(1);
 			}
 		}
 	}

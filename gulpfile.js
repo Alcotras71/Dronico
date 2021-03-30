@@ -37,31 +37,6 @@ gulp.task("pug", function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task("scss", function () {
-  return gulp
-    .src("src/scss/main.scss")
-    .pipe(
-      plumber({
-        errorHandler: notify.onError(function (err) {
-          return {
-            title: "Styles",
-            sound: false,
-            message: err.message,
-          };
-        }),
-      })
-    )
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ["last 8 versions"],
-      })
-    )
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest("build/css/"))
-    .pipe(browserSync.stream());
-});
 gulp.task("scss", () => {
   return gulp
     .src("src/scss/main.scss")
@@ -89,6 +64,7 @@ gulp.task("scss", () => {
     .pipe(gulp.dest("build/css/"))
     .pipe(browserSync.stream());
 });
+
 gulp.task("js", () => {
   return gulp
     .src("src/js/**/*.js")
@@ -113,7 +89,10 @@ gulp.task("js", () => {
 
 
 gulp.task("cssLibs", () => {
-  const modules = ["node_modules/swiper/swiper-bundle.min.css"];
+  const modules = [
+		"node_modules/swiper/swiper-bundle.min.css",
+		"node_modules/rellax/css/main.css"
+	];
   return gulp
     .src(modules)
     .pipe(gulp.dest("build/css/libs/"))
@@ -124,7 +103,11 @@ gulp.task("jsLibs", () => {
     "node_modules/swiper/swiper-bundle.min.js",
 		"node_modules/swiper/swiper-bundle.min.js.map",
 		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js",
-		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js.map"
+		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js.map",
+		"node_modules/fslightbox/fslightbox.js",
+		"node_modules/parallax-js/dist/parallax.min.js",
+		"node_modules/parallax-js/dist/parallax.min.js.map",
+		"node_modules/rellax/rellax.min.js"
   ];
   return gulp
     .src(modules)
@@ -139,6 +122,7 @@ gulp.task("img", () => {
     .pipe(gulp.dest("build/images/"))
     .pipe(browserSync.reload({ stream: true }));
 });
+
 
 gulp.task("copy:fonts", () => {
   return gulp
@@ -164,6 +148,7 @@ gulp.task("copy:php", () => {
     .pipe(gulp.dest("build/php/"))
     .pipe(browserSync.reload({ stream: true }));
 });
+
 
 gulp.task("watch", () => {
   gulp.watch("src/pug/**/*.pug", gulp.parallel("pug"));

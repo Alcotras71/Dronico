@@ -1,19 +1,19 @@
-article.presentation.light-show
+article.presentation.light-show.invisible
 	.pattern_top
 	video(class="video-dark" src='video/video_dron.mp4' loop muted autoplay="autoplay" preload="auto" poster="images/show/video_TOP.png")
 	video(class="video-white" src='video/video_dron1.mp4' loop muted autoplay="autoplay" preload="auto" poster="images/balloon/video_TOP.png")
 	img(class="img-dark mobile" src="images/show/video_TOP.png" alt="darkBg")
 	img(class="img-white mobile" src="images/balloon/video_TOP.png" alt="whiteBg")
 	.presentation__title
-		img(class="bg-dark" src='images/show/dronico_text.svg' alt='dronico_text')
-		img(class="bg-white" src='images/balloon/dronico_text.svg' alt='dronico_text')
+		lottie-player(class='bg-dark' autoplay mode='normal', src=`images/lottie-json/bg-dark.json`)
+		lottie-player(class='bg-white' autoplay mode='normal', src=`images/lottie-json/bg-white.json`)
 	.presentation__subtitle
 		h1.title-dark световое шоу дронов
 		h1.title-white радиоуправляемые дирижабли с автопилотом для маркетинговых и развлекательных проектов по всему миру
 	.presentation__text
 		p Прикоснитесь к будущему в сфере искусства и технологий
 	.presentation__button-wrapper
-		.presentation__button.box
+		.presentation__button.box.intransition
 			p Заказать звонок
 	ul.presentation__coords
 		li 21.512344233, 35.1129764
