@@ -10,7 +10,7 @@ mixin typesCard(listObject)
 mixin dronicoImgSlide(id, videoNum ,img)
 	a(class="dronico-slider__img-slide swiper-slide" data-fslightbox="lightbox" href=`#${id}`)
 		iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
-		img(src=`images/show/dronico-sl_${img}.jpg` alt=`${img}`)
+		img(src=`images/show/dronico-sl_${img}.jpg` alt=`${img}` data-swiper-parallax-x="-100")
 		.dronico-slider__img-btn
 			svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
 				path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
@@ -18,16 +18,22 @@ mixin dronicoImgSlide(id, videoNum ,img)
 
 mixin dronicoImgNumSlider(imgPath, imgHeight, imgWidth)
 	.dronico-slider__imgNum-slide.swiper-slide
-		svg(width=`${imgWidth}` height=`${imgHeight}` viewBox=`0 0 ${imgWidth} ${imgHeight}` fill="none" xmlns="http://www.w3.org/2000/svg")
+		svg(width=`${imgWidth}` height=`${imgHeight}` viewBox=`0 0 ${imgWidth} ${imgHeight}` fill="none" xmlns="http://www.w3.org/2000/svg" data-swiper-parallax-scale="0.5" )
 			path(fill-rule="evenodd" clip-rule="evenodd" d=`${imgPath}` stroke="url(#num-gradient)" stroke-width="1.2")
 			defs
 				linearGradient(id="num-gradient" x1="172.39" y1="-51.3909" x2="172.39" y2="230.524" gradientUnits="userSpaceOnUse")
 					stop(stop-color="white")
 					stop(offset="1" stop-color="#8533FF")
 
-mixin dronicoSlide(title, subtitle, myList)
+mixin dronicoSlide(id, videoNum,title, subtitle, myList)
 	.dronico-slider__slide.swiper-slide
 		.dronico-slider__content
+			a(class="dronico-slider__img-small" data-fslightbox="lightbox" href=`#${id}`)
+				iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
+				div(class="dronico-slider__img-btn" data-swiper-parallax-scale="0.5" data-swiper-parallax-x="-100" data-swiper-parallax-y="-100")
+					svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
+						path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
+						circle(cx="63.7292" cy="63.7292" r="60.7292" stroke="white" stroke-opacity="1" stroke-width="6")
 			.dronico-slider__content-top
 				div(class="dronico-slider__title title-dark")
 					| #{title}

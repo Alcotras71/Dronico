@@ -1,5 +1,37 @@
 document.addEventListener("DOMContentLoaded", (e) => {
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // calcScroll
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  function calcScroll() {
+    let div = document.createElement("div");
+
+    div.style.width = "50px";
+    div.style.height = "50px";
+    div.style.overflowY = "scroll";
+    div.style.visibility = "hidden";
+
+    document.body.appendChild(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+
+    return scrollWidth;
+  }
+
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // then popup is open add padding
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+  let paddingScroll = calcScroll();
+
+  fsLightboxInstances["lightbox"].props.onOpen = () => {
+    document.body.style.paddingRight = `${paddingScroll}px`;
+  };
+
+  fsLightboxInstances["lightbox"].props.onClose = () => {
+    document.body.style.paddingRight = `0`;
+  };
+
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // visible header
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -17,11 +49,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // ——————————————————————————————————————————————————
   // UsingAreasSlider
   // ——————————————————————————————————————————————————
+  const prevUsingBtn = document.querySelector(".using-areas__pagination-prev"),
+    nextUsingBtn = document.querySelector(".using-areas__pagination-next"),
+    usCard = document.querySelectorAll(".using-card__card");
+
   const usingAreas = new Swiper(".using-card__container", {
     speed: 400,
     spaceBetween: 10,
     slidesPerView: 1,
     loop: false,
+    // on: {
+    //   slideChange: function () {
+    //     if (this.activeIndex == 0) {
+		// 			this.slideTo(6, 500);
+		// 		} else if (this.activeIndex == 7) {
+		// 			this.slideTo(1, 500);
+		// 		}
+    //   },
+    // },
     navigation: {
       nextEl: ".using-areas__pagination-next",
       prevEl: ".using-areas__pagination-prev",
@@ -33,7 +78,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       },
       769: {
         slidesPerView: 3,
-        spaceBetween: 11,
+				spaceBetween: 11,
       },
       1026: {
         slidesPerView: 4,
@@ -45,6 +90,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // DronicoSlider
   // ——————————————————————————————————————————————————
   const dronicoSlider = new Swiper(".dronico-slider__container", {
+    parallax: true,
     speed: 500,
     slidesPerView: 1,
     loop: true,
@@ -60,6 +106,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     },
   });
   const dronicoImgSlider = new Swiper(".dronico-slider__img-container", {
+    parallax: true,
     speed: 500,
     slidesPerView: 1,
     loop: true,
@@ -70,6 +117,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     spaceBetween: 20,
   });
   const dronicoImgNumSlider = new Swiper(".dronico-slider__imgNum-container", {
+    parallax: true,
     speed: 500,
     slidesPerView: 1,
     loop: true,
@@ -120,7 +168,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const workSlider = new Swiper(".work__container", {
     speed: 400,
     slidesPerView: 6,
-    spaceBetween: 23,
+    spaceBetween: 20,
     navigation: {
       nextEl: ".work__navigation-next",
       prevEl: ".work__navigation-prev",
@@ -201,32 +249,27 @@ document.addEventListener("DOMContentLoaded", (e) => {
     };
   }
 
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // FeedbackModal
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   function closeModal(modalSelector) {
     const modalWindow = document.querySelector(modalSelector);
 
     modalWindow.classList.remove("active");
   }
 
-  function openModal(modalSelector, modalTimerId) {
+  function openModal(modalSelector) {
     const modalWindow = document.querySelector(modalSelector);
 
     modalWindow.classList.add("active");
-    if (modalTimerId) {
-      clearInterval(modalTimerId);
-    }
   }
 
-  function modal(triggerSelector, modalSelector, modalTimerId) {
+  function modal(triggerSelector, modalSelector) {
     const modalBtn = document.querySelectorAll(triggerSelector),
       modalWindow = document.querySelector(modalSelector);
 
     modalBtn.forEach((btn) => {
-      btn.addEventListener("click", () =>
-        openModal(modalSelector, modalTimerId)
-      );
+      btn.addEventListener("click", () => openModal(modalSelector));
     });
 
     modalWindow.addEventListener("click", (e) => {
@@ -240,30 +283,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         closeModal(modalSelector);
       }
     });
-
-    function showModalByScroll() {
-      if (
-        window.pageYOffset + document.documentElement.clientHeight >=
-        document.documentElement.scrollHeight
-      ) {
-        openModal(modalSelector, modalTimerId);
-        window.removeEventListener("scroll", showModalByScroll);
-      }
-    }
-
-    window.addEventListener("scroll", showModalByScroll);
   }
 
-  const modalTimerId = setTimeout(
-    () => openModal(".feedback", modalTimerId),
-    600000
-  );
+  modal(".box", ".feedback");
 
-  modal(".box", ".feedback", modalTimerId);
-
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // Form
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   const form = document.querySelector(".feedback__form");
   form.addEventListener("submit", formSend);
 
@@ -334,9 +360,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     input.classList.remove("_error");
   }
 
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // TextScramble
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
   class TextScramble {
     constructor(el) {
@@ -425,9 +451,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Modal
 
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // Parallax
-  // ——————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
   const paralaxClass = ".rellax";
 
@@ -440,11 +466,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   const rellax = new Rellax(paralaxClass, {
     center: true,
-	});
+  });
 
-	// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // openVideo
-	// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-	const dronicoSliderContainer = document.querySelector('.dronico-slider__img-container');
-
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  const dronicoSliderContainer = document.querySelector(
+    ".dronico-slider__img-container"
+  );
 });

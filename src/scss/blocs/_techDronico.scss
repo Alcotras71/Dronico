@@ -32,7 +32,7 @@
 	&__text-wrapper {
 		position: relative;
 		padding-left: 23px;
-		padding-bottom: 250px;
+		padding-bottom: 10vw;
 		border-bottom: 1px solid $main;
 		border-image: linear-gradient(to right top, $main, #fff, $main);
 		border-image-slice: 1;
@@ -179,7 +179,7 @@
 		}
 	}
 	&__img.big {
-		top: 55%;
+		top: 45%;
 		left: 45%;
 		width: 50vw;
 		.tech-dronico__btn {
@@ -194,6 +194,12 @@
 	}
 	100% {
 		width: 260px;
+	}
+}
+
+@media (min-width: 1950px) {
+	.tech-dronico__text-wrapper {
+		padding-bottom: 200px;
 	}
 }
 

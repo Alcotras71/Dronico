@@ -7,7 +7,7 @@ body {
 		background: $background;
 	}
 	&.white {
-		background: #fff url("../images/patternB.png") repeat;
+		background: #fff;
 	}
 	font-family: "RoadRadio", Arial, Helvetica, sans-serif;
 	font-weight: 300;
@@ -28,13 +28,16 @@ body {
 }
 
 .wrapper-dark {
-	background:url("../images/pattern.png") repeat,
-	 url("../images/show/use_radialBG.png") no-repeat 0 -5%,
-		url("../images/show/work_radialBg.png") no-repeat -60% 92%,
+	background: url("../images/pattern.png") repeat,
+		url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+		url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
+		url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
+		url("../images/show/work_radialBg.png") no-repeat -60% 88%,
 		url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
 }
 .wrapper-white {
-	background: url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%;
+	background: url("../images/patternB.png") repeat,
+		url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%;
 }
 
 .big-title img,
@@ -97,15 +100,34 @@ body {
 	}
 }
 
-@media (max-width: 550px) {
-	html {
-		font-size: 6px;
-	}
-}
-
 @media (max-width: 1025px) {
 	.title {
 		font-size: 5.3rem;
 		line-height: 5.4rem;
 	}
 }
+
+@media (max-width: 768px) {
+	.wrapper-dark {
+		background: url("../images/pattern.png") repeat,
+			url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+			url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
+			url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
+			url("../images/show/work_radialBg.png") no-repeat 0% 85%,
+			url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
+	}
+
+	.wrapper-white {
+		background: url("../images/patternB.png") repeat,
+			url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%,
+			url("../images/balloon/dolphin_radialBg.png") no-repeat 0% 90%;
+	}
+}
+
+@media (max-width: 550px) {
+	html {
+		font-size: 6px;
+	}
+}
+
+

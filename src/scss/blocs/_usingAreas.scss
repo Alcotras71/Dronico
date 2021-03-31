@@ -2,9 +2,9 @@
 $cardWidthUs: 23vw;
 $cardHeightUs: 19vw;
 $cornUs: 1.9vw;
-$borderWidthUs: 2px;
+$borderWidthUs: 3px;
 $borderBottomWidthUs: 3px;
-$calculateUs: calc(1.9vw + 2px);
+$calculateUs: calc(1.9vw + 3px);
 $calculateBottomUs: calc(1.9vw + 3px);
 
 .using-areas {
@@ -24,8 +24,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 			cursor: pointer;
 			transition: $transition;
 			background-repeat: no-repeat;
-			background-size: 100%;
-			background-position: center;
+			background-position: right;
 		}
 		&-prev {
 			top: 51px;
@@ -68,16 +67,16 @@ $calculateBottomUs: calc(1.9vw + 3px);
 			linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 			linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-size: 51% 51% !important;
 		-webkit-mask-repeat: no-repeat !important;
-		iframe{
+		iframe {
 			display: none;
 		}
 		&-btn {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%,-50%);
+			transform: translate(-50%, -50%);
 			opacity: 0;
 			transition: $transition;
 		}
@@ -98,7 +97,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50% 50% !important;
+			-webkit-mask-size: 51% 51% !important;
 			-webkit-mask-repeat: no-repeat !important;
 			width: 100%;
 			height: calc(100% + 4px);
@@ -123,7 +122,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 			linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
 			linear-gradient(135deg, transparent 0 0, #fff 0) top left,
 			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-		-webkit-mask-size: 50.5% 50.5% !important;
+		-webkit-mask-size: 51% 51% !important;
 		-webkit-mask-repeat: no-repeat !important;
 	}
 	&__count {
@@ -166,7 +165,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 		img {
 			opacity: 1;
 		}
-		.using-card__top-btn{
+		.using-card__top-btn {
 			opacity: 1;
 		}
 
@@ -194,6 +193,11 @@ $calculateBottomUs: calc(1.9vw + 3px);
 			color: $mainB;
 		}
 		&__pagination {
+			&-prev,
+			&-next {
+				background-repeat: no-repeat;
+				background-position: left;
+			}
 			&-prev {
 				background-image: url("../images/balloon/use_arrow.svg");
 				transform: rotate(0deg);
@@ -251,7 +255,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-size: 51% 51% !important;
 			-webkit-mask-repeat: no-repeat !important;
 		}
 	}
@@ -403,11 +407,15 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-size: 51% 51% !important;
 			-webkit-mask-repeat: no-repeat !important;
 			&-line {
 				width: $cardWidthUs;
 				height: $cardHeightUs;
+				opacity: 0;
+			}
+			&-btn {
+				opacity: 1;
 			}
 
 			img {
@@ -415,8 +423,9 @@ $calculateBottomUs: calc(1.9vw + 3px);
 					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-				-webkit-mask-size: 50% 50% !important;
+				-webkit-mask-size: 51% 51% !important;
 				-webkit-mask-repeat: no-repeat !important;
+				opacity: 1;
 			}
 		}
 
@@ -433,17 +442,28 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-size: 51% 51% !important;
 			-webkit-mask-repeat: no-repeat !important;
+		}
+
+		&__text {
+			margin-top: 18px;
+			opacity: 0.6;
 		}
 		&__visible {
 			height: $cardHeightUs;
-			transform: translateY(20vw);
+			opacity: 1;
+				background: $main;
+				transform: translate(0);
 		}
 		&__count {
+			opacity: 0;
 			img {
 				height: 6.5vw;
 			}
+		}
+		&:after {
+			opacity: 1;
 		}
 	}
 }
@@ -489,7 +509,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50% 50% !important;
+			-webkit-mask-size: 51% 51% !important;
 			-webkit-mask-repeat: no-repeat !important;
 			&-line {
 				width: $cardWidthUs;
@@ -502,7 +522,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
 					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
 					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
 					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-				-webkit-mask-size: 50.5% 50.5% !important;
+				-webkit-mask-size: 51% 51% !important;
 				-webkit-mask-repeat: no-repeat !important;
 			}
 		}
@@ -519,12 +539,11 @@ $calculateBottomUs: calc(1.9vw + 3px);
 				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
 				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
 				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 50.5% 50.5% !important;
+			-webkit-mask-size: 51% 51% !important;
 			-webkit-mask-repeat: no-repeat !important;
 		}
 		&__visible {
 			height: $cardHeightUs;
-			transform: translateY(40vw);
 		}
 		&__count {
 			img {
@@ -540,7 +559,6 @@ $calculateBottomUs: calc(1.9vw + 3px);
 			font-family: Geometria;
 			font-size: 3rem;
 			line-height: 3.4rem;
-			opacity: 0;
 			transition: $transition;
 		}
 	}
