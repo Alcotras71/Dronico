@@ -104,6 +104,7 @@ gulp.task("jsLibs", () => {
 		"node_modules/swiper/swiper-bundle.min.js.map",
 		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js",
 		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js.map",
+		"node_modules/lottie-web/build/player/lottie.js",
 		"node_modules/fslightbox/fslightbox.js",
 		"node_modules/parallax-js/dist/parallax.min.js",
 		"node_modules/parallax-js/dist/parallax.min.js.map",

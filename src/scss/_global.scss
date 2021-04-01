@@ -78,11 +78,11 @@ body {
 	background: rgba(255, 255, 255, 0.02);
 }
 
-.invisible *:not(.presentation__title, .bg-dark, .bg-white) {
+.invisible *:not(.presentation__title, .presentation__title *) {
 	opacity: 0;
 }
 
-.invisible *:not(.intransition *, .intransition) {
+.invisible *:not(.intransition *, .intransition, .presentation__title *, .presentation__title) {
 	transition: all 4s ease;
 }
 

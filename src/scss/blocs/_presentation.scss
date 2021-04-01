@@ -18,10 +18,10 @@ $calculatePres: $cornPres + $borderWidthPres;
 		object-fit: cover;
 	}
 
-	lottie-player {
-		height: 100vh;
-		width: 99vw;
-	}
+	// lottie-player {
+	// 	height: 100vh;
+	// 	width: 99vw;
+	// }
 	.mobile {
 		display: none;
 	}
@@ -170,7 +170,14 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 		&__title {
 			position: absolute;
+			height: 100vh;
+			width: 100vw;
 			top: -13%;
+		}
+
+		.dark-log {
+			width: 100vw;
+			height: 100vh;
 		}
 
 		&__subtitle {
@@ -380,9 +387,6 @@ $calculatePres: $cornPres + $borderWidthPres;
 		.img-white {
 			display: none;
 		}
-		&__title {
-			display: none;
-		}
 	}
 	.white {
 		.presentation {
@@ -404,6 +408,10 @@ $calculatePres: $cornPres + $borderWidthPres;
 	$borderWidthPres: 2px;
 	$calculatePres: $cornPres + $borderWidthPres;
 	.presentation {
+		&__title {
+			display: none;
+		}
+
 		&__subtitle {
 			max-width: 95vw;
 			font-size: 12.8vw;

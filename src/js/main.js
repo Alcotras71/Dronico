@@ -7,10 +7,32 @@ document.addEventListener("DOMContentLoaded", (e) => {
     whiteAnchr = document.querySelectorAll(".white-anchr");
 
   if (body.classList.contains("dark")) {
+    lottie.loadAnimation({
+      container: document.querySelector(".presentation__title"),
+      renderer: "svg",
+      rendererSettings: {
+        className: "dark-logo",
+      },
+      loop: false,
+      autoplay: true,
+      path: "images/lottie-json/bg-dark.json",
+    });
+
     darkAnchr.forEach((anc) => {
       anc.setAttribute("href", "#header");
     });
   } else if (body.classList.contains("white")) {
+    lottie.loadAnimation({
+      container: document.querySelector(".presentation__title"),
+      renderer: "svg",
+      rendererSettings: {
+        className: "white-logo",
+      },
+      loop: false,
+      autoplay: true,
+      path: "images/lottie-json/bg-white.json",
+    });
+
     whiteAnchr.forEach((anc) => {
       anc.setAttribute("href", "#header");
     });
@@ -92,34 +114,44 @@ document.addEventListener("DOMContentLoaded", (e) => {
     speed: 400,
     spaceBetween: 10,
     slidesPerView: 1,
-    loop: false,
-    // on: {
-    //   slideChange: function () {
-    //     if (this.activeIndex == 0) {
-    // 			this.slideTo(6, 500);
-    // 		} else if (this.activeIndex == 7) {
-    // 			this.slideTo(1, 500);
-    // 		}
-    //   },
-    // },
+    loop: true,
     navigation: {
       nextEl: ".using-areas__pagination-next",
       prevEl: ".using-areas__pagination-prev",
     },
     breakpoints: {
       551: {
+        loop: false,
         slidesPerView: 2,
         spaceBetween: 40,
       },
       769: {
+        loop: false,
         slidesPerView: 3,
         spaceBetween: 11,
       },
       1026: {
+        loop: false,
         slidesPerView: 4,
       },
     },
   });
+
+  // check resize slider
+  function handleTabletChange(e) {
+    if (e.matches) {
+      usingAreas.on("slideChange", function (e) {
+        if (this.activeIndex == 0) {
+          this.slideTo(6, 1000);
+        } else if (this.activeIndex == 7) {
+          this.slideTo(1, 1000);
+        }
+      });
+    }
+  }
+  const mediaQuery = window.matchMedia("(max-width: 551px)");
+  mediaQuery.addListener(handleTabletChange);
+  handleTabletChange(mediaQuery);
 
   // ——————————————————————————————————————————————————
   // DronicoSlider
@@ -209,33 +241,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       prevEl: ".work__navigation-prev",
     },
   });
-
-  const workContainer = document.createElement("div"),
-    workCards = document.querySelectorAll(".work__slide"),
-    workWrapper = document.querySelector(".work__wrapper");
-
-  // check resize slider
-  // function handleTabletChange(e) {
-  //   if (e.matches) {
-  //     workSlider.destroy(false, true);
-
-  //     workContainer.className = "work__cards";
-  //     workCards.forEach((card) => {
-  //       workContainer.append(card);
-  //     });
-  // 		workWrapper.append(workContainer);
-
-  //   } else {
-  // 		workSlider.init();
-
-  // 		workCards.forEach((card) => {
-  // 			workWrapper.append(card);
-  // 		});
-  //   }
-  // }
-  // const mediaQuery = window.matchMedia("(max-width: 1251px)");
-  // mediaQuery.addListener(handleTabletChange);
-  // handleTabletChange(mediaQuery);
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // MainCode
@@ -350,8 +355,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
         alert("Ошибка");
         form.classList.remove("_sending");
       }
-    } else {
-      alert("Заполни");
     }
   }
 
@@ -388,11 +391,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
   function formAddError(input) {
     input.parentElement.classList.add("_error");
     input.classList.add("_error");
+    input.nextSibling.nextElementSibling.classList.add("_error");
   }
 
   function formRemoveError(input) {
     input.parentElement.classList.remove("_error");
-    input.classList.remove("_error");
+		input.classList.remove("_error");
+		input.nextSibling.nextElementSibling.classList.remove("_error");
   }
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -477,8 +482,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 
   numbers.forEach((num, i) => {
-		scrumbleText(`fx${i}`, num);
-	});
+    scrumbleText(`fx${i}`, num);
+  });
 
   // Modal
 

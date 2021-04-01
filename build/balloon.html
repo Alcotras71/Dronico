@@ -63,11 +63,21 @@
       <div class="feedback__content">
         <div class="feedback__title">Заказать звонок</div>
         <div class="feedback__subtitle">Оставьте ваши контактные данные и менеджер свяжеться с Вами в ближайшее время</div>
+        <div class="feedback__success">Ваше сообщение отправлено!</div>
+        <div class="feedback__error">Упсс... Что-то пошло не так!</div>
         <form class="feedback__form" action="#" method="post" enctype="multipart/form-data">
           <div class="feedback__inputs">
-            <input class="feedback__name _req _name" type="text" name="name" placeholder="Вас зовут"/>
-            <input class="feedback__phone _req _phone" type="tel" name="phone" placeholder="+7(999) 999-99-99"/>
-            <input class="feedback__comment" type="text" name="comment" placeholder="Комментарий"/>
+            <div class="feedback__inputs-wrapper">
+              <input class="feedback__name _req _name" type="text" name="name" placeholder="Вас зовут"/>
+              <div class="error">Поле обязательно</div>
+            </div>
+            <div class="feedback__inputs-wrapper">
+              <input class="feedback__phone _req _phone" type="tel" name="phone" placeholder="+7(999) 999-99-99"/>
+              <div class="error">Поле обязательно</div>
+            </div>
+            <div class="feedback__inputs-wrapper">
+              <input class="feedback__comment" type="text" name="comment" placeholder="Комментарий"/>
+            </div>
           </div>
           <div class="feedback__btns">
             <label class="feedback__agree">
@@ -87,10 +97,7 @@
         <div class="pattern_top"></div>
         <video class="video-dark" src="video/video_dron.mp4" loop="loop" muted="muted" autoplay="autoplay" preload="auto" poster="images/show/video_TOP.png"></video>
         <video class="video-white" src="video/video_dron1.mp4" loop="loop" muted="muted" autoplay="autoplay" preload="auto" poster="images/balloon/video_TOP.png"></video><img class="img-dark mobile" src="images/show/video_TOP.png" alt="darkBg"/><img class="img-white mobile" src="images/balloon/video_TOP.png" alt="whiteBg"/>
-        <div class="presentation__title">
-          <lottie-player class="bg-dark" autoplay="autoplay" mode="normal" src="images/lottie-json/bg-dark.json"></lottie-player>
-          <lottie-player class="bg-white" autoplay="autoplay" mode="normal" src="images/lottie-json/bg-white.json"></lottie-player>
-        </div>
+        <div class="presentation__title"></div>
         <div class="presentation__subtitle">
           <h1 class="title-dark">световое шоу дронов</h1>
           <h1 class="title-white">радиоуправляемые дирижабли с автопилотом для маркетинговых и развлекательных проектов по всему миру</h1>
@@ -786,6 +793,7 @@
     <script src="js/map.min.js"></script>
     <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ELQtiPPBbfNKcUHh0F0kRpQkHS6qgVI&amp;callback=initMap" type="text/javascript"></script>
     <script src="js/libs/lottie-player.js"></script>
+    <script src="js/libs/lottie.js"></script>
     <script src="js/libs/swiper-bundle.min.js"></script>
     <script src="js/libs/fslightbox.js"></script>
     <script src="js/libs/parallax.min.js"></script>
