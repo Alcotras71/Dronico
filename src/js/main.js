@@ -1,5 +1,40 @@
 document.addEventListener("DOMContentLoaded", (e) => {
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // addAnchorsToLinks
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  const body = document.body,
+    darkAnchr = document.querySelectorAll(".dark-anchr"),
+    whiteAnchr = document.querySelectorAll(".white-anchr");
+
+  if (body.classList.contains("dark")) {
+    darkAnchr.forEach((anc) => {
+      anc.setAttribute("href", "#header");
+    });
+  } else if (body.classList.contains("white")) {
+    whiteAnchr.forEach((anc) => {
+      anc.setAttribute("href", "#header");
+    });
+  }
+
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // smoothScrollByAnchors
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+  const anchors = document.querySelectorAll('a[href*="#"]');
+  for (let anchor of anchors) {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const blockID = anchor.getAttribute("href").substr(1);
+      if (blockID) {
+        document.getElementById(blockID).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  }
+
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // calcScroll
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   function calcScroll() {
@@ -61,10 +96,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // on: {
     //   slideChange: function () {
     //     if (this.activeIndex == 0) {
-		// 			this.slideTo(6, 500);
-		// 		} else if (this.activeIndex == 7) {
-		// 			this.slideTo(1, 500);
-		// 		}
+    // 			this.slideTo(6, 500);
+    // 		} else if (this.activeIndex == 7) {
+    // 			this.slideTo(1, 500);
+    // 		}
     //   },
     // },
     navigation: {
@@ -78,7 +113,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       },
       769: {
         slidesPerView: 3,
-				spaceBetween: 11,
+        spaceBetween: 11,
       },
       1026: {
         slidesPerView: 4,
@@ -427,27 +462,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
     "83.123341, 42.75656",
   ];
 
-  // const el = document.querySelectorAll(".scrumble-text");
+  const numbers = document.querySelectorAll(".scrumble-text");
 
-  // const fx1 = new TextScramble(el[0]);
-  // let counter1 = 0;
-  // const next1 = () => {
-  //   fx1.setText(phrases[counter1]).then(() => {
-  //     setTimeout(next1, 800);
-  //   });
-  //   counter1 = (counter1 + 1) % phrases.length;
-  // };
-  // next1();
+  function scrumbleText(fx, num) {
+    fx = new TextScramble(num);
+    let counter = 0;
+    function next() {
+      fx.setText(phrases[counter]).then(() => {
+        setTimeout(next, 800);
+      });
+      counter = (counter + 1) % phrases.length;
+    }
+    next();
+  }
 
-  // const fx2 = new TextScramble(el[1]);
-  // let counter2 = 0;
-  // const next2 = () => {
-  //   fx2.setText(phrases[counter2]).then(() => {
-  //     setTimeout(next2, 800);
-  //   });
-  //   counter2 = (counter2 + 1) % phrases.length;
-  // };
-  // next2();
+  numbers.forEach((num, i) => {
+		scrumbleText(`fx${i}`, num);
+	});
 
   // Modal
 

@@ -38,6 +38,9 @@ $calculateDron: calc(2.2vw + 3px);
 	&__img {
 		width: 36vw;
 		transition: all 0.5s ease;
+		&-small{
+			display: none;
+		}
 		&-btn {
 			cursor: pointer;
 			position: absolute;
@@ -110,7 +113,7 @@ $calculateDron: calc(2.2vw + 3px);
 		transition: all 0.9s ease 0.7s;
 	}
 	&__types {
-		margin-top: 100px;
+		margin-top: 80px;
 		display: flex;
 		justify-content: space-between;
 		width: 48vw;
@@ -296,16 +299,29 @@ $calculateDron: calc(2.2vw + 3px);
 					height: auto;
 				}
 			}
+			&-overlay{
+				position: absolute;
+				width: 100%;
+				height: 50%;
+				bottom: 0;
+				z-index: 55;
+				background: rgba(96, 36, 186, 0.5);
+			}
 			&-btn {
 				display: none;
 			}
 			&-small{
+				display: block;
 				.dronico-slider__img-btn{
 					display: block;
 					position: absolute;
-					top: -25%;
-					left: 43%;
+					top: calc(-12vw - 28px);
+					left: 42%;
 					transform: translate(0, 0);
+					opacity: 0.6;
+					svg {
+						width: 14vw;
+					}
 				}
 				&:hover {
 					.dronico-slider__img-btn{
@@ -323,14 +339,14 @@ $calculateDron: calc(2.2vw + 3px);
 		}
 
 		&__content {
-			margin-top: 28vw;
+			margin-top: 31vw;
 			padding: 0 15px 0 15px;
 			position: relative;
 		}
 		&__title {
 			font-size: 5rem;
 			line-height: 5.1rem;
-			color: #8e42ff;
+			color: #fff;
 			max-width: 85vw;
 		}
 		&__subtitle {
@@ -338,7 +354,7 @@ $calculateDron: calc(2.2vw + 3px);
 			max-width: 85vw;
 		}
 		&__types {
-			margin-top: 40px;
+			margin-top: 0;
 			display: flex;
 			width: 100%;
 			flex-wrap: wrap;
@@ -388,12 +404,20 @@ $calculateDron: calc(2.2vw + 3px);
 			}
 		}
 		&__content {
-			margin-top: 25vw;
 			padding: 0 35px 0 15px;
 		}
 		&__imgNum-container {
 			top: 6%;
 		}
+		&__img {
+			&-small{
+				.dronico-slider__img-btn{
+					top: calc(-13vw - 28px);
+					left: 40vw;
+				}
+			}
+		}
+
 		&__title {
 			font-size: 4.7rem;
 			line-height: 4.8rem;
@@ -456,6 +480,7 @@ $calculateDron: calc(2.2vw + 3px);
 
 			.dronico-slider__static {
 				&-imgContainer {
+					position: relative;
 					-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
 						linear-gradient(-45deg, transparent 0 $cornDron, #fff 0) bottom right,
 						linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
@@ -473,28 +498,40 @@ $calculateDron: calc(2.2vw + 3px);
 					top: 5%;
 					left: 5%;
 					width: auto;
-					height: 20%;
+					height: 7%;
 				}
+				svg.dronico-slider__static-img {
+					top: 25%;
+					left: 50%;
+					transform: translate(-50%, -35%);
+					opacity: 0.7;
+					width: auto;
+					height: 32vw;
+					transition: $transition;
+					&:hover {
+						opacity: 1;
+					}
+				}
+
 				&-container {
 					margin-bottom: 6vw;
 					position: relative;
 				}
 				&-content {
 					position: absolute;
-					top: 30%;
+					top: 36%;
 					width: 100%;
 					padding: 0 10px;
 				}
 				&-title {
-					font-size: 8.6vw;
-					line-height: 8.6vw;
-					color: #8e42ff;
-					margin-bottom: 20px;
+					font-size: 5.4vw;
+					line-height: 5.4vw;
+					margin-bottom: 7px;
 				}
 				&-subtitle {
 					font-family: Geometria;
-					font-size: 4.6vw;
-					line-height: 5.6vw;
+					font-size: 4.5vw;
+					line-height: 5.5vw;
 				}
 			}
 		}

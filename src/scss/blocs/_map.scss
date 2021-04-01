@@ -1,11 +1,39 @@
 $cornMap: 3.5vw;
-$borderWidthMap: 2px;
-$calculateMap: calc(3.5vw + 2px);
+$borderWidthMap: 3px;
+$calculateMap: calc(3.5vw + 3px);
 $mapColor: #6024ba;
 
 .map {
 	margin-bottom: 70px;
 	display: flex;
+	&__btn-wrapper {
+		position: static;
+		margin-top: 30px;
+	}
+	&__btn.box {
+		display: inline-block;
+		width: 15vw;
+		border: $borderWidthPres solid $main;
+		background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+			linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $alpha;
+		background-origin: border-box;
+		background-repeat: no-repeat;
+		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+			linear-gradient(-45deg, transparent 0 $cornPres, #fff 0) bottom right,
+			linear-gradient(135deg, transparent 0 $cornPres, #fff 0) top left,
+			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+		-webkit-mask-size: 51% 51% !important;
+		-webkit-mask-repeat: no-repeat !important;
+		transition: all 0.5s ease;
+		text-align: center;
+		&:hover {
+			background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $main;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+		}
+	}
+
 	&__container {
 		padding: 3.5vw 0 0 3vw;
 		position: relative;
@@ -182,6 +210,15 @@ $mapColor: #6024ba;
 
 @media (max-width: 1440px) {
 	.map {
+		&__btn-wrapper {
+			position: static;
+			margin-top: 20px;
+		}
+		&__btn.box {
+			p {
+				font-size: 2.2rem;
+			}
+		}
 		&__zoom {
 			&-plus,
 			&-minus {
@@ -197,10 +234,31 @@ $mapColor: #6024ba;
 }
 
 @media (max-width: 1025px) {
+	$cornPres: 1.1vw;
+	$borderWidthPres: 3px;
+	$calculatePres: calc(1.1vw + 3px);
 	.map {
 		&__title {
 			font-size: 2.5vw;
 		}
+		&__btn.box {
+			height: 50px;
+			border: $borderWidthPres solid $main;
+			background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornPres, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornPres, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 51% 51% !important;
+			-webkit-mask-repeat: no-repeat !important;
+			p {
+				font-size: 1.5rem;
+			}
+		}
+
 		&__zoom {
 			&-plus,
 			&-minus {
@@ -215,21 +273,80 @@ $mapColor: #6024ba;
 	}
 }
 
+@media (max-width: 768px) {
+	.map {
+		&__container {
+			padding-right: 3vw;
+		}
+		&__btn.box {
+			width: 100%;
+			height: 7vw;
+		}
+		&__contacts {
+			bottom: 5vw;
+			right: auto;
+			left: 3vw;
+		}
+		&__title {
+			font-size: 3vw;
+			line-height: 3.8vw;
+		}
+
+		.hide-br {
+			display: none;
+		}
+
+		&__contacts-phone {
+			padding-bottom: 10px;
+		}
+		&__social-icons {
+			padding-bottom: 10px;
+		}
+	}
+}
+
 @media (max-width: 550px) {
 	$cornMap: 3.5vw;
 	$borderWidthMap: 2px;
 	$calculateMap: calc(3.5vw + 2px);
 	$mapColor: #6024ba;
 
+	$cornPres: 3vw;
+	$borderWidthPres: 3px;
+	$calculatePres: calc(3vw + 3px);
+
 	.map {
 		display: block;
 		margin-bottom: 8vw;
 
+		&__btn.box {
+			width: 100%;
+			height: 14vw;
+
+			border: $borderWidthPres solid $main;
+			background: linear-gradient(-45deg, $main 0 $calculatePres, transparent 0) bottom right/50% 50%,
+				linear-gradient(135deg, $main 0 $calculatePres, transparent 0) top left / 50% 50%, $alpha;
+			background-origin: border-box;
+			background-repeat: no-repeat;
+			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+				linear-gradient(-45deg, transparent 0 $cornPres, #fff 0) bottom right,
+				linear-gradient(135deg, transparent 0 $cornPres, #fff 0) top left,
+				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+			-webkit-mask-size: 51% 51% !important;
+			-webkit-mask-repeat: no-repeat !important;
+
+			p {
+				font-size: 3.5vw;
+			}
+		}
+
 		&__title {
-			font-size: 5.6vw;
+			font-size: 6.6vw;
+			line-height: 8vw;
 		}
 		&__contacts {
-			font-size: 3.6vw;
+			font-size: 5vw;
+			line-height: 5.1vw;
 		}
 		&__social-icons {
 			svg {
@@ -239,7 +356,7 @@ $mapColor: #6024ba;
 		}
 
 		&__container {
-			padding: 3.5vw 0 0 3vw;
+			padding: 3.5vw 3vw 0 3vw;
 			width: 100%;
 			height: 85vw;
 			border: $borderWidthMap solid $cardBorderColor;

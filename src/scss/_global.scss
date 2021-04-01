@@ -28,16 +28,14 @@ body {
 }
 
 .wrapper-dark {
-	background: url("../images/pattern.png") repeat,
-		url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+	background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
 		url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
 		url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
 		url("../images/show/work_radialBg.png") no-repeat -60% 88%,
 		url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
 }
 .wrapper-white {
-	background: url("../images/patternB.png") repeat,
-		url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%;
+	background: url("../images/patternB.png") repeat, url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%;
 }
 
 .big-title img,
@@ -88,6 +86,25 @@ body {
 	transition: all 4s ease;
 }
 
+.scrumble-text {
+	font-family: "Roboto Mono", monospace !important;
+}
+
+@media (min-width: 1950px) {
+	.title {
+		font-size: 10rem;
+		line-height: 10rem;
+	}
+
+	.wrapper-dark {
+		background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+			url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
+			url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
+			url("../images/show/work_radialBg.png") no-repeat 0% 80%,
+			url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
+	}
+}
+
 @media (max-width: 1440px) {
 	html {
 		font-size: 7.5px;
@@ -109,8 +126,7 @@ body {
 
 @media (max-width: 768px) {
 	.wrapper-dark {
-		background: url("../images/pattern.png") repeat,
-			url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+		background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
 			url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
 			url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
 			url("../images/show/work_radialBg.png") no-repeat 0% 85%,
@@ -118,8 +134,7 @@ body {
 	}
 
 	.wrapper-white {
-		background: url("../images/patternB.png") repeat,
-			url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%,
+		background: url("../images/patternB.png") repeat, url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%,
 			url("../images/balloon/dolphin_radialBg.png") no-repeat 0% 90%;
 	}
 }
@@ -129,5 +144,3 @@ body {
 		font-size: 6px;
 	}
 }
-
-

@@ -1,13 +1,40 @@
 .footer {
-	background:url("../images/pattern.png") repeat;
+	background: url("../images/pattern.png") repeat left 30px;
 	padding: 0 30px 70px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 2rem;
-	line-height: 2rem;
-	letter-spacing: 0.055em;
-	color: #ffffff;
+
+	&__nav {
+		margin-bottom: 50px;
+		a {
+			color: #fff;
+		}
+	}
+	&__menu {
+		justify-content: center;
+	}
+	&__show {
+		a {
+			color: $main;
+			transition: $transition;
+		}
+	}
+	&__aero {
+		a {
+			transition: $transition;
+		}
+		a:hover {
+			color: $main;
+		}
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 2rem;
+		line-height: 2rem;
+		letter-spacing: 0.055em;
+		color: #ffffff;
+	}
 	&__wrapper {
 		display: flex;
 		width: 50%;
@@ -65,7 +92,30 @@
 		background: #000;
 	}
 	.footer {
-		background:  url("../images/patternB.png") repeat;
+		background: url("../images/patternB.png") repeat;
+
+		&__nav {
+			a {
+				color: #000;
+			}
+		}
+		&__show {
+			a {
+				color: #000;
+			}
+			a:hover {
+				color: $main;
+			}
+		}
+		&__aero {
+			a {
+				color: $main;
+			}
+			a:hover {
+				color: $main;
+			}
+		}
+
 		&__social-icons {
 			svg {
 				path {
@@ -84,9 +134,24 @@
 	}
 }
 
+@media (max-width: 1250px) {
+	.footer {
+		&__show {
+			margin-left: 100px;
+		}
+	}
+}
+
 @media (max-width: 1025px) {
 	.footer {
-		display: block;
+		&__container {
+			display: block;
+		}
+
+		&__menu {
+			position: static;
+		}
+
 		&__wrapper {
 			display: flex;
 			width: 100%;
@@ -96,21 +161,39 @@
 
 @media (max-width: 550px) {
 	.footer {
-		display: flex;
-		flex-wrap: wrap-reverse;
-		font-size: 3.8vw;
-		line-height: 3.8vw;
-		justify-content: center;
-		padding-bottom: 7vw;
+		&__container {
+			display: flex;
+			flex-wrap: wrap-reverse;
+			font-size: 3.8vw;
+			line-height: 3.8vw;
+			justify-content: center;
+			padding-bottom: 7vw;
+		}
+
+		&__nav{
+			margin-bottom: 6vw;
+		}
+
+		&__nav li {
+			margin: 0;
+			margin-bottom: 2vw;
+			padding: 0;
+		}
+
+		&__nav a {
+			font-size: 3.8vw;
+			line-height: 3.8vw;
+		}
+
 		&__wrapper {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 		}
-		&__policy{
+		&__policy {
 			margin-bottom: 2vw;
 		}
-		&__rights{
+		&__rights {
 			margin-bottom: 7vw;
 		}
 	}

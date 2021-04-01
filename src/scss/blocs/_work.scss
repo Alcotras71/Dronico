@@ -290,6 +290,10 @@ $calculateWork: calc(2.05vw + 3px);
 
 @media (min-width: 1950px) {
 	.work {
+		&__title {
+			max-width: 20vw;
+		}
+
 		&__wrapper {
 			height: 850px;
 		}

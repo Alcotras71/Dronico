@@ -26,6 +26,17 @@
 	}
 }
 
+@media (min-width: 1950px) {
+	.about {
+		&__text-title {
+			max-width: 45vw;
+		}
+		&__text-text{
+			max-width: 50vw;
+		}
+	}
+}
+
 @media (max-width: 1440px) {
 	.about {
 		&__title {
