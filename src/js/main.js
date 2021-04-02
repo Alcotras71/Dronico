@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // smoothScrollByAnchors
-  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+	// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
   const anchors = document.querySelectorAll('a[href*="#"]');
   for (let anchor of anchors) {
@@ -92,10 +92,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // visible header
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-  const invisible = document.querySelectorAll(".invisible *");
+  const invisible = document.querySelectorAll(".invisible *"),
+    coords = document.querySelectorAll(".presentation__coords *");
   const headerTimeout = setTimeout(() => {
     invisible.forEach((el) => {
       el.style.opacity = 1;
+    });
+    coords.forEach((el) => {
+      el.style.opacity = 0.3;
     });
   }, 1500);
 
@@ -294,13 +298,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   function closeModal(modalSelector) {
     const modalWindow = document.querySelector(modalSelector);
-
+    document.body.style.paddingRight = `0`;
+    document.body.style.overflow = "visible";
     modalWindow.classList.remove("active");
   }
 
   function openModal(modalSelector) {
     const modalWindow = document.querySelector(modalSelector);
-
+    document.body.style.paddingRight = `${paddingScroll}px`;
+    document.body.style.overflow = "hidden";
     modalWindow.classList.add("active");
   }
 
@@ -327,10 +333,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   modal(".box", ".feedback");
 
+  // ——————————————————————————————————————————————————
+  // InputMask
+  // ——————————————————————————————————————————————————
+
+  const inputsTel = document.querySelectorAll('input[type="tel"]');
+  const inputmask = new Inputmask("+7(999) 999-99-99");
+  inputmask.mask(inputsTel);
+
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // Form
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-  const form = document.querySelector(".feedback__form");
+  const form = document.querySelector(".feedback__form"),
+    errorText = document.querySelector(".feedback__error"),
+    successText = document.querySelector(".feedback__success"),
+    feedbackWindow = document.querySelector(".feedback");
+
   form.addEventListener("submit", formSend);
 
   async function formSend(e) {
@@ -340,22 +358,35 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     const formData = new FormData(form);
 
+    console.log(error);
+
     if (error === 0) {
-      form.classList.add("._sending");
+      feedbackWindow.classList.add("_sending");
       let response = await fetch("php/sendmail.php", {
         method: "POST",
         body: formData,
       });
       if (response.ok) {
         let result = await response.json();
-        alert(result.message);
         form.reset();
-        form.classList.remove("_sending");
+        feedbackWindow.classList.remove("_sending");
+        showMessage(form, successText, 5);
       } else {
-        alert("Ошибка");
-        form.classList.remove("_sending");
+        feedbackWindow.classList.remove("_sending");
+        showMessage(form, errorText, 2.5);
       }
     }
+  }
+
+  function showMessage(form, messageSelector, delay) {
+    form.style.opacity = "0";
+    form.style.pointerEvents = "none";
+    messageSelector.style.opacity = "1";
+    setTimeout(function () {
+      form.style.opacity = "1";
+      form.style.pointerEvents = "auto";
+      messageSelector.style.opacity = "0";
+    }, delay * 1000);
   }
 
   function formValidate(form) {
@@ -367,12 +398,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
       formRemoveError(input);
 
       if (input.classList.contains("_name")) {
-        if (!/^\w{4,20}$/gi.test(input.value)) {
+        if (!/^[\s\D]{2,20}$/gi.test(input.value)) {
           formAddError(input);
-        }
-      } else if (input.classList.contains("_phone")) {
-        if (!/^\d{4,12}$/g.test(input.value)) {
-          formAddError(input);
+          error++;
         }
       } else if (
         input.getAttribute("type") === "checkbox" &&
@@ -389,15 +417,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 
   function formAddError(input) {
-    input.parentElement.classList.add("_error");
-    input.classList.add("_error");
-    input.nextSibling.nextElementSibling.classList.add("_error");
+    if (input.value.length == 0 || input.getAttribute("type") === "checkbox") {
+      input.parentElement.classList.add("_error");
+      input.classList.add("_error");
+      input.nextSibling.nextElementSibling.classList.add("_error");
+    } else {
+      input.parentElement.classList.add("_errorValid");
+      input.classList.add("_errorValid");
+      input.nextSibling.nextElementSibling.classList.add("_errorValid");
+    }
   }
 
   function formRemoveError(input) {
     input.parentElement.classList.remove("_error");
-		input.classList.remove("_error");
-		input.nextSibling.nextElementSibling.classList.remove("_error");
+    input.classList.remove("_error");
+    input.nextSibling.nextElementSibling.classList.remove("_error");
+    input.parentElement.classList.remove("_errorValid");
+    input.classList.remove("_errorValid");
+    input.nextSibling.nextElementSibling.classList.remove("_errorValid");
   }
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -484,8 +521,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   numbers.forEach((num, i) => {
     scrumbleText(`fx${i}`, num);
   });
-
-  // Modal
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // Parallax

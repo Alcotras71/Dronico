@@ -17,11 +17,6 @@ $calculatePres: $cornPres + $borderWidthPres;
 		min-height: 100%;
 		object-fit: cover;
 	}
-
-	// lottie-player {
-	// 	height: 100vh;
-	// 	width: 99vw;
-	// }
 	.mobile {
 		display: none;
 	}
@@ -34,11 +29,9 @@ $calculatePres: $cornPres + $borderWidthPres;
 		background: url("../images/pattern.png") repeat;
 	}
 	&__title {
-		img {
-			width: 98vw;
-			height: 100vh;
-			padding-left: 21px;
-		}
+		height: 100vh;
+		width: 100vw;
+		padding-right: 20px;
 	}
 	&__subtitle {
 		position: absolute;
@@ -170,8 +163,6 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 		&__title {
 			position: absolute;
-			height: 100vh;
-			width: 100vw;
 			top: -13%;
 		}
 
@@ -255,6 +246,7 @@ $calculatePres: $cornPres + $borderWidthPres;
 		}
 
 		&__coords {
+			opacity: 0.5;
 			bottom: 14%;
 		}
 
@@ -279,7 +271,6 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 	.white {
 		.presentation {
-
 			.video-dark {
 				display: none;
 			}
@@ -353,7 +344,6 @@ $calculatePres: $cornPres + $borderWidthPres;
 
 	.white {
 		.presentation {
-
 			.video-dark {
 				display: none;
 			}
@@ -511,3 +501,14 @@ $calculatePres: $cornPres + $borderWidthPres;
 }
 
 
+@media (max-width: 900px) and (orientation:landscape)  {
+	.presentation {
+		height: 800px;
+		&__title {
+			height: 100%;
+		}
+		.pattern_top {
+			height: 100%;
+		}
+	}
+}

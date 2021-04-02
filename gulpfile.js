@@ -8,12 +8,14 @@ const gulp = require("gulp"),
   notify = require("gulp-notify"),
   plumber = require("gulp-plumber"),
   pug = require("gulp-pug"),
-  imageMin = require("gulp-imagemin"),
-  cssMin = require("gulp-minify-css"),
+  cssMin = require("gulp-cssmin"),
   uglify = require("gulp-uglify"),
-	rename = require("gulp-rename"),
-	requirejs = require('requirejs');
+  babel = require("gulp-babel"),
+  rename = require("gulp-rename");
 
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// PUG
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("pug", function () {
   return gulp
     .src("src/pug/pages/**/*.pug")
@@ -36,7 +38,9 @@ gulp.task("pug", function () {
     .pipe(gulp.dest("build"))
     .pipe(browserSync.stream());
 });
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// SCSS
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("scss", () => {
   return gulp
     .src("src/scss/main.scss")
@@ -64,7 +68,9 @@ gulp.task("scss", () => {
     .pipe(gulp.dest("build/css/"))
     .pipe(browserSync.stream());
 });
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// JS
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("js", () => {
   return gulp
     .src("src/js/**/*.js")
@@ -80,51 +86,70 @@ gulp.task("js", () => {
       })
     )
     .pipe(sourcemaps.init())
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("build/js/"))
     .pipe(browserSync.reload({ stream: true }));
 });
-
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// CSS LIBRARIES
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("cssLibs", () => {
   const modules = [
-		"node_modules/swiper/swiper-bundle.min.css",
-		"node_modules/rellax/css/main.css"
-	];
+    "node_modules/swiper/swiper-bundle.min.css",
+    // "node_modules/rellax/css/main.css",
+  ];
   return gulp
     .src(modules)
     .pipe(gulp.dest("build/css/libs/"))
     .pipe(browserSync.reload({ stream: true }));
 });
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// JS LIBRARIES
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("jsLibs", () => {
   const modules = [
     "node_modules/swiper/swiper-bundle.min.js",
-		"node_modules/swiper/swiper-bundle.min.js.map",
-		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js",
-		"node_modules/@lottiefiles/lottie-player/dist/lottie-player.js.map",
-		"node_modules/lottie-web/build/player/lottie.js",
-		"node_modules/fslightbox/fslightbox.js",
-		"node_modules/parallax-js/dist/parallax.min.js",
-		"node_modules/parallax-js/dist/parallax.min.js.map",
-		"node_modules/rellax/rellax.min.js"
+    "node_modules/@lottiefiles/lottie-player/dist/lottie-player.js",
+    "node_modules/lottie-web/build/player/lottie.js",
+    "node_modules/parallax-js/dist/parallax.min.js",
+    "node_modules/rellax/rellax.min.js",
+    "node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js",
+    "loadLibs/fslightbox.min.js",
+    "loadLibs/inputmask.min.js",
   ];
   return gulp
     .src(modules)
     .pipe(gulp.dest("build/js/libs/"))
     .pipe(browserSync.reload({ stream: true }));
 });
-
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// MAPS FOR JS LIBRARIES
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+gulp.task("jsLibsMap", () => {
+  const modules = [
+    "node_modules/swiper/swiper-bundle.min.js.map",
+    "node_modules/@lottiefiles/lottie-player/dist/lottie-player.js.map",
+    "node_modules/parallax-js/dist/parallax.min.js.map",
+  ];
+  return gulp
+    .src(modules)
+    .pipe(gulp.dest("build/js/libs/"))
+    .pipe(browserSync.reload({ stream: true }));
+});
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// COPY IMG
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("img", () => {
   return gulp
     .src("src/images/**/*.*")
     .pipe(gulp.dest("build/images/"))
     .pipe(browserSync.reload({ stream: true }));
 });
-
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// COPY FONTS, VIDEO, IFRAME, PHP
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("copy:fonts", () => {
   return gulp
     .src("src/fonts/**/*.*")
@@ -149,8 +174,9 @@ gulp.task("copy:php", () => {
     .pipe(gulp.dest("build/php/"))
     .pipe(browserSync.reload({ stream: true }));
 });
-
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// WATCH TASK
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("watch", () => {
   gulp.watch("src/pug/**/*.pug", gulp.parallel("pug"));
   gulp.watch("src/scss/**/*.scss", gulp.parallel("scss"));
@@ -162,7 +188,9 @@ gulp.task("watch", () => {
   gulp.watch("src/iframe/**/**.*", gulp.parallel("copy:iframe"));
   gulp.watch("src/php/**/**.*", gulp.parallel("copy:php"));
 });
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// Server
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("server", () => {
   browserSync.init({
     server: {
@@ -170,11 +198,15 @@ gulp.task("server", () => {
     },
   });
 });
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// Build
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task("clean:build", () => {
   return del("build/");
 });
-
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+// Default
+// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 gulp.task(
   "default",
   gulp.series(
@@ -189,7 +221,8 @@ gulp.task(
       "copy:iframe",
       "copy:php",
       "cssLibs",
-      "jsLibs"
+      "jsLibs",
+      "jsLibsMap"
     ),
     gulp.parallel("server", "watch")
   )

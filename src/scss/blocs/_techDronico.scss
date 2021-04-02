@@ -68,7 +68,7 @@
 			width: 100%;
 		}
 	}
-	.tech-dronico__btn {
+	&__btn {
 		position: absolute;
 		cursor: pointer;
 		top: 60%;
@@ -198,6 +198,19 @@
 }
 
 @media (min-width: 1950px) {
+	.tech-dronico__btn {
+		.tech-dronico__circle {
+			.tech-dronico__text-container {
+				.plus {
+					position: absolute;
+					top: 55%;
+					left: 50%;
+					transform: translate(-49%, -51%);
+				}
+			}
+		}
+	}
+
 	.tech-dronico__text-wrapper {
 		padding-bottom: 200px;
 	}
