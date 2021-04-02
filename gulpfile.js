@@ -86,6 +86,11 @@ gulp.task("js", () => {
       })
     )
     .pipe(sourcemaps.init())
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
     .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write())

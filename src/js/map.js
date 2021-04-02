@@ -178,18 +178,14 @@ function initMap() {
     scaleControl: false,
   });
 
-  markerImage = new google.maps.MarkerImage(
-    "images/show/map_marker.svg",
-    new google.maps.Size(80, 80),
-    new google.maps.Point(0, 0),
-    new google.maps.Point(40, 40)
-  );
-
   initZoomControl(map);
   const marker = new google.maps.Marker({
     position: new google.maps.LatLng(55.72078349376917, 37.63271754923085),
     map: map,
-    icon: markerImage,
+    icon: {
+			url:	"images/show/map_marker.svg",
+			anchor: new google.maps.Point(40, 40)
+		}
   });
 }
 

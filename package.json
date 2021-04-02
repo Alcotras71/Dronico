@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.13.14",
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
@@ -29,6 +30,7 @@
     "mathsass": "^0.11.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.13.10",
     "@lottiefiles/lottie-player": "^0.5.1",
     "fslightbox": "^3.2.3",
     "parallax-js": "^3.1.0",
