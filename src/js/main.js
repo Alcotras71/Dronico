@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // smoothScrollByAnchors
-	// ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
   const anchors = document.querySelectorAll('a[href*="#"]');
   for (let anchor of anchors) {
@@ -149,6 +149,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
           this.slideTo(6, 1000);
         } else if (this.activeIndex == 7) {
           this.slideTo(1, 1000);
+        }
+      });
+      const techText = document.querySelectorAll(".tech-dronico__text");
+      techText.forEach((el) => {
+        if (el.dataset.text == "1") {
+          const div = document.createElement("div");
+          div.innerHTML = "1.";
+          el.prepend(div);
+        } else if (el.dataset.text == "2") {
+          const div = document.createElement("div");
+          div.innerHTML = "2.";
+          el.prepend(div);
+        } else if (el.dataset.text == "3") {
+          const div = document.createElement("div");
+          div.innerHTML = "3.";
+          el.prepend(div);
         }
       });
     }
@@ -545,4 +561,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const dronicoSliderContainer = document.querySelector(
     ".dronico-slider__img-container"
   );
+
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+  // make ordered list
+  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 });

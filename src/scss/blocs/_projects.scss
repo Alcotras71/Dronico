@@ -3,7 +3,7 @@ $cornPr: 3.5vw;
 .projects {
 	position: relative;
 
-	iframe{
+	iframe {
 		display: none;
 	}
 
@@ -44,21 +44,21 @@ $cornPr: 3.5vw;
 				-webkit-mask-size: 51% 51% !important;
 				-webkit-mask-repeat: no-repeat !important;
 			}
-			&:hover{
-				.projects__card-btn {
-					opacity: 1;
-					transform: translate(-50%, -50%) scale(1);
-				}
-			}
+			// &:hover{
+			// 	.projects__card-btn {
+			// 		opacity: 1;
+			// 		transform: translate(-50%, -50%) scale(1);
+			// 	}
+			// }
 		}
-		&-btn{
-			position: absolute;
-			opacity: 0.3;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%) scale(0.9);
-			transition: $transition;
-		}
+		// &-btn{
+		// 	position: absolute;
+		// 	opacity: 0.3;
+		// 	top: 50%;
+		// 	left: 50%;
+		// 	transform: translate(-50%, -50%) scale(0.9);
+		// 	transition: $transition;
+		// }
 		&-textcontainer {
 			grid-area: text;
 			max-width: 532px;
@@ -78,7 +78,6 @@ $cornPr: 3.5vw;
 				padding-bottom: 31px;
 			}
 		}
-
 	}
 	&__card:nth-child(odd) {
 		grid-template-areas: "image text";

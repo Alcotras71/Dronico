@@ -339,17 +339,17 @@
 			display: none;
 		}
 		&__img.small {
-			top: 50%;
+			top: 35%;
 			left: 0%;
 			width: 15vw;
 		}
 		&__img.medium {
-			top: 30%;
+			top: 15%;
 			left: 5%;
 			width: 39vw;
 		}
 		&__img.big {
-			top: 41%;
+			top: 38%;
 			left: 38%;
 			width: 60vw;
 		}
@@ -360,6 +360,13 @@
 			padding-left: 0;
 			padding-top: 15vw;
 			padding-bottom: 20vw;
+				p {
+					padding-left: 15px;
+					padding-right: 15px;
+					position: static;
+					opacity: 1;
+					margin-bottom: 18px;
+				}
 			&:before {
 				top: 7vw;
 			}
@@ -373,7 +380,8 @@
 @media (max-width: 375px) {
 	.tech-dronico {
 		&__text-wrapper {
-			padding-bottom: 33vw;
+			padding-bottom: 15vw;
+			width: 95%;
 		}
 	}
 }

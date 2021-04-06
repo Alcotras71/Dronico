@@ -17,6 +17,7 @@ $calculateFeed: $cornFeed + $borderWidthFeed;
 	opacity: 0;
 	transform: translateX(100%);
 	transition: $transition;
+	overflow-y: scroll;
 
 	&::after {
 		content: '';
