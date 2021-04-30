@@ -1,0 +1,85 @@
+.advantages {
+  position: relative;
+
+  &__drone {
+    position: absolute;
+    top: -5%;
+    left: -3%;
+  }
+
+  &__wrapper {
+    padding-top: 180px;
+  }
+
+  &__title {
+    text-align: right;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  &__inner-btn {
+    max-width: 1350px;
+    width: 1350px;
+    max-height: 600px;
+    height: 600px;
+    position: relative;
+  }
+
+  &__btn-text {
+    position: absolute;
+    left: 90px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+    max-width: 1250px;
+    width: 1250px;
+
+    &--3 {
+      width: 1170px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    cursor: auto;
+
+    &.tech-dronico__btn .tech-dronico__circle {
+      background: $red;
+    }
+
+    &--1 {
+      top: 0;
+      left: 15%;
+    }
+
+    &--2 {
+      top: 25%;
+      left: 10%;
+    }
+
+    &--3 {
+      top: 50%;
+      left: 5%;
+    }
+
+    &--4 {
+      top: 75%;
+      left: 0%;
+    }
+
+    .tech-dronico__circle {
+      .tech-dronico__text-container {
+        .plus {
+          transform: translate(-50%, -53%);
+        }
+      }
+    }
+  }
+}

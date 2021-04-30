@@ -1,0 +1,51 @@
+.security {
+  position: relative;
+
+  &__wrapper {
+    margin-bottom: 158px;
+  }
+
+  &__title {
+    margin-bottom: 84px;
+  }
+
+  &__inner {
+  }
+
+  &__inner-btn {
+    max-width: 1470px;
+    width: 1470px;
+    max-height: 450px;
+    height: 450px;
+    position: relative;
+  }
+
+  &__btn {
+    left: 5%;
+    cursor: auto;
+
+    &.tech-dronico__btn .tech-dronico__circle {
+      background: $red;
+    }
+
+    &--1 {
+      top: 0%;
+    }
+
+    &--2 {
+      top: 40%;
+    }
+
+    &--3 {
+      top: 80%;
+    }
+
+    .tech-dronico__circle {
+      .tech-dronico__text-container {
+        .plus {
+          transform: translate(-50%, -53%);
+        }
+      }
+    }
+  }
+}

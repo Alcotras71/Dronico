@@ -1,0 +1,32 @@
+//- WORK CARD----------------------------------------------------------------
+mixin workCard(width, coord ,color, text, className)
+  div(class=`work__slide swiper-slide ${className}`)
+    .work__slide-number
+      svg(width=`${width}` height='60' viewbox=`0 0 ${width} 60` fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(fill-rule='evenodd' clip-rule='evenodd' d=`${coord}` stroke=`${color}` stroke-width='1')
+    .work__slide-text #{text}
+
+
+//- TECHNO CARD----------------------------------------------------------------
+mixin technoCard(img, text, colorText, className, idTab)
+  div(class="technologies__tab" id=`${idTab}`)
+    .technologies__tab-icon
+      lottie-player(class='lottie-tech' mode='normal', src=`images/lottie-json/tech_${img}.json`)
+    div(class=`technologies__tab-text ${className}`)
+      | #{text}
+      span  #{colorText}
+
+
+
+//- PILOTS-------------------------------------------------------------------------
+mixin pilotsCard(img, name)
+  .pilots__card.pilots-card
+    img.pilots-card__img(src=`images/cinematic/${img}` alt=`${img.slice(0, img.length - 4)}`)
+    .pilots-card__block
+    p.pilots-card__name #{name}
+
+mixin eventCard(img, text)
+  .event__card.event-card
+    .event-card__wrapper
+      img.event-card__img(src=`images/cinematic/${img}` alt=`${img.slice(0, img.length - 4)}`)
+      p.event-card__text #{text}

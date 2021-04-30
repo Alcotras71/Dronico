@@ -1,17 +1,19 @@
 mixin typesCard(listObject)
 	.types__card
 		.types__icon
-			img(src=`images/show/dronico-sl_${listObject.img}.svg` alt=`${listObject.alt}`)
+			img(src=`images/show/dronico-sl_${listObject.img}.svg` loading="lazy" alt=`${listObject.alt}`)
 		.types__title.title-dark
 			| #{listObject.title}
 		.types__text
 			| #{listObject.text}
 
 mixin dronicoImgSlide(id, videoNum ,img)
-	a(class="dronico-slider__img-slide swiper-slide" data-fslightbox="lightbox" href=`#${id}`)
-		iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
-		img(src=`images/show/dronico-sl_${img}.jpg` alt=`${img}` data-swiper-parallax-x="-100")
-		.dronico-slider__img-btn
+	//- a(class="dronico-slider__img-slide swiper-slide" data-fslightbox="lightbox" href=`#${id}`)
+	//- 	iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
+	div.dronico-slider__img-slide.swiper-slide
+		img.desktop(src=`images/show/dronico-sl_desk_${img}.jpg` loading="lazy" alt=`${img}` data-swiper-parallax-x="-100")
+		img.tablet(src=`images/show/dronico-sl_${img}.jpg` loading="lazy" alt=`${img}` data-swiper-parallax-x="-100")
+		//- .dronico-slider__img-btn
 			svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
 				path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
 				circle(cx="63.7292" cy="63.7292" r="60.7292" stroke="white" stroke-opacity="1" stroke-width="6")
@@ -29,7 +31,7 @@ mixin dronicoSlide(id, videoNum,title, subtitle, myList)
 	.dronico-slider__slide.swiper-slide
 		.dronico-slider__content
 			a(class="dronico-slider__img-small" data-fslightbox="lightbox" href=`#${id}`)
-				iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
+				iframe(title=`${id}` loading="lazy" class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
 				div(class="dronico-slider__img-btn" data-swiper-parallax-scale="0.5" data-swiper-parallax-x="-100" data-swiper-parallax-y="-100")
 					svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
 						path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
@@ -52,8 +54,8 @@ mixin dronicoMobileSlider(textItem)
 mixin dronicoStaticMobile(id, videoNum, img, imgPath, imgHeight, imgWidth, title, subtitle, textLyst)
 	.dronico-slider__static-container
 		.dronico-slider__static-imgContainer
-			img(src=`images/show/dronico-sl_${img}.jpg` alt=`${img}`)
-			a(class="dronico-slider__static-img-small" data-fslightbox="lightbox" href=`#${id}`)
+			img(src=`images/show/dronico-sl_${img}.jpg` loading="lazy" alt=`${img}`)
+			//- a(class="dronico-slider__static-img-small" data-fslightbox="lightbox" href=`#${id}`)
 				iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
 				div(class="dronico-slider__static-img-btn" data-swiper-parallax-scale="0.5" data-swiper-parallax-x="-100" data-swiper-parallax-y="-100")
 					svg(class="dronico-slider__static-img" width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")

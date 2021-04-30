@@ -1,209 +1,300 @@
 .footer {
-	background: url("../images/pattern.png") repeat left 30px;
-	padding: 0 30px 70px;
+  background: url("../images/pattern.png") repeat left 30px;
+  padding: 0 30px 70px;
 
-	&__nav {
-		margin-bottom: 50px;
-		a {
-			color: #fff;
-		}
-	}
-	&__menu {
-		justify-content: center;
-	}
-	&__show {
-		a {
-			color: $main;
-			transition: $transition;
-		}
-	}
-	&__aero {
-		a {
-			transition: $transition;
-		}
-		a:hover {
-			color: $main;
-		}
-	}
+  &__nav {
+    margin-bottom: 50px;
+    a {
+      color: #fff;
+    }
+  }
+  &__menu {
+    justify-content: space-between;
+    max-width: 720px;
+    width: 720px;
+    margin: 0 auto;
+  }
+  &__show {
+    a {
+      color: $main;
+      transition: $transition;
+    }
+  }
+  &__aero {
+    a {
+      transition: $transition;
+    }
+    a:hover {
+      color: $main;
+    }
+  }
+  &__cinematic {
+    a {
+      transition: $transition;
+    }
+    a:hover {
+      color: $main;
+    }
+  }
 
-	&__container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		font-size: 2rem;
-		line-height: 2rem;
-		letter-spacing: 0.055em;
-		color: #ffffff;
-	}
+  &__cinematic {
+    a {
+      transition: $transition;
+    }
+    a:hover {
+      color: $main;
+    }
+  }
 
-	&__social-icons {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		min-width: 283px;
-		svg {
-			cursor: pointer;
-			path {
-				fill: transparent;
-				transition: $transition;
-			}
-		}
-		svg:hover {
-			path {
-				fill: rgba(122, 34, 255, 0.9);
-			}
-			path.stroke {
-				fill: #121421;
-			}
-		}
-	}
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: 0.055em;
+    color: #ffffff;
+  }
 
-	&__policy a {
-		color: #fff;
-		position: relative;
-	}
-	&__policy a:after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: #fff;
-		transition: $transition;
-	}
-	&__policy a:hover:after {
-		width: 100%;
-	}
+  &__social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 283px;
+    svg {
+      cursor: pointer;
+      path {
+        fill: transparent;
+        transition: $transition;
+      }
+    }
+    svg:hover {
+      path {
+        fill: rgba(122, 34, 255, 0.9);
+      }
+      path.stroke {
+        fill: #121421;
+      }
+    }
+  }
+
+  &__policy a {
+    color: #fff;
+    position: relative;
+  }
+  &__policy a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: $transition;
+  }
+  &__policy a:hover:after {
+    width: 100%;
+  }
 }
 
 .white {
-	.footer,
-	.footer__rights,
-	.footer__policy a {
-		color: #000;
-	}
-	.footer__policy a:after {
-		background: #000;
-	}
-	.footer {
-		background: url("../images/patternB.png") repeat;
+  .footer,
+  .footer__rights,
+  .footer__policy a {
+    color: #000;
+    transition: $transition;
+  }
+  .footer__policy a:after {
+    background: #000;
+  }
+  .footer {
+    background: url("../images/patternB.png") repeat;
 
-		&__nav {
-			a {
-				color: #000;
-			}
-		}
-		&__show {
-			a {
-				color: #000;
-			}
-			a:hover {
-				color: $main;
-			}
-		}
-		&__aero {
-			a {
-				color: $main;
-			}
-			a:hover {
-				color: $main;
-			}
-		}
+    &__nav {
+      a {
+        color: #000;
+      }
+    }
+    &__show,
+    &__cinematic {
+      a {
+        color: #000;
+      }
+      a:hover {
+        color: $main;
+      }
+    }
+    &__aero {
+      a {
+        color: $main;
+      }
+      a:hover {
+        color: $main;
+      }
+    }
 
-		&__social-icons {
-			svg {
-				path {
-					stroke: #000;
-				}
-			}
-			svg:hover {
-				path {
-					fill: #000;
-				}
-				path.stroke {
-					fill: #fff;
-				}
-			}
-		}
-	}
+    &__social-icons {
+      svg {
+        path {
+          stroke: #000;
+        }
+      }
+      svg:hover {
+        path {
+          fill: #000;
+        }
+        path.stroke {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+.red {
+  .footer,
+  .footer__rights,
+  .footer__policy a {
+    color: #fff;
+    transition: $transition;
+  }
+
+  .footer__policy a:after {
+    background: $red;
+  }
+
+  .footer {
+    &__show,
+    &__aero {
+      a {
+        color: #fff;
+      }
+
+      a:hover {
+        color: $red;
+      }
+    }
+
+    &__cinematic {
+      a {
+        color: $red;
+      }
+
+      a:hover {
+        color: $main;
+      }
+    }
+
+    .footer__cinematic a {
+      color: $red;
+    }
+
+    a:hover {
+      color: $red;
+      path {
+        fill: $red;
+      }
+    }
+
+    .footer__logo {
+      svg:hover {
+        path {
+          fill: $red;
+        }
+      }
+    }
+  }
+
+  .footer__social-icons {
+    path {
+      stroke: $red;
+    }
+
+    svg:hover {
+      path {
+        fill: $red;
+      }
+      path.stroke {
+        fill: $background;
+      }
+    }
+  }
 }
 
 @media (max-width: 1250px) {
-	.footer {
-		&__show {
-			margin-left: 100px;
-		}
-	}
+  .footer {
+    &__show {
+      margin-left: 100px;
+    }
+  }
 }
 
 @media (max-width: 1025px) {
-	.footer {
-		&__container {
-			display: flex;
-			flex-wrap: wrap;
-		}
+  .footer {
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-		&__social-icons {
-			width: 50%;
-			padding-left: 18%;
-		}
+    &__social-icons {
+      width: 50%;
+      padding-left: 18%;
+    }
 
-		&__menu {
-			position: static;
-		}
-	}
+    &__menu {
+      position: static;
+    }
+  }
 }
 
 @media (max-width: 768px) {
-	.footer {
-
-		&__social-icons {
-			padding-left: 10%;
-		}
-	}
+  .footer {
+    &__social-icons {
+      padding-left: 10%;
+    }
+  }
 }
 
 @media (max-width: 550px) {
-	.footer {
-		&__container {
-			display: grid;
-			grid-auto-columns: 100%;
-			font-size: 3.8vw;
-			line-height: 3.8vw;
-			padding-bottom: 7vw;
-		}
+  .footer {
+    &__container {
+      display: grid;
+      grid-auto-columns: 100%;
+      font-size: 3.8vw;
+      line-height: 3.8vw;
+      padding-bottom: 7vw;
+    }
 
-		&__social-icons {
-			grid-row-start: 3;
-			width: 100%;
-			padding: 0;
-		}
+    &__social-icons {
+      grid-row-start: 3;
+      width: 100%;
+      padding: 0;
+    }
 
-		&__nav {
-			margin-bottom: 6vw;
-		}
+    &__nav {
+      margin-bottom: 6vw;
+    }
 
-		&__nav li {
-			margin: 0;
-			margin-bottom: 2vw;
-			padding: 0;
-		}
+    &__nav li {
+      margin: 0;
+      margin-bottom: 2vw;
+      padding: 0;
+    }
 
-		&__nav a {
-			font-size: 3.8vw;
-			line-height: 3.8vw;
-		}
+    &__nav a {
+      font-size: 3.8vw;
+      line-height: 3.8vw;
+    }
 
-		&__policy {
-			width: 100%;
-			text-align: center;
-			margin-bottom: 7vw;
-		}
-		&__rights {
-			width: 100%;
-			text-align: center;
-			margin-bottom: 2vw;
-		}
-	}
+    &__policy {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 7vw;
+    }
+    &__rights {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2vw;
+    }
+  }
 }

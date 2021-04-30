@@ -1,146 +1,179 @@
 html {
-	font-size: 10px;
+  font-size: 10px;
 }
 
 body {
-	&.dark {
-		background: $background;
-	}
-	&.white {
-		background: #fff;
-	}
-	font-family: "RoadRadio", Arial, Helvetica, sans-serif;
-	font-weight: 300;
+  &.dark {
+    background: $background;
+  }
+  &.white {
+    background: #fff;
+  }
+  &.red {
+    background: $background;
+  }
+  font-family: "RoadRadio", Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 .wrapper {
-	padding: 0 30px 0 30px;
-	overflow: hidden;
+  padding: 0 30px 0 30px;
+  overflow: hidden;
 }
 
 .wrapper-dark,
 .wrapper-dark a {
-	color: #fff;
+  color: #fff;
 }
 .wrapper-white,
 .wrapper-white a {
-	color: #000;
+  color: #000;
+}
+
+.wrapper-red,
+.wrapper-red a {
+  color: #fff;
 }
 
 .wrapper-dark {
-	background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
-		url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
-		url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
-		url("../images/show/work_radialBg.png") no-repeat -60% 88%,
-		url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
+  background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+    url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
+    url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
+    url("../images/show/work_radialBg.png") no-repeat -60% 88%,
+    url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
 }
 .wrapper-white {
-	background: url("../images/patternB.png") repeat, url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%;
+  background: url("../images/patternB.png") repeat, url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%;
+}
+
+.wrapper-red {
+  background: url("../images/pattern.png");
 }
 
 .big-title img,
 .about img {
-	width: 100%;
+  width: 100%;
 }
 
 .title {
-	font-weight: 900;
-	font-size: 6.4rem;
-	line-height: 6.5rem;
-	text-transform: uppercase;
-	span {
-		color: $main;
-	}
+  font-weight: 900;
+  font-size: 6.4rem;
+  line-height: 6.5rem;
+  text-transform: uppercase;
+  span {
+    color: $main;
+  }
+}
+
+.title--red {
+  color: #fff;
+  span {
+    color: $red;
+  }
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-	content: "";
+  content: "";
 }
 .swiper-button-prev,
 .swiper-bundle-next {
-	left: auto;
-	right: auto;
-	top: auto;
-	bottom: auto;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
 }
 
 .gmnoprint,
 .gm-style-cc,
 .fslightbox-slide-number-container,
 .fslightbox-slide-btn-container {
-	display: none !important;
+  display: none !important;
 }
 
 .bloc {
-	width: 50px;
-	height: 50px;
-	background: rgba(255, 255, 255, 0.02);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .invisible *:not(.presentation__title, .presentation__title *) {
-	opacity: 0;
+  opacity: 0;
 }
 
 .invisible *:not(.intransition *, .intransition, .presentation__title *, .presentation__title) {
-	transition: all 4s ease;
+  transition: all 4s ease;
 }
 
 .scrumble-text {
-	font-family: "Roboto Mono", monospace !important;
+  font-family: "Roboto Mono", monospace !important;
+}
+
+.desktop {
+  display: block;
+}
+.tablet {
+  display: none;
 }
 
 @media (min-width: 1950px) {
-	.title {
-		font-size: 10rem;
-		line-height: 10rem;
-	}
+  .title {
+    font-size: 10rem;
+    line-height: 10rem;
+  }
 
-	.wrapper-dark {
-		background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
-			url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
-			url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
-			url("../images/show/work_radialBg.png") no-repeat 0% 80%,
-			url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
-	}
+  .wrapper-dark {
+    background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+      url("../images/show/tech_radialBg.png") no-repeat 60% 15%,
+      url("../images/show/tech_radialBg.png") no-repeat 100% 52%,
+      url("../images/show/work_radialBg.png") no-repeat 0% 82%,
+      url("../images/show/techDron_radialBg.png") no-repeat center bottom 67%;
+  }
 }
 
 @media (max-width: 1440px) {
-	html {
-		font-size: 7.5px;
-	}
+  html {
+    font-size: 7.5px;
+  }
 }
 
 @media (max-width: 1250px) {
-	html {
-		font-size: 7px;
-	}
+  html {
+    font-size: 7px;
+  }
 }
 
 @media (max-width: 1025px) {
-	.title {
-		font-size: 5.3rem;
-		line-height: 5.4rem;
-	}
+  .title {
+    font-size: 5.3rem;
+    line-height: 5.4rem;
+  }
+
+  .desktop {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
-	.wrapper-dark {
-		background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
-			url("../images/show/tech_radialBg.png") no-repeat 60% 13%,
-			url("../images/show/tech_radialBg.png") no-repeat 100% 50%,
-			url("../images/show/work_radialBg.png") no-repeat 0% 85%,
-			url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
-	}
+  .wrapper-dark {
+    background: url("../images/pattern.png") repeat, url("../images/show/use_radialBG.png") no-repeat 0 -5%,
+      url("../images/show/tech_radialBg.png") no-repeat 60% 15%,
+      url("../images/show/tech_radialBg.png") no-repeat 100% 52%,
+      url("../images/show/work_radialBg.png") no-repeat 0% 85%,
+      url("../images/show/techDron_radialBg.png") no-repeat center bottom 65%;
+  }
 
-	.wrapper-white {
-		background: url("../images/patternB.png") repeat, url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%,
-			url("../images/balloon/dolphin_radialBg.png") no-repeat 0% 90%;
-	}
+  .wrapper-white {
+    background: url("../images/patternB.png") repeat, url("../images/balloon/dolphin_radialBg.png") no-repeat 50% 14%,
+      url("../images/balloon/dolphin_radialBg.png") no-repeat 0% 90%;
+  }
 }
 
 @media (max-width: 550px) {
-	html {
-		font-size: 6px;
-	}
+  html {
+    font-size: 6px;
+  }
 }

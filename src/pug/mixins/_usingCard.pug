@@ -1,18 +1,19 @@
-mixin usingCard(id, videoNum, img, count, title, text)
-	.swiper-slide.using-card__card
-		a(class="using-card__top" data-fslightbox="lightbox" href=`#${id}`)
-			iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
-			img(src=`images/show/use_${img}.png` alt=`${img}`)
-			.using-card__top-btn
-				svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
-					path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
-					circle(cx="63.7292" cy="63.7292" r="60.7292" stroke="white" stroke-opacity="1" stroke-width="6")
-			.using-card__top-line
-		.using-card__bottom
-			.using-card__count
-				img(src=`images/show/use_${count}.svg`, alt=`${count}`)
-			.using-card__visible
-				.using-card__title
-					| #{title}
-				.using-card__text
-					| #{text}
+mixin usingCard(id, videoNum, img, count, page, title, text)
+  .swiper-slide.using-card__card
+    //- a(class="using-card__top" data-fslightbox="lightbox" href=`#${id}`)
+    //- 	iframe(title=`${id}` class="video-frame" id=`${id}` src=`https://player.vimeo.com/video/${videoNum}` width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen")
+    div.using-card__top(class={'using-card__top--red': cinematic})
+      .using-card__top-line(class={'using-card__top-line--red': cinematic})
+      img(src=`images/${page}/use_${img}.png` loading="lazy" alt=`${img}`)
+      //- .using-card__top-btn
+        svg(width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/sv")
+          path(d="M58.0784 44.536L83.2239 63.7291L58.0784 82.9221L58.0784 44.536Z" stroke="white" stroke-opacity="1" stroke-width="6")
+          circle(cx="63.7292" cy="63.7292" r="60.7292" stroke="white" stroke-opacity="1" stroke-width="6")
+    .using-card__bottom(class={'using-card__bottom--red': cinematic})
+      .using-card__count
+        img(src=`images/${page}/use_${count}.svg`, alt=`${count}`)
+      .using-card__visible(class={'using-card__visible--red': cinematic})
+        .using-card__title
+          | #{title}
+        .using-card__text
+          | #{text}

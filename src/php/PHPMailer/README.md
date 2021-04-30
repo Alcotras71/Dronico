@@ -1,4 +1,4 @@
-![PHPMailer](https://raw.github.com/PHPMailer/PHPMailer/master/examples/images/phpmailer.png)
+![PHPMailer](https://raw.github.com/PHPMailer/PHPMailer/master/examples/images/phpmailer.webp)
 
 # PHPMailer – A full-featured email creation and transfer class for PHP
 
@@ -113,7 +113,7 @@ try {
 
     //Attachments
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+    $mail->addAttachment('/tmp/image.webp', 'new.webp');    //Optional name
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -167,7 +167,7 @@ If this isn't passing, is there something you can do to help?
 ## Security
 Please disclose any vulnerabilities found responsibly – report security issues to the maintainers privately.
 
-See [SECURITY](https://github.com/PHPMailer/PHPMailer/tree/master/SECURITY.md) and [PHPMailer's security advisories on GitHub](https://github.com/PHPMailer/PHPMailer/security). 
+See [SECURITY](https://github.com/PHPMailer/PHPMailer/tree/master/SECURITY.md) and [PHPMailer's security advisories on GitHub](https://github.com/PHPMailer/PHPMailer/security).
 
 ## Contributing
 Please submit bug reports, suggestions and pull requests to the [GitHub issue tracker](https://github.com/PHPMailer/PHPMailer/issues).

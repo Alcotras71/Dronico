@@ -1,0 +1,18 @@
+extends ../layouts/main.pug
+
+block variables
+  - const titleShow = 'Cinematic FPV';
+  - const bodyClass = 'red';
+  - const cinematic = true;
+
+block content
+  include ../sections/cinematic/_1presentation.pug
+  .wrapper.wrapper-red
+    main.main.main-red
+      include ../sections/cinematic/_2using-areas.pug
+      include ../sections/cinematic/_3advantages.pug
+      include ../sections/cinematic/_4pilots.pug
+      include ../sections/cinematic/_5event.pug
+      include ../sections/cinematic/_6security.pug
+      include ../sections/cinematic/_7work.pug
+      include ../sections/cinematic/_8map.pug

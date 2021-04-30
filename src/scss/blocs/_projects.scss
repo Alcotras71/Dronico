@@ -135,6 +135,11 @@ $cornPr: 3.5vw;
 			position: static;
 			max-width: 100%;
 		}
+		&__card {
+			&-textcontainer {
+				padding-top: 0;
+			}
+		}
 	}
 }
 

@@ -1,0 +1,84 @@
+$cardWidth: 27.5vw;
+$cardHeight: 42vw;
+$corn: 1.9vw;
+$borderWidth: 3px;
+$calculate: calc(1.9vw + 3px);
+
+@mixin mask {
+  -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+    linear-gradient(-45deg, transparent 0 $corn, #fff 0) bottom right,
+    linear-gradient(135deg, transparent 0 $corn, #fff 0) top left,
+    linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+  -webkit-mask-size: 51% 51% !important;
+  -webkit-mask-repeat: no-repeat !important;
+}
+
+.pilots {
+  &__title {
+    margin-bottom: 75px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 100px;
+  }
+}
+
+.pilots-card {
+  position: relative;
+  width: $cardWidth;
+  height: $cardHeight;
+  display: inline-block;
+  border: $borderWidth solid $red;
+  background: linear-gradient(135deg, $red 0 $calculate, transparent 0) top left / 50% 50%,
+    linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right / 50% 50%, $alpha;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  @include mask;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include mask;
+  }
+
+  &__block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    @include mask;
+    transition: $transition;
+  }
+
+  &__name {
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 65px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 50px;
+    left: 70px;
+    opacity: 0;
+    transform: translate(-10%);
+    transition: $transition;
+  }
+
+  &:hover {
+    .pilots-card {
+      &__block {
+        background: rgba(0, 0, 0, 0);
+      }
+
+      &__name {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+  }
+}

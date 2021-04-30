@@ -1,0 +1,15 @@
+include ../../mixins/_mixins.pug
+
+section.technologies
+  .technologies__title
+    img(src='images/show/tech_text.svg' alt='tech_text')
+  .technologies__image-container
+    iframe(src="iframe/Drone.html" frameborder="0" class="technologies__particles" loading="lazy")
+    .technologies__coord-left
+      .scrumble-text 70.512323, 45.11974
+    .technologies__coord-right
+      .scrumble-text 70.512323, 45.11974
+  .technologies__tabs
+    +technoCard('1', 'Наши беспилотники проектируются специально под шоу,', 'превращая мероприятия в незабываемы впечатления','new-stroke', 'second')
+    +technoCard('2', 'Подсветка RGBA, позволяет создавать группу летающих огней,', 'плавные и сложные движения работают в гармонии', '','first')
+    +technoCard('3', 'Вес дронов всего 150 г, что позволяет безопасно работать с артистами.', 'Оптимизированы под постоянные инсталляции и гастрольные постановки. Безопасны, надежны и просты в использовании', '','third')

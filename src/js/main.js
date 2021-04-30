@@ -80,13 +80,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   let paddingScroll = calcScroll();
 
-  fsLightboxInstances["lightbox"].props.onOpen = () => {
-    document.body.style.paddingRight = `${paddingScroll}px`;
-  };
+  if (fsLightboxInstances["lightbox"]) {
+    fsLightboxInstances["lightbox"].props.onOpen = () => {
+      document.body.style.paddingRight = `${paddingScroll}px`;
+    };
 
-  fsLightboxInstances["lightbox"].props.onClose = () => {
-    document.body.style.paddingRight = `0`;
-  };
+    fsLightboxInstances["lightbox"].props.onClose = () => {
+      document.body.style.paddingRight = `0`;
+    };
+  }
 
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // visible header
@@ -106,15 +108,37 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // Initialize sliders
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
-  // ——————————————————————————————————————————————————
   // UsingAreasSlider
   // ——————————————————————————————————————————————————
-  const prevUsingBtn = document.querySelector(".using-areas__pagination-prev"),
-    nextUsingBtn = document.querySelector(".using-areas__pagination-next"),
-    usCard = document.querySelectorAll(".using-card__card");
 
-  const usingAreas = new Swiper(".using-card__container", {
+  const usingAreasDark = new Swiper(".using-card__container.dark", {
+    speed: 400,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: ".using-areas__pagination-next",
+      prevEl: ".using-areas__pagination-prev",
+    },
+    breakpoints: {
+      551: {
+        loop: false,
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      769: {
+        loop: false,
+        slidesPerView: 3,
+        spaceBetween: 11,
+      },
+      1026: {
+        loop: false,
+        slidesPerView: 4,
+      },
+    },
+  });
+
+  const usingAreasWhite = new Swiper(".using-card__container.white", {
     speed: 400,
     spaceBetween: 10,
     slidesPerView: 1,
@@ -144,10 +168,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // check resize slider
   function handleTabletChange(e) {
     if (e.matches) {
-      usingAreas.on("slideChange", function (e) {
+      usingAreasDark.on("slideChange", function (e) {
         if (this.activeIndex == 0) {
           this.slideTo(6, 1000);
         } else if (this.activeIndex == 7) {
+          this.slideTo(1, 1000);
+        }
+      });
+      usingAreasWhite.on("slideChange", function (e) {
+        if (this.activeIndex == 0) {
+          this.slideTo(4, 1000);
+        } else if (this.activeIndex == 5) {
           this.slideTo(1, 1000);
         }
       });
@@ -554,15 +585,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const rellax = new Rellax(paralaxClass, {
     center: true,
   });
-
-  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-  // openVideo
-  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-  const dronicoSliderContainer = document.querySelector(
-    ".dronico-slider__img-container"
-  );
-
-  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-  // make ordered list
-  // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 });

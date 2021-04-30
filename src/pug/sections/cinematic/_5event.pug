@@ -1,0 +1,13 @@
+include ../../mixins/_mixins.pug
+
+section.event
+  img.event__dron-small(src="images/cinematic/event-drone_small.png" alt="drone-small")
+  img.event__dron-medium(src="images/cinematic/event-drone_medium.png" alt="drone-medium")
+  .event__wrapper
+    h2.event__title.title.title--red Покажи своё событие с
+      span  необычного ракурса
+    .event__inner
+      +eventCard('event_1.svg','Съемка при скорости до 150 км/ч на открытой местности и от 0 до 5м/с в помещении.')
+      +eventCard('event_2.svg','Экшн-камера 4 К, цифровое изображение высокой четкости.')
+      +eventCard('event_3.svg','Возможность онлайн-трансляции с дальностью передачи сигнала до 4 км.')
+      +eventCard('event_4.svg','Вес дрона от 100 гр. до 1,5 кг в зависимости от задач.')

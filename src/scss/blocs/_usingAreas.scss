@@ -8,557 +8,646 @@ $calculateUs: calc(1.9vw + 3px);
 $calculateBottomUs: calc(1.9vw + 3px);
 
 .using-areas {
-	position: relative;
-	padding-top: 50px;
-	&__title {
-		width: 450px;
-		margin-bottom: 60px;
-	}
-	&__pagination {
-		&-prev,
-		&-next {
-			position: absolute;
-			width: 5.8vw;
-			height: 4.2vw;
-			top: 50px;
-			cursor: pointer;
-			transition: $transition;
-			background-repeat: no-repeat;
-			background-position: right;
-		}
-		&-prev {
-			top: 51px;
-			right: 9%;
-			background-image: url("../images/show/use_arrow.svg");
-			transform: rotate(180deg);
-		}
-		&-next {
-			right: 1%;
-			background-image: url("../images/show/use_arrow.svg");
-		}
-		&-prev:hover {
-			background-image: url("../images/show/use_arrow-enable.svg");
-		}
-		&-next:hover {
-			background-image: url("../images/show/use_arrow-enable.svg");
-		}
-	}
+  position: relative;
+  padding-top: 50px;
+  &__title {
+    width: 450px;
+    margin-bottom: 60px;
+
+    &--red {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 36px;
+    line-height: 36px;
+    max-width: 865px;
+    margin-bottom: 50px;
+  }
+
+  &__pagination {
+    &-prev,
+    &-next {
+      position: absolute;
+      width: 5.8vw;
+      height: 4.2vw;
+      top: 50px;
+      cursor: pointer;
+      transition: $transition;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    &-prev {
+      top: 51px;
+      right: 9%;
+      background-image: url("../images/show/use_arrow.svg");
+      transform: rotate(180deg);
+    }
+    &-next {
+      right: 1%;
+      background-image: url("../images/show/use_arrow.svg");
+    }
+    &-prev:hover {
+      background-image: url("../images/show/use_arrow-enable.svg");
+    }
+    &-next:hover {
+      background-image: url("../images/show/use_arrow-enable.svg");
+    }
+  }
 }
 .using-card {
-	&__card {
-		width: $cardWidthUs;
-		cursor: pointer;
-		margin-top: 25px;
-		&:after {
-			@include pseudoPlus(2.4rem, auto, -30px, -1px, auto, 0);
-			transition: $transition;
-		}
-	}
-	&__top {
-		position: relative;
-		width: $cardWidthUs;
-		height: $cardHeightUs;
-		display: inline-block;
-		border: $borderWidthUs solid $cardBorderColor;
-		background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
-		background-origin: border-box;
-		background-repeat: no-repeat;
-		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-			linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-			linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
-			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-		-webkit-mask-size: 51% 51% !important;
-		-webkit-mask-repeat: no-repeat !important;
-		iframe {
-			display: none;
-		}
-		&-btn {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			opacity: 0;
-			transition: $transition;
-		}
-		&-line {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			background: url("../images/show/use_line.png") no-repeat center;
-			background-size: 100% 100%;
-			transition: all 0.5s ease;
-		}
+  &__card {
+    width: $cardWidthUs;
+    cursor: pointer;
+    margin-top: 25px;
+    &:after {
+      @include pseudoPlus(2.4rem, auto, -30px, -1px, auto, 0);
+      transition: $transition;
+    }
+  }
+  &__top {
+    position: relative;
+    width: $cardWidthUs;
+    height: $cardHeightUs;
+    display: inline-block;
+    border: $borderWidthUs solid $cardBorderColor;
+    background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+      linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+      linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+      linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+    -webkit-mask-size: 51% 51% !important;
+    -webkit-mask-repeat: no-repeat !important;
 
-		img {
-			opacity: 0;
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 51% 51% !important;
-			-webkit-mask-repeat: no-repeat !important;
-			width: 100%;
-			height: calc(100% + 4px);
-			margin-top: -1px;
-			transition: all 0.5s ease;
-		}
-	}
-	&__bottom {
-		position: relative;
-		width: $cardWidthUs;
-		height: $cardHeightUs;
-		display: inline-block;
-		overflow: hidden;
-		border: $borderWidthUs solid $cardBorderColor;
-		border-bottom: $borderBottomWidthUs solid $cardBorderColor;
-		border-top: none;
-		background: linear-gradient(-45deg, $cardBorderColor 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%,
-			$alpha;
-		background-origin: border-box;
-		background-repeat: no-repeat;
-		-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-			linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
-			linear-gradient(135deg, transparent 0 0, #fff 0) top left,
-			linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-		-webkit-mask-size: 51% 51% !important;
-		-webkit-mask-repeat: no-repeat !important;
-	}
-	&__count {
-		padding: 21px 0 0 23px;
-		opacity: 1;
-		transition: opacity 0.5s ease;
-		img {
-			height: 3.8vw;
-			width: auto;
-		}
-	}
-	&__visible {
-		opacity: 1;
-		position: absolute;
-		top: 0;
-		left: 0;
-		padding: 37px 0 0 23px;
-		height: $cardHeightUs;
-		transform: translateY(10vw);
-		transition: $transition;
-	}
-	&__title {
-		font-size: 3rem;
-		line-height: 3rem;
-		text-transform: uppercase;
-		width: 235px;
-	}
-	&__text {
-		margin-top: 30px;
-		font-family: Geometria;
-		font-size: 2.4rem;
-		line-height: 3rem;
-		opacity: 0;
-		transition: $transition;
-	}
-	&__card:hover {
-		.using-card__top-line {
-			opacity: 0;
-		}
-		img {
-			opacity: 1;
-		}
-		.using-card__top-btn {
-			opacity: 1;
-		}
+    &--red {
+      border: $borderWidthUs solid $red;
+      background: linear-gradient(135deg, $red 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+    }
 
-		.using-card__visible {
-			opacity: 1;
-			background: $main;
-			transform: translate(0);
-		}
-		.using-card__text {
-			margin-top: 18px;
-			opacity: 0.6;
-		}
-		.using-card__count {
-			opacity: 0;
-		}
-		&:after {
-			opacity: 1;
-		}
-	}
+    iframe {
+      display: none;
+    }
+    &-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: $transition;
+    }
+    &-line {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url("../images/show/use_line.png") no-repeat center;
+      background-size: 100% 100%;
+      transition: all 0.5s ease;
+      &--red {
+        background: none;
+      }
+    }
+
+    img {
+      opacity: 0;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+      width: 100%;
+      height: calc(100% + 4px);
+      margin-top: -1px;
+      transition: all 0.5s ease;
+    }
+  }
+  &__bottom {
+    position: relative;
+    width: $cardWidthUs;
+    height: $cardHeightUs;
+    display: inline-block;
+    overflow: hidden;
+    border: $borderWidthUs solid $cardBorderColor;
+    border-bottom: $borderBottomWidthUs solid $cardBorderColor;
+    border-top: none;
+    background: linear-gradient(-45deg, $cardBorderColor 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%,
+      $alpha;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+      linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+      linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+      linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+    -webkit-mask-size: 51% 51% !important;
+    -webkit-mask-repeat: no-repeat !important;
+
+    &--red {
+      border: $borderWidthUs solid $red;
+      border-bottom: $borderBottomWidthUs solid $red;
+      border-top: none;
+      background: linear-gradient(-45deg, $red 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+    }
+  }
+  &__count {
+    padding: 21px 0 0 23px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    img {
+      height: 3.8vw;
+      width: auto;
+    }
+  }
+  &__visible {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 37px 23px 0 23px;
+    height: $cardHeightUs;
+    transform: translateY(10vw);
+    transition: $transition;
+  }
+  &__title {
+    font-size: 3rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    width: 95%;
+  }
+  &__text {
+    margin-top: 30px;
+    font-family: Geometria;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    opacity: 0;
+    transition: $transition;
+  }
+  &__card:hover {
+    .using-card__top-line {
+      opacity: 0;
+    }
+    img {
+      opacity: 1;
+    }
+    .using-card__top-btn {
+      opacity: 1;
+    }
+
+    .using-card__visible {
+      opacity: 1;
+      background: $main;
+      transform: translate(0);
+
+      &--red {
+        background: $red;
+      }
+    }
+    .using-card__text {
+      margin-top: 18px;
+      opacity: 0.6;
+    }
+    .using-card__count {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+  &__container.dark,
+  &__container.white {
+    display: none;
+  }
+}
+
+.dark {
+  .using-card {
+    &__container.dark {
+      display: block;
+    }
+  }
 }
 
 .white {
-	.using-areas {
-		&__title {
-			color: $mainB;
-		}
-		&__pagination {
-			&-prev,
-			&-next {
-				background-repeat: no-repeat;
-				background-position: left;
-			}
-			&-prev {
-				background-image: url("../images/balloon/use_arrow.svg");
-				transform: rotate(0deg);
-			}
-			&-next {
-				background-image: url("../images/balloon/use_arrow.svg");
-				transform: rotate(180deg);
-			}
-			&-prev:hover {
-				background-image: url("../images/balloon/use_arrow_enable.svg");
-			}
-			&-next:hover {
-				background-image: url("../images/balloon/use_arrow_enable.svg");
-			}
-		}
-	}
-	.using-card {
-		&__card {
-		}
-		&__text {
-			color: #fff;
-		}
-		&__card:hover {
-			color: #fff;
-			.using-card__visible {
-				background: $mainB;
-			}
-		}
-	}
+  .using-areas {
+    &__title {
+      color: $mainB;
+    }
+    &__pagination {
+      &-prev,
+      &-next {
+        background-repeat: no-repeat;
+        background-position: left;
+      }
+      &-prev {
+        background-image: url("../images/balloon/use_arrow.svg");
+        transform: rotate(0deg);
+      }
+      &-next {
+        background-image: url("../images/balloon/use_arrow.svg");
+        transform: rotate(180deg);
+      }
+      &-prev:hover {
+        background-image: url("../images/balloon/use_arrow_enable.svg");
+      }
+      &-next:hover {
+        background-image: url("../images/balloon/use_arrow_enable.svg");
+      }
+    }
+  }
+  .using-card {
+    &__card {
+    }
+    &__text {
+      color: #fff;
+    }
+    &__card:hover {
+      color: #fff;
+      .using-card__visible {
+        background: $mainB;
+      }
+    }
+    &__container.white {
+      display: block;
+    }
+  }
+}
+
+.red {
+  .using-areas {
+    &__pagination {
+      &-prev,
+      &-next {
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+      }
+      &-prev {
+        background-image: url("../images/cinematic/use_arrow.svg");
+        transform: rotate(180deg);
+      }
+      &-next {
+        background-image: url("../images/cinematic/use_arrow.svg");
+        transform: rotate(0deg);
+      }
+      &-prev:hover {
+        background-image: url("../images/cinematic/use_arrow_enable.svg");
+      }
+      &-next:hover {
+        background-image: url("../images/cinematic/use_arrow_enable.svg");
+      }
+    }
+  }
 }
 
 @media (max-width: 1440px) {
-	.using-areas {
-		&__pagination {
-			&-prev,
-			&-next {
-				top: 50px;
-			}
-			&-prev {
-				right: 10%;
-			}
-		}
-	}
-	.using-card {
-		&__bottom {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			border: $borderWidthUs solid $cardBorderColor;
-			border-bottom: $borderWidthUs solid $cardBorderColor;
-			border-top: none;
-			background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
-			background-origin: border-box;
-			background-repeat: no-repeat;
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 51% 51% !important;
-			-webkit-mask-repeat: no-repeat !important;
-		}
-	}
+  .using-areas {
+    &__pagination {
+      &-prev,
+      &-next {
+        top: 50px;
+      }
+      &-prev {
+        right: 10%;
+      }
+    }
+  }
+  .using-card {
+    &__bottom {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      border: $borderWidthUs solid $cardBorderColor;
+      border-bottom: $borderWidthUs solid $cardBorderColor;
+      border-top: none;
+      background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+    }
+  }
 
-	.white {
-		.using-areas {
-			&__title {
-				color: $mainB;
-			}
-			&__pagination {
-				&-prev {
-					background-image: url("../images/balloon/use_arrow.svg");
-				}
-				&-next {
-					background-image: url("../images/balloon/use_arrow.svg");
-				}
-				&-prev:hover {
-					background-image: url("../images/balloon/use_arrow_enable.svg");
-				}
-				&-next:hover {
-					background-image: url("../images/balloon/use_arrow_enable.svg");
-				}
-			}
-		}
-		.using-card {
-			&__card {
-			}
-			&__text {
-				color: #fff;
-			}
-			&__card:hover {
-				color: #fff;
-				.using-card__visible {
-					background: $mainB;
-				}
-			}
-		}
-	}
+  .white {
+    .using-areas {
+      &__title {
+        color: $mainB;
+      }
+      &__pagination {
+        &-prev {
+          background-image: url("../images/balloon/use_arrow.svg");
+        }
+        &-next {
+          background-image: url("../images/balloon/use_arrow.svg");
+        }
+        &-prev:hover {
+          background-image: url("../images/balloon/use_arrow_enable.svg");
+        }
+        &-next:hover {
+          background-image: url("../images/balloon/use_arrow_enable.svg");
+        }
+      }
+    }
+    .using-card {
+      &__card {
+      }
+      &__text {
+        color: #fff;
+      }
+      &__card:hover {
+        color: #fff;
+        .using-card__visible {
+          background: $mainB;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1300px) {
-	.using-areas {
-		width: 95vw;
-		&__pagination {
-			&-prev,
-			&-next {
-				top: 12%;
-				width: 7vw;
-				height: 5.6vw;
-			}
-		}
-	}
-}
+  .using-card {
+    &__visible {
+      padding: 10px 15px 0;
+    }
+  }
 
-@media (max-width: 1200px) {
-	.using-card {
-		&__visible {
-			padding: 15px 0 0 15px;
-		}
-	}
+  .using-areas {
+    width: 95vw;
+    &__pagination {
+      &-prev,
+      &-next {
+        top: 12%;
+        width: 7vw;
+        height: 5.6vw;
+      }
+    }
+  }
 }
 
 @media (max-width: 1025px) {
-	$cardWidthUs: 29.5vw;
-	$cardHeightUs: 25.5vw;
-	.using-areas {
-		width: 100%;
-		&__title {
-			width: 30vw;
-		}
-		&__pagination {
-			&-prev,
-			&-next {
-				top: 10%;
-				width: 7.5vw;
-				height: 6vw;
-			}
-			&-prev {
-				right: 13%;
-			}
-		}
-	}
-	.using-card {
-		&__card {
-			width: $cardWidthUs;
-			margin-top: 0px;
-		}
-		&__top {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			&-line {
-				width: $cardWidthUs;
-				height: $cardHeightUs;
-			}
-		}
-		&__bottom {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-		}
-		&__visible {
-			padding: 20px 15px 0 15px;
-			height: $cardHeightUs;
-			transform: translateY(13vw);
-		}
-		&__count {
-			img {
-				height: 5vw;
-			}
-		}
-	}
+  $cardWidthUs: 29.5vw;
+  $cardHeightUs: 25.5vw;
+  .using-areas {
+    width: 100%;
+    &__title {
+      width: 30vw;
+    }
+    &__pagination {
+      &-prev,
+      &-next {
+        top: 10%;
+        width: 7.5vw;
+        height: 6vw;
+      }
+      &-prev {
+        right: 13%;
+      }
+    }
+  }
+  .using-card {
+    &__card {
+      width: $cardWidthUs;
+      margin-top: 0px;
+    }
+    &__top {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      &-line {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+      }
+    }
+    &__bottom {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+    }
+    &__visible {
+      padding: 20px 15px 0 15px;
+      height: $cardHeightUs;
+      transform: translateY(13vw);
+    }
+    &__count {
+      img {
+        height: 5vw;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
-	$cardWidthUs: 41.5vw;
-	$cardHeightUs: 33.5vw;
-	$cornUs: 3.2vw;
-	$borderWidthUs: 2px;
-	$calculateUs: calc(3.2vw + 2px);
+  $cardWidthUs: 41.5vw;
+  $cardHeightUs: 33.5vw;
+  $cornUs: 3.2vw;
+  $borderWidthUs: 2px;
+  $calculateUs: calc(3.2vw + 2px);
 
-	.using-areas {
-		&__pagination {
-			&-prev,
-			&-next {
-				top: 9%;
-				width: 12vw;
-				height: 10vw;
-			}
-			&-prev {
-				right: 20%;
-			}
-			&-next {
-				right: 3%;
-			}
-		}
-	}
-	.using-card {
-		&__card {
-			width: $cardWidthUs;
-			margin-top: 0px;
-		}
-		&__top {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			border: $borderWidthUs solid $cardBorderColor;
-			background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
-			background-origin: border-box;
-			background-repeat: no-repeat;
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 51% 51% !important;
-			-webkit-mask-repeat: no-repeat !important;
-			&-line {
-				width: $cardWidthUs;
-				height: $cardHeightUs;
-				opacity: 0;
-			}
-			&-btn {
-				opacity: 1;
-			}
+  .using-areas {
+    &__pagination {
+      &-prev,
+      &-next {
+        top: 9%;
+        width: 12vw;
+        height: 10vw;
+      }
+      &-prev {
+        right: 20%;
+      }
+      &-next {
+        right: 3%;
+      }
+    }
+  }
+  .using-card {
+    &__card {
+      width: $cardWidthUs;
+      margin-top: 0px;
+    }
+    &__top {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      border: $borderWidthUs solid $cardBorderColor;
+      background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+      &-line {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+        opacity: 0;
+      }
+      &-btn {
+        opacity: 1;
+      }
 
-			img {
-				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
-					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-				-webkit-mask-size: 51% 51% !important;
-				-webkit-mask-repeat: no-repeat !important;
-				opacity: 1;
-			}
-		}
+      img {
+        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+          linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+          linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+        -webkit-mask-size: 51% 51% !important;
+        -webkit-mask-repeat: no-repeat !important;
+        opacity: 1;
+      }
+    }
 
-		&__bottom {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			border: $borderWidthUs solid $cardBorderColor;
-			border-bottom: $borderWidthUs solid $cardBorderColor;
-			border-top: none;
-			background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
-			background-origin: border-box;
-			background-repeat: no-repeat;
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 51% 51% !important;
-			-webkit-mask-repeat: no-repeat !important;
-		}
+    &__bottom {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      border: $borderWidthUs solid $cardBorderColor;
+      border-bottom: $borderWidthUs solid $cardBorderColor;
+      border-top: none;
+      background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+    }
 
-		&__text {
-			margin-top: 18px;
-			opacity: 0.6;
-		}
-		&__visible {
-			height: $cardHeightUs;
-			opacity: 1;
-				background: $main;
-				transform: translate(0);
-		}
-		&__count {
-			opacity: 0;
-			img {
-				height: 6.5vw;
-			}
-		}
-		&:after {
-			opacity: 1;
-		}
-	}
+    &__text {
+      margin-top: 18px;
+      opacity: 0.6;
+    }
+    &__visible {
+      height: $cardHeightUs;
+      opacity: 1;
+      background: $main;
+      transform: translate(0);
+    }
+    &__count {
+      opacity: 0;
+      img {
+        height: 6.5vw;
+      }
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 550px) {
-	$cardWidthUs: 100%;
-	$cardHeightUs: 65.5vw;
-	$cornUs: 6.5vw;
-	$borderWidthUs: 2px;
-	$calculateUs: calc(6.5vw + 2px);
+  $cardWidthUs: 100%;
+  $cardHeightUs: 65.5vw;
+  $cornUs: 6.5vw;
+  $borderWidthUs: 2px;
+  $calculateUs: calc(6.5vw + 2px);
 
-	.using-areas {
-		padding-bottom: 20vw;
-		&__pagination {
-			&-prev,
-			&-next {
-				top: auto;
-				bottom: -4%;
-				width: 25vw;
-				height: 20vw;
-			}
-			&-prev {
-				left: calc(50% - 28vw);
-			}
-			&-next {
-				right: calc(50% - 28vw);
-			}
-		}
-	}
+  .using-areas {
+    padding-bottom: 20vw;
+    &__pagination {
+      &-prev,
+      &-next {
+        top: auto;
+        bottom: -4%;
+        width: 25vw;
+        height: 20vw;
+      }
+      &-prev {
+        left: calc(50% - 28vw);
+      }
+      &-next {
+        right: calc(50% - 28vw);
+      }
+    }
+  }
 
-	.using-card {
-		&__card {
-			width: $cardWidthUs;
-		}
-		&__top {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			border: $borderWidthUs solid $cardBorderColor;
-			background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
-			background-origin: border-box;
-			background-repeat: no-repeat;
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 51% 51% !important;
-			-webkit-mask-repeat: no-repeat !important;
-			&-line {
-				width: $cardWidthUs;
-				height: $cardHeightUs;
-			}
+  .using-card {
+    &__card {
+      width: $cardWidthUs;
+    }
+    &__top {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      border: $borderWidthUs solid $cardBorderColor;
+      background: linear-gradient(135deg, $cardBorderColor 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+      &-line {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+      }
 
-			img {
-				width: $cardWidthUs;
-				-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-					linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
-					linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
-					linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-				-webkit-mask-size: 51% 51% !important;
-				-webkit-mask-repeat: no-repeat !important;
-			}
-		}
-		&__bottom {
-			width: $cardWidthUs;
-			height: $cardHeightUs;
-			border: $borderWidthUs solid $cardBorderColor;
-			border-bottom: $borderWidthUs solid $cardBorderColor;
-			border-top: none;
-			background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
-			background-origin: border-box;
-			background-repeat: no-repeat;
-			-webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-				linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
-				linear-gradient(135deg, transparent 0 0, #fff 0) top left,
-				linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-			-webkit-mask-size: 51% 51% !important;
-			-webkit-mask-repeat: no-repeat !important;
-		}
-		&__visible {
-			height: $cardHeightUs;
-		}
-		&__count {
-			img {
-				height: 15vw;
-			}
-		}
-		&__title {
-			font-size: 3.8rem;
-			line-height: 3.8rem;
-		}
-		&__text {
-			font-family: Geometria;
-			font-size: 3rem;
-			line-height: 3.4rem;
-			transition: $transition;
-		}
-	}
+      img {
+        width: $cardWidthUs;
+        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+          linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+          linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+        -webkit-mask-size: 51% 51% !important;
+        -webkit-mask-repeat: no-repeat !important;
+      }
+    }
+    &__bottom {
+      width: $cardWidthUs;
+      height: $cardHeightUs;
+      border: $borderWidthUs solid $cardBorderColor;
+      border-bottom: $borderWidthUs solid $cardBorderColor;
+      border-top: none;
+      background: linear-gradient(-45deg, $cardBorderColor 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+      -webkit-mask-size: 51% 51% !important;
+      -webkit-mask-repeat: no-repeat !important;
+    }
+    &__visible {
+      height: $cardHeightUs;
+    }
+    &__count {
+      img {
+        height: 15vw;
+      }
+    }
+    &__title {
+      font-size: 3.8rem;
+      line-height: 3.8rem;
+    }
+    &__text {
+      font-family: Geometria;
+      font-size: 3rem;
+      line-height: 3.4rem;
+      transition: $transition;
+    }
+  }
 }

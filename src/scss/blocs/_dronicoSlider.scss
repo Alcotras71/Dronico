@@ -38,7 +38,7 @@ $calculateDron: calc(2.2vw + 3px);
 	&__img {
 		width: 36vw;
 		transition: all 0.5s ease;
-		&-small{
+		&-small {
 			display: none;
 		}
 		&-btn {
@@ -66,6 +66,11 @@ $calculateDron: calc(2.2vw + 3px);
 				-webkit-mask-repeat: no-repeat !important;
 				height: 100%;
 				width: auto;
+
+				&.desktop {
+					width: 100%;
+					object-fit: cover;
+				}
 			}
 		}
 		&-slide {
@@ -203,8 +208,13 @@ $calculateDron: calc(2.2vw + 3px);
 @media (max-width: 1440px) {
 	.dronico-slider {
 		&__container {
-			width: 53vw;
+			width: 55vw;
 		}
+
+		&__title {
+			max-width: 45vw;
+		}
+
 		&__subtitle {
 			max-width: 50vw;
 		}
@@ -216,10 +226,15 @@ $calculateDron: calc(2.2vw + 3px);
 			}
 		}
 		&__content {
-			margin-top: 170px;
+			margin-top: 100px;
+
+			&-top {
+				min-height: 195px;
+			}
 		}
 		&__types {
 			width: 50vw;
+			margin-top: 35px;
 		}
 		.types {
 			&__card {
@@ -299,7 +314,7 @@ $calculateDron: calc(2.2vw + 3px);
 					height: auto;
 				}
 			}
-			&-overlay{
+			&-overlay {
 				position: absolute;
 				width: 100%;
 				height: 50%;
@@ -310,9 +325,9 @@ $calculateDron: calc(2.2vw + 3px);
 			&-btn {
 				display: none;
 			}
-			&-small{
-				display: block;
-				.dronico-slider__img-btn{
+			&-small {
+				display: none;
+				.dronico-slider__img-btn {
 					display: block;
 					position: absolute;
 					top: calc(-12vw - 28px);
@@ -324,7 +339,7 @@ $calculateDron: calc(2.2vw + 3px);
 					}
 				}
 				&:hover {
-					.dronico-slider__img-btn{
+					.dronico-slider__img-btn {
 						opacity: 1;
 					}
 				}
@@ -342,6 +357,9 @@ $calculateDron: calc(2.2vw + 3px);
 			margin-top: 31vw;
 			padding: 0 15px 0 15px;
 			position: relative;
+			&-top {
+				min-height: 13vw;
+			}
 		}
 		&__title {
 			font-size: 5rem;
@@ -410,8 +428,8 @@ $calculateDron: calc(2.2vw + 3px);
 			top: 6%;
 		}
 		&__img {
-			&-small{
-				.dronico-slider__img-btn{
+			&-small {
+				.dronico-slider__img-btn {
 					top: calc(-13vw - 28px);
 					left: 40vw;
 				}
@@ -485,11 +503,12 @@ $calculateDron: calc(2.2vw + 3px);
 						linear-gradient(-45deg, transparent 0 $cornDron, #fff 0) bottom right,
 						linear-gradient(135deg, transparent 0 $cornDron, #fff 0) top left,
 						linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-					-webkit-mask-size: 50% 50% !important;
+					-webkit-mask-size: 51% 51% !important;
 					-webkit-mask-repeat: no-repeat !important;
 					img {
-						width: auto;
+						width: 100%;
 						height: 110vw;
+						object-fit: cover;
 					}
 				}
 

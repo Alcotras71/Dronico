@@ -2,27 +2,34 @@ block variables
 
 <!DOCTYPE html>
 html(lang="en")
-	head
-		include ../sections/_head.pug
-	body(class="" +bodyClass)
+  head
+    include ../sections/_head.pug
+  body(class="" +bodyClass)
 
-		include ../sections/_header.pug
-		include ../sections/_feedback.pug
+    include ../sections/_header.pug
+    include ../sections/_feedback.pug
 
-		.content
-			block content
+    .content
+      block content
 
-		include ../sections/_footer.pug
+    include ../sections/_footer.pug
 
-		script(src='js/map.min.js')
-		script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ELQtiPPBbfNKcUHh0F0kRpQkHS6qgVI&callback=initMap' type='text/javascript')
-		script(src="js/libs/lottie-player.js")
-		script(src="js/libs/lottie.js")
-		script(src="js/libs/swiper-bundle.min.js")
-		script(src="js/libs/fslightbox.min.js")
-		script(src="js/libs/parallax.min.js")
-		script(src="js/libs/rellax.min.js")
-		script(src="js/libs/inputmask.min.js")
-		script(src="js/libs/smoothscroll.min.js")
-		script(src="js/main.min.js")
+
+    if main
+      script(src='js/map.min.js')
+    else
+      script(src='js/mapCinematic.min.js')
+    script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ELQtiPPBbfNKcUHh0F0kRpQkHS6qgVI&callback=initMap' type='text/javascript')
+    script(src="js/libs/lottie-player.js")
+    script(src="js/libs/lottie.js")
+    script(src="js/libs/swiper-bundle.min.js")
+    script(src="js/libs/fslightbox.min.js")
+    script(src="js/libs/parallax.min.js")
+    script(src="js/libs/rellax.min.js")
+    script(src="js/libs/inputmask.min.js")
+    script(src="js/libs/smoothscroll.min.js")
+    if main
+      script(src="js/main.min.js")
+    else
+      script(src="js/main-cinematic.min.js")
 

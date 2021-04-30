@@ -1,0 +1,15 @@
+include ../../mixins/_usingCard.pug
+- const text0 = ''
+
+section.using-areas.using-areas-dark
+  .using-areas__pagination
+    .using-areas__pagination-prev
+    .using-areas__pagination-next
+  h2.using-areas__title.title
+    | Области применения
+  .using-areas__slider.using-card__container.swiper-container.white
+    .using-card__wrapper.swiper-wrapper
+      +usingCard(1,'312487203','01', '01','balloon', 'Концертные туры и фестивали', text0)
+      +usingCard(2,'507038250','02', '02','balloon', 'Intro для мероприятий', text0)
+      +usingCard(3,'507031674','03', '03','balloon', 'Цирковые представления', text0)
+      +usingCard(4,'312487068','04', '04','balloon', 'Бренды компаний', text0)

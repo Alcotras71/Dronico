@@ -1,19 +1,20 @@
 extends ../layouts/main.pug
 
 block variables
-	- const titleShow = 'Световое шоу';
-	- const bodyClass = 'dark';
+  - const titleShow = 'Световое шоу';
+  - const bodyClass = 'dark';
+  - const main = true;
 
 block content
-	include ../sections/_presentation.pug
-	.wrapper.wrapper-dark
-		main.main
-			include ../sections/_using-areas.pug
-			include ../sections/_history.pug
-			include ../sections/_dronico-slider.pug
-			include ../sections/_tech-dronico.pug
-			include ../sections/_technologies.pug
-			include ../sections/_about.pug
-			include ../sections/_our-clients.pug
-			include ../sections/_work.pug
-			include ../sections/_map.pug
+  include ../sections/lightning/_presentation.pug
+  .wrapper.wrapper-dark
+    main.main
+      include ../sections/lightning/_using-areas.pug
+      include ../sections/_history.pug
+      include ../sections/lightning/_dronico-slider.pug
+      include ../sections/lightning/_tech-dronico.pug
+      include ../sections/lightning/_technologies.pug
+      include ../sections/lightning/_about.pug
+      include ../sections/lightning/_our-clients.pug
+      include ../sections/lightning/_work.pug
+      include ../sections/lightning/_map.pug

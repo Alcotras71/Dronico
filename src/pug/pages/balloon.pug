@@ -1,16 +1,17 @@
 extends ../layouts/main.pug
 
 block variables
-	- const titleShow = 'Радиоуправляемые аэростаты';
-	- const bodyClass = 'white';
+  - const titleShow = 'Радиоуправляемые аэростаты';
+  - const bodyClass = 'white';
+  - const main = true;
 
 block content
-	include ../sections/_presentation.pug
-	.wrapper.wrapper-white
-		main.main.main-white
-			include ../sections/_using-areas.pug
-			include ../sections/_dolphins.pug
-			include ../sections/_history.pug
-			include ../sections/_projects.pug
-			include ../sections/_work.pug
-			include ../sections/_map.pug
+  include ../sections/balloon/_presentation.pug
+  .wrapper.wrapper-white
+    main.main.main-white
+      include ../sections/balloon/_using-areas.pug
+      include ../sections/balloon/_dolphins.pug
+      include ../sections/_history.pug
+      include ../sections/balloon/_projects.pug
+      include ../sections/balloon/_work.pug
+      include ../sections/balloon/_map.pug

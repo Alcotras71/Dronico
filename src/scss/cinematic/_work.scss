@@ -1,0 +1,90 @@
+$corn: 3vw;
+$calculate: calc(3vw + 3px);
+
+.cinematic-work {
+  position: relative;
+
+  &__drone-medium,
+  &__drone-big {
+    position: absolute;
+    object-fit: contain;
+  }
+
+  &__drone-medium {
+    width: 650px;
+    right: 0;
+    top: -15%;
+  }
+
+  &__drone-big {
+    width: 810px;
+  }
+
+  &__title {
+    max-width: 350px;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__inner {
+  }
+
+  &__block {
+    width: 840px;
+  }
+}
+
+.work__slide.red {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 55px 0 40px 35px;
+  width: 413px;
+  height: 375px;
+  border-color: $red;
+  background: linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right/50% 50%,
+    linear-gradient(135deg, $red 0 $calculate, transparent 0) top left / 50% 50%, $alpha;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+    linear-gradient(-45deg, transparent 0 $corn, #fff 0) bottom right,
+    linear-gradient(135deg, transparent 0 $corn, #fff 0) top left,
+    linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+  -webkit-mask-size: 51% 51% !important;
+  -webkit-mask-repeat: no-repeat !important;
+  transition: all 0.5s ease;
+
+  svg {
+    height: 5vw;
+    margin-left: 30px;
+  }
+
+  .work__slide-text {
+    max-width: 350px;
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+
+  &:nth-child(2n) {
+    margin-bottom: 0;
+  }
+  &:nth-child(even) {
+    margin-left: 90%;
+    margin-top: 10px;
+    margin-bottom: 56px;
+  }
+
+  &:hover {
+    background: linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right/50% 50%,
+      linear-gradient(135deg, $red 0 $calculate, transparent 0) top left / 50% 50%, $red;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+
+    path {
+      stroke: #fff;
+    }
+  }
+}
