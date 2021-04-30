@@ -1,6 +1,41 @@
 .security {
   position: relative;
 
+  &__line {
+    transform: skew(-34deg) !important;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--right {
+      &-red {
+        &-top {
+          top: -45%;
+          right: -16%;
+        }
+
+        &-bottom {
+          top: -40%;
+          right: -17.5%;
+        }
+      }
+
+      &-blue {
+        &-big {
+          top: -55%;
+          right: -13%;
+        }
+
+        &-small {
+          top: 40%;
+          right: 1%;
+        }
+      }
+    }
+  }
+
   &__wrapper {
     margin-bottom: 158px;
   }

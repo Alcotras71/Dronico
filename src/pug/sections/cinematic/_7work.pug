@@ -14,10 +14,29 @@ include ../../mixins/_mixins.pug
   ]
 
 section.cinematic-work
-  img.cinematic-work__drone-medium(src="images/cinematic/work-drone_medium.png" alt="drone_medium")
-  img.cinematic-work__drone-big(src="images/cinematic/work-drone_big.png" alt="drone_big")
-  h2.cinematic-work__title.title.title--red Как мы
-    span  работаем
+  .cinematic-work__drone-medium.rellax(data-rellax-speed="-2.8")
+    img(src="images/cinematic/work-drone_medium.png" alt="drone_medium" data-depth="0.3")
+  .cinematic-work__drone-big.rellax(data-rellax-speed="2")
+    img(src="images/cinematic/work-drone_big.png" alt="drone_big" data-depth="-0.3")
+
+  .cinematic-work__line.cinematic-work__line--left-red-big.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_red-big.png" alt="line" data-depth-y="0.2")
+  .cinematic-work__line.cinematic-work__line--left-red-top.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_red-medium.png" alt="line" data-depth-y="-0.2")
+  .cinematic-work__line.cinematic-work__line--left-blue-top.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_blue-big.png" alt="line" data-depth-y="-0.2")
+  .cinematic-work__line.cinematic-work__line--left-blue-bottom.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_blue-big.png" alt="line" data-depth-y="0.2")
+  .cinematic-work__line.cinematic-work__line--left-red-medium.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_red-medium.png" alt="line" data-depth-y="-0.2")
+  .cinematic-work__line.cinematic-work__line--left-red-bottom.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_red-medium.png" alt="line" data-depth-y="-0.2")
+  .cinematic-work__line.cinematic-work__line--left-blue-small.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_blue-small.png" alt="line" data-depth-y="0.2")
+
+  h2.cinematic-work__title.title.title--red
+    span Как мы
+    |  работаем
   .cinematic-work__wrapper
     .cinematic-work__block
     .cinematic-work__inner

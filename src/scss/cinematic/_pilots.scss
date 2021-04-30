@@ -16,6 +16,8 @@ $calculate: calc(1.9vw + 3px);
 .pilots {
   &__title {
     margin-bottom: 75px;
+    position: relative;
+    z-index: 5;
   }
 
   &__inner {
@@ -33,16 +35,23 @@ $calculate: calc(1.9vw + 3px);
   display: inline-block;
   border: $borderWidth solid $red;
   background: linear-gradient(135deg, $red 0 $calculate, transparent 0) top left / 50% 50%,
-    linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right / 50% 50%, $alpha;
+    linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right / 50% 50%, #000;
   background-origin: border-box;
   background-repeat: no-repeat;
   @include mask;
+  overflow: hidden;
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    @include mask;
+    -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+      linear-gradient(-45deg, transparent 0 2.9vw, #fff 0) bottom right,
+      linear-gradient(135deg, transparent 0 2.9vw, #fff 0) top left,
+      linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+    -webkit-mask-size: 51% 51% !important;
+    -webkit-mask-repeat: no-repeat !important;
+    transition: $transition;
   }
 
   &__block {
@@ -53,7 +62,7 @@ $calculate: calc(1.9vw + 3px);
     left: 0;
     background: rgba(0, 0, 0, 0.4);
     @include mask;
-    transition: $transition;
+    transition: transform 0.5s ease;
   }
 
   &__name {
@@ -78,6 +87,10 @@ $calculate: calc(1.9vw + 3px);
       &__name {
         opacity: 1;
         transform: translate(0);
+      }
+
+      &__img {
+        transform: scale(1.05);
       }
     }
   }

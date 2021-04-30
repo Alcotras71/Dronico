@@ -4,20 +4,76 @@ $calculate: calc(3vw + 3px);
 .cinematic-work {
   position: relative;
 
+  &__line {
+    transform: skew(-34deg) !important;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--left {
+      &-red {
+        &-big {
+          top: 10%;
+          left: -15.5%;
+        }
+
+        &-top {
+          top: 0%;
+          left: 13%;
+        }
+
+        &-medium {
+          top: 53%;
+          left: -3%;
+        }
+
+        &-bottom {
+          top: 63%;
+          left: -7.5%;
+        }
+      }
+
+      &-blue {
+        &-top {
+          top: 19%;
+          left: -3%;
+        }
+
+        &-bottom {
+          top: 30%;
+          left: 2%;
+          z-index: 4;
+        }
+
+        &-small {
+          top: 68%;
+          left: -1%;
+        }
+      }
+    }
+  }
+
   &__drone-medium,
   &__drone-big {
     position: absolute;
-    object-fit: contain;
+    z-index: 5;
   }
 
   &__drone-medium {
-    width: 650px;
     right: 0;
-    top: -15%;
+    top: -10%;
   }
 
-  &__drone-big {
+  &__drone-medium img {
+    object-fit: contain;
+    width: 650px;
+  }
+
+  &__drone-big img {
     width: 810px;
+    object-fit: contain;
   }
 
   &__title {
@@ -26,9 +82,6 @@ $calculate: calc(3vw + 3px);
 
   &__wrapper {
     display: flex;
-  }
-
-  &__inner {
   }
 
   &__block {

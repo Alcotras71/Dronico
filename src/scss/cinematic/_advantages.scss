@@ -2,9 +2,63 @@
   position: relative;
 
   &__drone {
-    position: absolute;
     top: -5%;
     left: -3%;
+    z-index: 5;
+  }
+
+  &__line {
+    transform: skew(-34deg) !important;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--left {
+      &-red {
+        &-big {
+          top: 30%;
+          left: -14.5%;
+          z-index: 2;
+        }
+
+        &-medium {
+          top: 7%;
+          left: 16%;
+        }
+
+        &-small {
+          top: 55%;
+          left: 14.5%;
+        }
+      }
+
+      &-blue {
+        top: 46%;
+        left: -1%;
+        z-index: 2;
+      }
+    }
+
+    &--right {
+      &-red {
+        &-top {
+          top: 2%;
+          right: -15%;
+        }
+
+        &-bottom {
+          top: 10%;
+          right: -14.5%;
+        }
+      }
+
+      &-blue {
+        top: -2%;
+        right: -10%;
+      }
+    }
   }
 
   &__wrapper {

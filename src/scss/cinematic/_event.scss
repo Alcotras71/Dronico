@@ -7,6 +7,34 @@ $calculate: calc(1.9vw + 3px);
 .event {
   position: relative;
 
+  &__line {
+    transform: skew(-34deg) !important;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--right {
+      &-red {
+        &-big {
+          top: -80%;
+          right: -10.5%;
+        }
+
+        &-medium {
+          top: 27%;
+          right: 17.5%;
+        }
+      }
+
+      &-blue {
+        top: -48%;
+        right: 0;
+      }
+    }
+  }
+
   &__dron-small,
   &__dron-medium {
     position: absolute;
@@ -14,12 +42,12 @@ $calculate: calc(1.9vw + 3px);
     right: 15%;
   }
 
-  &__dron-small {
+  &__dron-small img {
     width: 348px;
     object-fit: contain;
   }
 
-  &__dron-medium {
+  &__dron-medium img {
     top: -24%;
     width: 766px;
     object-fit: contain;
