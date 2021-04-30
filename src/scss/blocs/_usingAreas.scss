@@ -83,7 +83,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
     -webkit-mask-repeat: no-repeat !important;
 
     &--red {
-      border: $borderWidthUs solid $red;
+      border: $borderWidthUs solid $red !important;
       background: linear-gradient(135deg, $red 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
       background-origin: border-box;
       background-repeat: no-repeat;

@@ -214,3 +214,38 @@ $calculate: calc(3vw + 3px);
     }
   }
 }
+
+@media (max-width: 1025px) {
+  .cinematic-work {
+    &__line {
+      img {
+        width: 70%;
+      }
+    }
+
+    &__drone-medium {
+      top: -23%;
+
+      img {
+        width: 31vw;
+      }
+    }
+
+    &__drone-big {
+      top: 25%;
+
+      img {
+        width: 48vw;
+      }
+    }
+  }
+
+  .work__slide.red {
+    padding: 20px;
+
+    .work__slide-text {
+      font-size: 2vw;
+      line-height: 2.5vw;
+    }
+  }
+}

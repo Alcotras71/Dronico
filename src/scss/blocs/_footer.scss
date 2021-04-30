@@ -255,6 +255,8 @@
 
     &__menu {
       position: static;
+      transform: translate(0);
+      width: 100%;
     }
   }
 }

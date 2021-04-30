@@ -35,21 +35,21 @@ $calculate: calc(1.9vw + 3px);
     }
   }
 
-  &__dron-small,
-  &__dron-medium {
+  &__drone-small,
+  &__drone-medium {
     position: absolute;
     top: -25%;
     right: 15%;
   }
 
-  &__dron-small {
+  &__drone-small {
     img {
       width: 348px;
       object-fit: contain;
     }
   }
 
-  &__dron-medium {
+  &__drone-medium {
     top: -24%;
 
     img {
@@ -147,7 +147,7 @@ $calculate: calc(1.9vw + 3px);
       margin-bottom: 120px;
     }
 
-    &__dron-small {
+    &__drone-small {
       top: -13%;
 
       img {
@@ -155,7 +155,7 @@ $calculate: calc(1.9vw + 3px);
       }
     }
 
-    &__dron-medium {
+    &__drone-medium {
       top: -8%;
 
       img {
@@ -178,6 +178,73 @@ $calculate: calc(1.9vw + 3px);
 
     &__wrapper {
       padding: 18px;
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .event {
+    &__title {
+      font-size: 5vw;
+      max-width: 55vw;
+      line-height: 5.2vw;
+    }
+
+    &__line {
+      img {
+        width: 70%;
+      }
+
+      &--right {
+        &-red {
+          &-big {
+            top: -117%;
+            right: -34%;
+          }
+
+          &-medium {
+            top: -10%;
+            right: 4.5%;
+          }
+        }
+      }
+    }
+
+    &__drone-small,
+    &__drone-medium {
+      z-index: 5;
+    }
+
+    &__drone-medium {
+      top: 0;
+
+      img {
+        width: 39vw;
+      }
+    }
+
+    &__drone-small {
+      top: -8%;
+
+      img {
+        width: 15vw;
+      }
+    }
+  }
+
+  .event-card {
+    &__wrapper {
+      padding: 13px;
+    }
+
+    &__img {
+      width: 6vw;
+      height: 6vw;
+    }
+
+    &__text {
+      font-size: 1.5vw;
+      line-height: 1.7vw;
     }
   }
 }

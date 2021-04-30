@@ -120,3 +120,21 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .security {
+    &__btn {
+      left: 0;
+    }
+
+    &__inner-btn {
+      height: 28vw;
+    }
+
+    &__line {
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
