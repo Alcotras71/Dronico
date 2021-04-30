@@ -64,16 +64,18 @@ $calculate: calc(3vw + 3px);
   &__drone-medium {
     right: 0;
     top: -10%;
+
+    img {
+      object-fit: contain;
+      width: 650px;
+    }
   }
 
-  &__drone-medium img {
-    object-fit: contain;
-    width: 650px;
-  }
-
-  &__drone-big img {
-    width: 810px;
-    object-fit: contain;
+  &__drone-big {
+    img {
+      width: 810px;
+      object-fit: contain;
+    }
   }
 
   &__title {
@@ -85,7 +87,7 @@ $calculate: calc(3vw + 3px);
   }
 
   &__block {
-    width: 840px;
+    width: 43.5vw;
   }
 }
 
@@ -94,8 +96,8 @@ $calculate: calc(3vw + 3px);
   flex-direction: column;
   justify-content: space-between;
   padding: 55px 0 40px 35px;
-  width: 413px;
-  height: 375px;
+  height: 19.5vw;
+  width: 21.5vw;
   border-color: $red;
   background: linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right/50% 50%,
     linear-gradient(135deg, $red 0 $calculate, transparent 0) top left / 50% 50%, $alpha;
@@ -138,6 +140,77 @@ $calculate: calc(3vw + 3px);
 
     path {
       stroke: #fff;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .cinematic-work {
+    &__drone-medium {
+      top: -20%;
+
+      img {
+        width: 533px;
+      }
+    }
+
+    &__drone-big {
+      img {
+        width: 682px;
+      }
+    }
+
+    &__block {
+      width: 50vw;
+    }
+
+    &__line {
+      &--left {
+        &-red {
+          &-big {
+            top: 13%;
+            left: -27.5%;
+          }
+
+          &-top {
+            top: 6%;
+            left: 7.5%;
+          }
+
+          &-medium {
+            top: 57%;
+            left: -3%;
+          }
+
+          &-bottom {
+            top: 71%;
+            left: -8.5%;
+          }
+        }
+
+        &-blue {
+          &-top {
+            top: 27%;
+            left: -11.5%;
+          }
+
+          &-bottom {
+            top: 42%;
+            left: -6%;
+          }
+
+          &-small {
+            top: 79%;
+          }
+        }
+      }
+    }
+  }
+
+  .work__slide.red {
+    .work__slide-text {
+      font-size: 27px;
+      line-height: 27px;
     }
   }
 }

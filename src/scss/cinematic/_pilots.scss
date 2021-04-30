@@ -95,3 +95,25 @@ $calculate: calc(1.9vw + 3px);
     }
   }
 }
+
+@media (max-width: 1440px) {
+  .pilots-card {
+    &__name {
+      font-size: 48px;
+      line-height: 48px;
+      left: 40px;
+      bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .pilots-card{
+    &__name {
+      font-size: 30px;
+      line-height: 30px;
+      left: 20px;
+      bottom: 20px;
+    }
+  }
+}

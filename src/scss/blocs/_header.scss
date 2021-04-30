@@ -137,7 +137,13 @@
     }
     &__menu {
       font-size: 1.9rem;
+      width: 550px;
     }
+
+    &__nav {
+      margin-left: 150px;
+    }
+
     .contacts {
       &__icon {
         svg {
@@ -162,14 +168,15 @@
     &__menu {
       font-size: 2.65rem;
       position: absolute;
-      right: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
       top: 22vh;
       width: 100%;
       justify-content: center;
-    }
-    &__show {
-      margin: 0;
-      margin-right: 30px;
+
+      li {
+        margin: 0 15px;
+      }
     }
     .contacts {
       &__icon {

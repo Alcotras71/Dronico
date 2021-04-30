@@ -42,15 +42,20 @@ $calculate: calc(1.9vw + 3px);
     right: 15%;
   }
 
-  &__dron-small img {
-    width: 348px;
-    object-fit: contain;
+  &__dron-small {
+    img {
+      width: 348px;
+      object-fit: contain;
+    }
   }
 
-  &__dron-medium img {
+  &__dron-medium {
     top: -24%;
-    width: 766px;
-    object-fit: contain;
+
+    img {
+      width: 766px;
+      object-fit: contain;
+    }
   }
 
   &__wrapper {
@@ -61,6 +66,9 @@ $calculate: calc(1.9vw + 3px);
   &__title {
     max-width: 725px;
     margin-bottom: 140px;
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 97px;
   }
 
   &__inner {
@@ -106,5 +114,70 @@ $calculate: calc(1.9vw + 3px);
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1440px) {
+  .event {
+    &__title {
+      max-width: 575px;
+      margin-bottom: 112px;
+      font-size: 77px;
+      line-height: 78px;
+    }
+
+    &__line {
+      &--right {
+        &-red {
+          &-big {
+            top: -101%;
+            right: -18%;
+          }
+
+          &-medium {
+            top: 13%;
+            right: 16.5%;
+          }
+        }
+      }
+    }
+
+    &__wrapper {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+
+    &__dron-small {
+      top: -13%;
+
+      img {
+        width: 248px;
+      }
+    }
+
+    &__dron-medium {
+      top: -8%;
+
+      img {
+        width: 546px;
+      }
+    }
+  }
+
+  .event-card {
+    &__img {
+      width: 118px;
+      height: 118px;
+      margin-right: 10px;
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    &__wrapper {
+      padding: 18px;
+    }
   }
 }

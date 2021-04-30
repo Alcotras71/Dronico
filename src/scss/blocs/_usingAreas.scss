@@ -322,6 +322,12 @@ $calculateBottomUs: calc(1.9vw + 3px);
 
 @media (max-width: 1440px) {
   .using-areas {
+    &__text {
+      font-size: 24px;
+      line-height: 24px;
+      max-width: 575px;
+    }
+
     &__pagination {
       &-prev,
       &-next {
@@ -351,6 +357,36 @@ $calculateBottomUs: calc(1.9vw + 3px);
     }
   }
 
+  .red {
+    .using-areas {
+      &__pagination {
+        &-prev,
+        &-next {
+          top: 18%;
+        }
+      }
+    }
+
+    .using-card {
+      &__bottom {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+        border: $borderWidthUs solid $red;
+        border-bottom: $borderWidthUs solid $red;
+        border-top: none;
+        background: linear-gradient(-45deg, $red 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+          linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+          linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+        -webkit-mask-size: 51% 51% !important;
+        -webkit-mask-repeat: no-repeat !important;
+      }
+    }
+  }
+
   .white {
     .using-areas {
       &__title {
@@ -372,11 +408,10 @@ $calculateBottomUs: calc(1.9vw + 3px);
       }
     }
     .using-card {
-      &__card {
-      }
       &__text {
         color: #fff;
       }
+
       &__card:hover {
         color: #fff;
         .using-card__visible {
@@ -452,6 +487,36 @@ $calculateBottomUs: calc(1.9vw + 3px);
     &__count {
       img {
         height: 5vw;
+      }
+    }
+  }
+
+  .red {
+    .using-areas {
+      &__pagination {
+        &-prev,
+        &-next {
+          top: 18%;
+        }
+      }
+    }
+
+    .using-card {
+      &__bottom {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+        border: $borderWidthUs solid $red;
+        border-bottom: $borderWidthUs solid $red;
+        border-top: none;
+        background: linear-gradient(-45deg, $red 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+          linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+          linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+        -webkit-mask-size: 51% 51% !important;
+        -webkit-mask-repeat: no-repeat !important;
       }
     }
   }

@@ -301,6 +301,12 @@ $calculatePres: $cornPres + $borderWidthPres;
     }
   }
 
+  .presentation-cinematic {
+    &__title {
+      max-width: 550px;
+    }
+  }
+
   .dark {
     .presentation {
       &__title {

@@ -84,3 +84,39 @@
     }
   }
 }
+
+@media (max-width: 1440px) {
+  .security {
+    &__inner-btn {
+      height: 340px;
+    }
+
+    &__line {
+      &--right {
+        &-red {
+          &-top {
+            top: -59%;
+            right: -23%;
+          }
+
+          &-bottom {
+            top: -54%;
+            right: -25.5%;
+          }
+        }
+
+        &-blue {
+          &-big {
+            top: -89%;
+            right: -24%;
+          }
+
+          &-small {
+            top: 38%;
+            right: -3%;
+          }
+        }
+      }
+    }
+  }
+}
