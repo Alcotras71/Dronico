@@ -248,3 +248,69 @@ $calculate: calc(1.9vw + 3px);
     }
   }
 }
+
+@media (max-width: 550px) {
+  .event {
+    &__drone-small,
+    &__drone-medium {
+      display: none;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 32px;
+      max-width: 75vw;
+      margin-bottom: 25px;
+    }
+
+    &__wrapper {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    &__inner {
+      display: block;
+    }
+  }
+
+  .event-card {
+    $cardWidth: 100%;
+    $cardHeight: 78vw;
+    $corn: 14vw;
+    $borderWidth: 3px;
+    $calculate: calc(14vw + 3px);
+
+    position: relative;
+    width: $cardWidth;
+    height: $cardHeight;
+    display: inline-block;
+    border: $borderWidth solid $red;
+    background: linear-gradient(135deg, $red 0 $calculate, transparent 0) top left / 50% 50%,
+      linear-gradient(-45deg, $red 0 $calculate, transparent 0) bottom right / 50% 50%, $alpha;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+      linear-gradient(-45deg, transparent 0 $corn, #fff 0) bottom right,
+      linear-gradient(135deg, transparent 0 $corn, #fff 0) top left,
+      linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+    -webkit-mask-size: 51% 51% !important;
+    -webkit-mask-repeat: no-repeat !important;
+
+    margin-bottom: 25px;
+
+    &__wrapper {
+      padding: 10px;
+    }
+
+    &__img {
+      width: 30vw;
+      height: 30vw;
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}

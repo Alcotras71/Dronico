@@ -84,9 +84,9 @@ $calculateBottomUs: calc(1.9vw + 3px);
 
     &--red {
       border: $borderWidthUs solid $red !important;
-      background: linear-gradient(135deg, $red 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha;
-      background-origin: border-box;
-      background-repeat: no-repeat;
+      background: linear-gradient(135deg, $red 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha !important;
+      background-origin: border-box !important;
+      background-repeat: no-repeat !important;
       -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
         linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
         linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
@@ -155,12 +155,12 @@ $calculateBottomUs: calc(1.9vw + 3px);
     -webkit-mask-repeat: no-repeat !important;
 
     &--red {
-      border: $borderWidthUs solid $red;
-      border-bottom: $borderBottomWidthUs solid $red;
+      border: $borderWidthUs solid $red !important;
+      border-bottom: $borderBottomWidthUs solid $red !important;
       border-top: none;
-      background: linear-gradient(-45deg, $red 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%, $alpha;
-      background-origin: border-box;
-      background-repeat: no-repeat;
+      background: linear-gradient(-45deg, $red 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%, $alpha !important;
+      background-origin: border-box !important;
+      background-repeat: no-repeat !important;
       -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
         linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
         linear-gradient(135deg, transparent 0 0, #fff 0) top left,
@@ -367,24 +367,24 @@ $calculateBottomUs: calc(1.9vw + 3px);
       }
     }
 
-    .using-card {
-      &__bottom {
-        width: $cardWidthUs;
-        height: $cardHeightUs;
-        border: $borderWidthUs solid $red;
-        border-bottom: $borderWidthUs solid $red;
-        border-top: none;
-        background: linear-gradient(-45deg, $red 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
-        background-origin: border-box;
-        background-repeat: no-repeat;
-        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-          linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
-          linear-gradient(135deg, transparent 0 0, #fff 0) top left,
-          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-        -webkit-mask-size: 51% 51% !important;
-        -webkit-mask-repeat: no-repeat !important;
-      }
-    }
+    // .using-card {
+    //   &__bottom {
+    //     width: $cardWidthUs;
+    //     height: $cardHeightUs;
+    //     border: $borderWidthUs solid $red;
+    //     border-bottom: $borderWidthUs solid $red;
+    //     border-top: none;
+    //     background: linear-gradient(-45deg, $red 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+    //     background-origin: border-box;
+    //     background-repeat: no-repeat;
+    //     -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+    //       linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+    //       linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+    //       linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+    //     -webkit-mask-size: 51% 51% !important;
+    //     -webkit-mask-repeat: no-repeat !important;
+    //   }
+    // }
   }
 
   .white {
@@ -475,10 +475,12 @@ $calculateBottomUs: calc(1.9vw + 3px);
         height: $cardHeightUs;
       }
     }
+
     &__bottom {
       width: $cardWidthUs;
       height: $cardHeightUs;
     }
+
     &__visible {
       padding: 20px 15px 0 15px;
       height: $cardHeightUs;
@@ -501,24 +503,24 @@ $calculateBottomUs: calc(1.9vw + 3px);
       }
     }
 
-    .using-card {
-      &__bottom {
-        width: $cardWidthUs;
-        height: $cardHeightUs;
-        border: $borderWidthUs solid $red;
-        border-bottom: $borderWidthUs solid $red;
-        border-top: none;
-        background: linear-gradient(-45deg, $red 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
-        background-origin: border-box;
-        background-repeat: no-repeat;
-        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
-          linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
-          linear-gradient(135deg, transparent 0 0, #fff 0) top left,
-          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
-        -webkit-mask-size: 51% 51% !important;
-        -webkit-mask-repeat: no-repeat !important;
-      }
-    }
+    // .using-card {
+    //   &__bottom {
+    //     width: $cardWidthUs;
+    //     height: $cardHeightUs;
+    //     border: $borderWidthUs solid $red;
+    //     border-bottom: $borderWidthUs solid $red;
+    //     border-top: none;
+    //     background: linear-gradient(-45deg, $red 0 $calculateUs, transparent 0) bottom right / 50% 50%, $alpha;
+    //     background-origin: border-box;
+    //     background-repeat: no-repeat;
+    //     -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+    //       linear-gradient(-45deg, transparent 0 $cornUs, #fff 0) bottom right,
+    //       linear-gradient(135deg, transparent 0 0, #fff 0) top left,
+    //       linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+    //     -webkit-mask-size: 51% 51% !important;
+    //     -webkit-mask-repeat: no-repeat !important;
+    //   }
+    // }
   }
 }
 
@@ -563,6 +565,22 @@ $calculateBottomUs: calc(1.9vw + 3px);
         linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
       -webkit-mask-size: 51% 51% !important;
       -webkit-mask-repeat: no-repeat !important;
+
+      &--red {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+        border: $borderWidthUs solid $red !important;
+        background: linear-gradient(135deg, $red 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha !important;
+        background-origin: border-box !important;
+        background-repeat: no-repeat !important;
+        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+          linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+          linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+        -webkit-mask-size: 51% 51% !important;
+        -webkit-mask-repeat: no-repeat !important;
+      }
+
       &-line {
         width: $cardWidthUs;
         height: $cardHeightUs;
@@ -620,6 +638,14 @@ $calculateBottomUs: calc(1.9vw + 3px);
       opacity: 1;
     }
   }
+
+  .red {
+    .using-card {
+      &__visible {
+        background: $red;
+      }
+    }
+  }
 }
 
 @media (max-width: 550px) {
@@ -646,6 +672,11 @@ $calculateBottomUs: calc(1.9vw + 3px);
         right: calc(50% - 28vw);
       }
     }
+
+    &__text {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   .using-card {
@@ -665,6 +696,22 @@ $calculateBottomUs: calc(1.9vw + 3px);
         linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
       -webkit-mask-size: 51% 51% !important;
       -webkit-mask-repeat: no-repeat !important;
+
+      &--red {
+        width: $cardWidthUs;
+        height: $cardHeightUs;
+        border: $borderWidthUs solid $red !important;
+        background: linear-gradient(135deg, $red 0 $calculateUs, transparent 0) top left / 50% 50%, $alpha !important;
+        background-origin: border-box !important;
+        background-repeat: no-repeat !important;
+        -webkit-mask: linear-gradient(45deg, transparent 0 0, #fff 0) bottom left,
+          linear-gradient(-45deg, transparent 0 0, #fff 0) bottom right,
+          linear-gradient(135deg, transparent 0 $cornUs, #fff 0) top left,
+          linear-gradient(-135deg, transparent 0 0, #fff 0) top right;
+        -webkit-mask-size: 51% 51% !important;
+        -webkit-mask-repeat: no-repeat !important;
+      }
+
       &-line {
         width: $cardWidthUs;
         height: $cardHeightUs;
@@ -713,6 +760,17 @@ $calculateBottomUs: calc(1.9vw + 3px);
       font-size: 3rem;
       line-height: 3.4rem;
       transition: $transition;
+    }
+  }
+
+  .red {
+    .using-areas {
+      &__pagination {
+        &-prev,
+        &-next {
+          top: auto;
+        }
+      }
     }
   }
 }

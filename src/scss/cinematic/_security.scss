@@ -138,3 +138,34 @@
     }
   }
 }
+
+@media (max-width: 550px) {
+  .security {
+    &__title {
+      margin-bottom: 45px;
+    }
+
+    &__wrapper {
+      margin-bottom: 115px;
+    }
+
+    &__inner-btn {
+      height: 59vw;
+    }
+
+    .advantages__btn-text {
+      top: -42%;
+      transform: translate(0, 0);
+    }
+
+    &__btn {
+      &--2 {
+        top: 43%;
+      }
+
+      &--3 {
+        top: 100%;
+      }
+    }
+  }
+}
