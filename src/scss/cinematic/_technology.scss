@@ -1,0 +1,215 @@
+.cinematic-techno {
+  position: relative;
+
+  &__line {
+    transform: skew(-34deg) !important;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--right {
+      &-red {
+        top: -180%;
+        right: -15%;
+      }
+
+      &-blue {
+        &-top {
+          top: -100%;
+          right: -2%;
+        }
+
+        &-bottom {
+          top: -125%;
+          right: -20%;
+        }
+      }
+    }
+  }
+
+  &__drone {
+    z-index: 5;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &--big {
+      width: 683px;
+      top: -65%;
+      right: 0;
+    }
+
+    &--small {
+      width: 392px;
+      bottom: -65%;
+      right: 23%;
+    }
+  }
+
+  &__wrapper {
+    margin: 250px 0;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    &--big {
+      max-width: 1435px;
+      margin: 0;
+
+      span {
+        color: $red;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 1105px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .cinematic-techno {
+    &__wrapper {
+      margin: 200px 0 150px 0;
+    }
+
+    &__text {
+      max-width: 800px;
+    }
+
+    &__title {
+      &--big {
+        max-width: 1100px;
+      }
+    }
+
+    &__line {
+      &--right {
+        &-red {
+          top: -300%;
+          right: -25%;
+        }
+
+        &-blue {
+          &-top {
+            top: -220%;
+            right: -12%;
+          }
+
+          &-bottom {
+            top: -240%;
+            right: -32%;
+          }
+        }
+      }
+    }
+
+    &__drone {
+      &--big {
+        width: 530px;
+        top: -75%;
+      }
+
+      &--small {
+        width: 250px;
+        bottom: -55%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .cinematic-techno {
+    &__drone {
+      &--big {
+        width: 45vw;
+        top: -130%;
+      }
+
+      &--small {
+        width: 25vw;
+        bottom: -120%;
+      }
+    }
+
+    &__line {
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cinematic-techno {
+    &__wrapper {
+      margin: 100px 0;
+    }
+
+    &__text {
+      margin-bottom: 25px;
+    }
+
+    &__drone {
+      &--big {
+        width: 45vw;
+        top: -80%;
+      }
+
+      &--small {
+        width: 25vw;
+        bottom: -100%;
+      }
+    }
+
+    &__line {
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .cinematic-techno {
+    &__wrapper {
+      margin: 50px 0 0 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    &__drone {
+      display: none;
+    }
+
+    &__line {
+      img {
+        width: 40%;
+      }
+
+      &--right {
+        &-red {
+          top: -160%;
+          right: -100%;
+        }
+
+        &-blue {
+          &-top {
+            top: -100%;
+            right: -50%;
+          }
+
+          &-bottom {
+            top: -120%;
+            right: -80%;
+          }
+        }
+      }
+    }
+  }
+}

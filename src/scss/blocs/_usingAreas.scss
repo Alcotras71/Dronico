@@ -157,7 +157,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
     &--red {
       border: $borderWidthUs solid $red !important;
       border-bottom: $borderBottomWidthUs solid $red !important;
-      border-top: none;
+      border-top: none !important;
       background: linear-gradient(-45deg, $red 0 $calculateBottomUs, transparent 0) bottom right / 50% 50%, $alpha !important;
       background-origin: border-box !important;
       background-repeat: no-repeat !important;
@@ -188,6 +188,10 @@ $calculateBottomUs: calc(1.9vw + 3px);
     height: $cardHeightUs;
     transform: translateY(10vw);
     transition: $transition;
+
+    &--red {
+      transform: translateY(8vw);
+    }
   }
   &__title {
     font-size: 3rem;
@@ -498,7 +502,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
       &__pagination {
         &-prev,
         &-next {
-          top: 18%;
+          top: 4%;
         }
       }
     }
@@ -674,7 +678,7 @@ $calculateBottomUs: calc(1.9vw + 3px);
     }
 
     &__text {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 14px;
     }
   }

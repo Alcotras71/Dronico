@@ -121,6 +121,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
       },
     },
   });
+
+  // check resize slider
+  function handleTabletChange(e) {
+    if (e.matches) {
+      usingAreasRed.on("slideChange", function (e) {
+        if (this.activeIndex == 0) {
+          this.slideTo(5, 1000);
+        } else if (this.activeIndex == 6) {
+          this.slideTo(1, 1000);
+        }
+      });
+    }
+  }
+  const mediaQuery = window.matchMedia("(max-width: 551px)");
+  mediaQuery.addListener(handleTabletChange);
+  handleTabletChange(mediaQuery);
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
   // MainCode
   // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————

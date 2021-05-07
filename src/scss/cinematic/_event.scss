@@ -261,6 +261,8 @@ $calculate: calc(1.9vw + 3px);
       line-height: 32px;
       max-width: 75vw;
       margin-bottom: 25px;
+      position: relative;
+      z-index: 5;
     }
 
     &__wrapper {
@@ -271,14 +273,40 @@ $calculate: calc(1.9vw + 3px);
     &__inner {
       display: block;
     }
+
+    &__line {
+      img {
+        width: 40%;
+      }
+
+      &--right {
+        &-red {
+          &-big {
+            top: -38%;
+            right: -120%;
+          }
+
+          &-medium {
+            top: -15%;
+            right: -30%;
+          }
+        }
+
+        &-blue {
+          top: -30%;
+          right: -80%;
+          z-index: 3;
+        }
+      }
+    }
   }
 
   .event-card {
     $cardWidth: 100%;
     $cardHeight: 78vw;
-    $corn: 14vw;
+    $corn: 13vw;
     $borderWidth: 3px;
-    $calculate: calc(14vw + 3px);
+    $calculate: calc(13vw + 3px);
 
     position: relative;
     width: $cardWidth;
@@ -299,7 +327,13 @@ $calculate: calc(1.9vw + 3px);
     margin-bottom: 25px;
 
     &__wrapper {
-      padding: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      align-items: flex-end;
     }
 
     &__img {

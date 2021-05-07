@@ -68,11 +68,15 @@
     }
 
     &--2 {
-      top: 40%;
+      top: 33%;
     }
 
     &--3 {
-      top: 80%;
+      top: 66%;
+    }
+
+    &--4 {
+      top: 99%;
     }
 
     .tech-dronico__circle {
@@ -150,7 +154,8 @@
     }
 
     &__inner-btn {
-      height: 59vw;
+      height: 90vw;
+      margin-left: 5px;
     }
 
     .advantages__btn-text {
@@ -160,11 +165,47 @@
 
     &__btn {
       &--2 {
-        top: 43%;
+        top: 30%;
       }
 
       &--3 {
-        top: 100%;
+        top: 64%;
+      }
+
+      &--4 {
+        top: 103%;
+      }
+    }
+
+    &__line {
+      img {
+        width: 40%;
+      }
+
+      &--right {
+        &-red {
+          &-top {
+            top: 0%;
+            right: -70%;
+          }
+
+          &-bottom {
+            top: 10%;
+            right: -70%;
+          }
+        }
+
+        &-blue {
+          &-big {
+            top: -0%;
+            right: -70%;
+          }
+
+          &-small {
+            top: 80%;
+            right: -15%;
+          }
+        }
       }
     }
   }

@@ -292,38 +292,52 @@
 
     &__title {
       text-align: left;
+      position: relative;
+      z-index: 5;
     }
 
     &__line {
       img {
-        width: 50%;
+        width: 40%;
       }
 
       &--left {
         &-red {
           &-big {
-            left: -28%;
+            left: -20%;
+            top: 10%;
           }
 
           &-medium {
-            left: 13%;
+            top: 60%;
+            left: -50%;
           }
 
           &-small {
-            left: 13%;
-            top: 52%;
+            left: -30%;
+            top: 45%;
           }
         }
 
         &-blue {
-          left: -9.5%;
+          left: -30%;
+          top: 30%;
         }
       }
 
       &--right {
+        &-red {
+          &-bottom {
+            display: none;
+          }
+
+          &-top {
+            display: none;
+          }
+        }
+
         &-blue {
-          top: -6%;
-          right: -10%;
+          display: none;
         }
       }
     }
@@ -336,11 +350,11 @@
       }
 
       &--2 {
-        top: 22%;
+        top: 21%;
       }
 
       &--3 {
-        top: 45%;
+        top: 43%;
       }
 
       &--4 {
@@ -350,6 +364,7 @@
 
     &__inner-btn {
       height: 320px;
+      margin-left: 5px;
     }
 
     &__btn-text {

@@ -251,16 +251,18 @@ $calculate: calc(3vw + 3px);
 }
 
 @media (max-width: 550px) {
-  $corn: 14vw;
-  $calculate: calc(14vw + 3px);
+  $corn: 13vw;
+  $calculate: calc(13vw + 3px);
 
   .cinematic-work {
     &__title {
       max-width: 172px;
+      margin-bottom: 25px;
     }
 
     &__wrapper {
       display: block;
+      margin-bottom: 50px;
     }
 
     &__block {
@@ -270,6 +272,26 @@ $calculate: calc(3vw + 3px);
     &__drone-medium,
     &__drone-big {
       display: none;
+    }
+    &__line {
+      &--left {
+        &-red {
+          &-big,
+          &-top,
+          &-medium,
+          &-bottom {
+            display: none;
+          }
+        }
+
+        &-blue {
+          &-top,
+          &-bottom,
+          &-small {
+            display: none;
+          }
+        }
+      }
     }
   }
 

@@ -50,8 +50,9 @@ body {
   background: url("../images/pattern.png") repeat,
     url("../images/cinematic/bg_using-areas--left.png") no-repeat -300px -7%,
     url("../images/cinematic/bg_using-areas--right.png") no-repeat right -500px top -3%,
-    url("../images/cinematic/bg_advantages--left.png") no-repeat 0 13%,
-    url("../images/cinematic/bg_advantages--right.png") no-repeat right -400px top 18%,
+    url("../images/cinematic/bg_techno--right.png") no-repeat right -300px top 15%,
+    url("../images/cinematic/bg_advantages--left.png") no-repeat 0 28%,
+    url("../images/cinematic/bg_advantages--right.png") no-repeat right -400px top 35%,
     url("../images/cinematic/bg_event--left.png") no-repeat -300px 60%,
     url("../images/cinematic/bg_event--right.png") no-repeat right -500px top 52%,
     url("../images/cinematic/bg_work--left.png") no-repeat -300px 78%,
@@ -187,5 +188,15 @@ body {
 @media (max-width: 550px) {
   html {
     font-size: 6px;
+  }
+
+  .wrapper-red {
+    background: url("../images/pattern.png") repeat,
+      url("../images/cinematic/bg_using-areas--left.png") no-repeat -300px -7%,
+      url("../images/cinematic/bg_advantages--left.png") no-repeat 0 13%,
+      url("../images/cinematic/bg_event--left.png") no-repeat -300px 30%,
+      url("../images/cinematic/bg_event--right.png") no-repeat right -500px top 52%,
+      url("../images/cinematic/bg_work--left.png") no-repeat -300px 78%,
+      url("../images/cinematic/bg_work--right.png") no-repeat right -400px top 100%;
   }
 }
