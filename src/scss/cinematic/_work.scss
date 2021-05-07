@@ -63,17 +63,20 @@ $calculate: calc(3vw + 3px);
 
   &__drone-medium {
     right: 0;
-    top: -10%;
+    top: -20%;
 
     img {
       object-fit: contain;
-      width: 650px;
+      width: 40vw;
     }
   }
 
   &__drone-big {
+    top: 10%;
+    left: 0%;
+
     img {
-      width: 810px;
+      width: 45vw;
       object-fit: contain;
     }
   }
@@ -147,17 +150,11 @@ $calculate: calc(3vw + 3px);
 @media (max-width: 1440px) {
   .cinematic-work {
     &__drone-medium {
-      top: -20%;
-
-      img {
-        width: 533px;
-      }
+      top: -35%;
     }
 
     &__drone-big {
-      img {
-        width: 682px;
-      }
+      top: 25%;
     }
 
     &__block {

@@ -2,9 +2,10 @@
   position: relative;
 
   &__drone {
-    top: -5%;
-    left: -3%;
+    top: -25%;
+    left: 0%;
     z-index: 5;
+    width: 38vw;
 
     img {
       width: 100%;
@@ -71,7 +72,8 @@
   }
 
   &__title {
-    text-align: right;
+    text-align: center;
+    margin-left: 12%;
   }
 
   &__inner {
@@ -97,8 +99,8 @@
     font-size: 36px;
     line-height: 36px;
     text-transform: uppercase;
-    max-width: 1250px;
-    width: 1250px;
+    max-width: 1400px;
+    width: 1400px;
 
     &--3 {
       width: 1170px;
@@ -149,6 +151,14 @@
       padding-top: 165px;
     }
 
+    &__title {
+      margin-left: 20%;
+    }
+
+    &__inner {
+      margin-top: 80px;
+    }
+
     &__btn-text {
       font-size: 24px;
       line-height: 24px;
@@ -161,12 +171,8 @@
 
     &__drone {
       top: -5%;
-      left: -3%;
+      left: 0%;
       z-index: 5;
-
-      img {
-        width: 620px;
-      }
     }
 
     &__line {
@@ -230,6 +236,9 @@
 @media (max-width: 1025px) {
   .advantages {
     &__drone {
+      top: -30%;
+      left: 5%;
+
       img {
         width: 45vw;
       }
@@ -264,6 +273,11 @@
       }
     }
 
+    &__title {
+      margin: 0;
+      text-align: right;
+    }
+
     &__inner-btn {
       height: 45vw;
     }
@@ -272,6 +286,14 @@
       width: 80vw;
       font-size: 2.1vw;
       line-height: 2.2vw;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .advantages {
+    &__drone {
+      top: -25%;
     }
   }
 }

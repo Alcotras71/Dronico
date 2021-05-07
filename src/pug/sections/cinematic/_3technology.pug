@@ -1,8 +1,13 @@
 section.cinematic-techno
   .cinematic-techno__drone.cinematic-techno__drone--big.absolute.rellax(data-rellax-speed="-2")
     img(src="images/cinematic/techno-drone_big.png" alt="drone" data-depth="0.3")
-  .cinematic-techno__drone.cinematic-techno__drone--small.absolute.rellax(data-rellax-speed="-2")
-    img(src="images/cinematic/techno-drone_small.png" alt="drone" data-depth="-0.3")
+
+  .cinematic-techno__line.cinematic-techno__line--left-red-big.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_red-big.png" alt="line--red-right-top" data-depth-y="-0.2")
+  .cinematic-techno__line.cinematic-techno__line--left-red-medium.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_red-medium.png" alt="line--blue-right" data-depth-y="0.2")
+  .cinematic-techno__line.cinematic-techno__line--left-blue.absolute.rellax(data-rellax-speed="0")
+    img(src="images/cinematic/line_blue-big.png" alt="line--blue-right" data-depth-y="0.2")
 
   .cinematic-techno__line.cinematic-techno__line--right-red.absolute.rellax(data-rellax-speed="0")
     img(src="images/cinematic/line_red-big.png" alt="line--red-right-top" data-depth-y="-0.2")
@@ -15,6 +20,11 @@ section.cinematic-techno
       | Технологии
     p.using-areas__text.cinematic-techno__text
       | Мы летаем на маленьких и проворных дронах, чтобы создавать уникальный видео FPV (First Person View)
-    h2.tech-dronico__title.cinematic-techno__title--big
-      span Почувствуйте себя птицей
-      |  - это съемка FPV.
+    .cinematic-techno__inner
+      h2.tech-dronico__title.cinematic-techno__title--big
+        span Почувствуйте себя птицей
+        |  - это съемка FPV.
+      .cinematic-techno__video-wrapper
+        video(class="cinematic-techno__video" loop muted autoplay="autoplay" preload="auto")
+          source(src="video/minidrones.webm" type="video/webm")
+          source(src="video/minidrones.mp4" type="video/mp4")

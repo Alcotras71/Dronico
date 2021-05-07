@@ -37,7 +37,7 @@
   }
 
   &__wrapper {
-    margin-bottom: 158px;
+    margin-bottom: 300px;
   }
 
   &__title {
@@ -125,7 +125,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .security {
     &__btn {
       left: 0;
@@ -139,6 +139,14 @@
       img {
         width: 70%;
       }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .security {
+    &__wrapper {
+      margin-bottom: 150px;
     }
   }
 }

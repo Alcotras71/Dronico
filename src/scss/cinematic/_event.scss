@@ -50,10 +50,11 @@ $calculate: calc(1.9vw + 3px);
   }
 
   &__drone-medium {
-    top: -24%;
+    top: -32%;
+    right: 10%;
 
     img {
-      width: 766px;
+      width: 43vw;
       object-fit: contain;
     }
   }
@@ -147,20 +148,8 @@ $calculate: calc(1.9vw + 3px);
       margin-bottom: 120px;
     }
 
-    &__drone-small {
-      top: -13%;
-
-      img {
-        width: 248px;
-      }
-    }
-
     &__drone-medium {
-      top: -8%;
-
-      img {
-        width: 546px;
-      }
+      top: -25%;
     }
   }
 
@@ -216,18 +205,10 @@ $calculate: calc(1.9vw + 3px);
     }
 
     &__drone-medium {
-      top: 0;
+      top: -5%;
 
       img {
         width: 39vw;
-      }
-    }
-
-    &__drone-small {
-      top: -8%;
-
-      img {
-        width: 15vw;
       }
     }
   }
@@ -245,6 +226,14 @@ $calculate: calc(1.9vw + 3px);
     &__text {
       font-size: 1.5vw;
       line-height: 1.7vw;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .event {
+    &__drone-medium {
+      top: -25%;
     }
   }
 }
