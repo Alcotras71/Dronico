@@ -1,29 +1,30 @@
 include ../../mixins/_projectsCard.pug
--const textArr1 = ['For the launch of the Mercedes EQC 400 4MATIC in Beijing', 'Airstage were commissioned to fly 6 pilot flown Air Butterflies', 'for the preview video and then at the event itself'];
--const textArr2 = ['At the Mercedes-Benz Media Night and the press conference', 'on the following day at the IAA 2015, Airstage was part of the', 'production with their autonomous flying "AirOrbs"'];
--const textArr3 = ['Originally constructed and flown for the international reveal of', 'the new BMW 1 series in 2004, the BMW 1 remains as one of ', 'the mot versatile flying cars in our hirepark'];
--const textArr4 = ['The computer controlled glowing oriental-styled spheres and lanterns are a', 'highlight of the show as they magically take to the sky and float through elaborately choreographed formations', 'high above the central ice rink during the daily parade'];
--const textArr5 = ['The best and biggest Christmas show in New York City also has to have the biggest snowflakes…', 'so we were commissioned to created snowflake', 'AirOrbs that fly over the heads of the audience up to 5 times daily in the Radio City Christmas Spectacular'];
--const textArr6 = ['From extreme heavyweight to ultra lightweight.', 'A lavish product presentation show was the', 'highlight at the international trade fair for construction machines.'];
+-const textArr1 = ['ДЛЯ ЗАПУСКА MERCEDES EQC 400 4MATIC В ПЕКИНЕ', 'ДЛЯ ВИДЕО ПРЕВЬЮ И ЗАТЕМ ДЛЯ САМОГО МЕРОПРИЯТИЯ БЫЛИ ИЗГОТОВЛЕНЫ', '6 УПРАВЛЯЕМЫХ ПИЛОТАМИ ВОЗДУШНЫХ БАБОЧЕК'];
+-const textArr2 = ['НА МЕДИА ВЕЧЕРЕ MERCEDES-BENZ И ПРЕСС-КОНФЕРЕНЦИИ НА СЛЕДУЮЩИЙ ДЕНЬ', 'НА МЕЖДУНАРОДНОЙ ВЫСТАВКЕ АВТОМОБИЛЬНОЙ ПРОМЫШЛЕННОСТИ 2015', 'В ПОСТАНОВКЕ УЧАСТВОВАЛИ АВТОНОМНЫЕ ЛЕТАЮЩИЕ ВОЗДУШНЫЕ СФЕРЫ'];
+-const textArr3 = ['ПЕРВОНАЧАЛЬНО СКОНСТРУИРОВАННЫЙ И ЗАПУЩЕННЫЙ В 2004', 'НА МЕЖДУНАРОДНОМ ПОКАЗЕ BMW НОВОЙ СЕРИИ BMW 1', 'ОСТАЕТСЯ ОДНИМ ИЗ САМЫХ УНИВЕРСАЛЬНЫХ ЛЕТАЮЩИХ АВТОМОБИЛЕЙ В НАШЕМ ПРОКАТЕ'];
+-const textArr4 = ['УПРАВЛЯЕМЫЕ КОМПЬЮТЕРОМ СВЕТЯЩИЕСЯ СФЕРЫ И ФОНАРИ В ВОСТОЧНОМ СТИЛЕ', 'ЯВЛЯЮТСЯ ИЗЮМИНКОЙ ШОУ ВО ВРЕМЯ ЕЖЕДНЕВНОГО ПАРАДА:', 'ОНИ ВОЛШЕБНЫМ ОБРАЗОМ ПОДНИМАЮТСЯ В НЕБО И ПЛЫВУТ ЧЕРЕЗ ТЩАТЕЛЬНО ПРОДУМАННЫЕ ХОРЕОГРАФИЧЕСКИЕ ПОСТРОЕНИЯ ВЫСОКО НАД ЦЕНТРАЛЬНЫМ КАТКОМ'];
+-const textArr5 = ['ЛУЧШЕЕ И САМОЕ БОЛЬШОЕ РОЖДЕСТВЕНСКОЕ ШОУ В НЬЮ-ЙОРКЕ ТАКЖЕ ДОЛЖНО ИМЕТЬ САМЫЕ БОЛЬШИЕ СНЕЖИНКИ...', 'ПОЭТОМУ НАМ БЫЛО ПОРУЧЕНО СОЗДАТЬ СНЕЖИНКУВОЗДУШНЫЕ СФЕРЫ,', 'ПРОЛЕТАЮЩИЕ НАД ГОЛОВАМИ ЗРИТЕЛЕЙ ПО 5 РАЗ В ДЕНЬ НА РОЖДЕСТВЕНСКОМ ПРЕДСТАВЛЕНИИ В РАДИО-СИТИ'];
+-const textArr6 = ['ОТ ЭКСТРЕМАЛЬНО ТЯЖЕЛОГО ДО СВЕРХЛЕГКОГО ВЕСА.', 'РОСКОШНАЯ ПРЕЗЕНТАЦИЯ ПРОДУКЦИИ СТАЛА ИЗЮМИНКОЙ', 'МЕЖДУНАРОДНОЙ ВЫСТАВКИ СТРОИТЕЛЬНЫХ МАШИН'];
+
 
 section.projects
-	.projects__title-big
-		img(src="images/balloon/projects_logo.svg" alt="projects_logo")
-	.projects__title.title
-		span Примеры проектов
-	.projects__wrapper
-	+projectsCard('1', 'Air Butterflies', textArr1)
-	+projectsCard('2', 'Mercedes Benz Media Night, IAA 2015', textArr2)
-	+projectsCard('3', 'BMW 1', textArr3)
-	+projectsCard('4', 'Lotte World Night Parade', textArr4)
-	+projectsCard('5', 'Radio City Christmas Spectacular', textArr5)
-	+projectsCard('6', 'Komatsu Backhoe Loader', textArr6)
-	//- +projectsCard('vimeo1','373171794','1', 'Air Butterflies', textArr1)
-	//- +projectsCard('vimeo2','253406717','2', 'Mercedes Benz Media Night, IAA 2015', textArr2)
-	//- +projectsCard('vimeo3','253598691','3', 'BMW 1', textArr3)
-	//- +projectsCard('vimeo4','260981155','4', 'Lotte World Night Parade', textArr4)
-	//- +projectsCard('vimeo5','253424863','5', 'Radio City Christmas Spectacular', textArr5)
-	//- +projectsCard('vimeo6','253432714','6', 'Komatsu Backhoe Loader', textArr6)
-	//- .presentation__button-wrapper
-	//- 	.presentation__button.box
-	//- 		p Загрузить еще
+  .projects__title-big
+    img(src="images/balloon/projects_logo.svg" alt="projects_logo")
+  .projects__title.title
+    span Примеры проектов
+  .projects__wrapper
+  +projectsCard('1', 'ВОЗДУШНЫЕ БАБОЧКИ ', textArr1)
+  +projectsCard('2', 'МЕДИА ВЕЧЕР MERCEDESBENZ, МВАП 2015', textArr2)
+  +projectsCard('3', 'BMW 1', textArr3)
+  +projectsCard('4', 'НОЧНОЙ ПАРАД LOTTE WORLD', textArr4)
+  +projectsCard('5', 'РОЖДЕСТВЕНСКОЕ ПРЕДСТАВЛЕНИЕ РАДИО-СИТИ', textArr5)
+  +projectsCard('6', 'ЭКСКАВАТОР-ПОГРУЗЧИК KOMATSU', textArr6)
+  //- +projectsCard('vimeo1','373171794','1', 'Air Butterflies', textArr1)
+  //- +projectsCard('vimeo2','253406717','2', 'Mercedes Benz Media Night, IAA 2015', textArr2)
+  //- +projectsCard('vimeo3','253598691','3', 'BMW 1', textArr3)
+  //- +projectsCard('vimeo4','260981155','4', 'Lotte World Night Parade', textArr4)
+  //- +projectsCard('vimeo5','253424863','5', 'Radio City Christmas Spectacular', textArr5)
+  //- +projectsCard('vimeo6','253432714','6', 'Komatsu Backhoe Loader', textArr6)
+  //- .presentation__button-wrapper
+  //- 	.presentation__button.box
+  //- 		p Загрузить еще
